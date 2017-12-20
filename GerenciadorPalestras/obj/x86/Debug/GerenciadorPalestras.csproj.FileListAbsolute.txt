@@ -1,0 +1,13 @@
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\bin\x86\Debug\GerenciadorPalestras.exe
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\bin\x86\Debug\GerenciadorPalestras.pdb
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\bin\x86\Debug\Settings.pdb
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.csprojResolveAssemblyReference.cache
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Home.resources
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Properties.Resources.resources
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.csproj.GenerateResource.Cache
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.exe
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.pdb
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormUsuario.resources
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Login.resources
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\bin\x86\Debug\Settings.dll
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormEvento.resources

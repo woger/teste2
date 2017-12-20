@@ -1,0 +1,7 @@
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\bin\x86\Debug\Settings.pdb
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\obj\x86\Debug\Settings.Properties.Resources.resources
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\obj\x86\Debug\Settings.csproj.GenerateResource.Cache
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\obj\x86\Debug\Settings.pdb
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\obj\x86\Debug\Settings.csprojResolveAssemblyReference.cache
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\bin\x86\Debug\Settings.dll
+C:\Users\Rogério\documents\visual studio 2015\Projects\GerenciadorPalestras\Settings\obj\x86\Debug\Settings.dll
