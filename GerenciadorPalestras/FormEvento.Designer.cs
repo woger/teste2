@@ -94,7 +94,7 @@
             this.btnBuscarBanner.Location = new System.Drawing.Point(895, 12);
             this.btnBuscarBanner.Name = "btnBuscarBanner";
             this.btnBuscarBanner.Size = new System.Drawing.Size(183, 23);
-            this.btnBuscarBanner.TabIndex = 6;
+            this.btnBuscarBanner.TabIndex = 5;
             this.btnBuscarBanner.Text = "Importar Banner";
             this.btnBuscarBanner.UseVisualStyleBackColor = true;
             this.btnBuscarBanner.Click += new System.EventHandler(this.btnBuscarBanner_Click);
@@ -104,7 +104,7 @@
             this.btnAddData.Location = new System.Drawing.Point(324, 113);
             this.btnAddData.Name = "btnAddData";
             this.btnAddData.Size = new System.Drawing.Size(75, 23);
-            this.btnAddData.TabIndex = 7;
+            this.btnAddData.TabIndex = 3;
             this.btnAddData.Text = "+";
             this.btnAddData.UseVisualStyleBackColor = true;
             this.btnAddData.Click += new System.EventHandler(this.btnAddData_Click);
@@ -115,7 +115,7 @@
             this.tbxDataEvento.Mask = "00/00/0000";
             this.tbxDataEvento.Name = "tbxDataEvento";
             this.tbxDataEvento.Size = new System.Drawing.Size(78, 20);
-            this.tbxDataEvento.TabIndex = 8;
+            this.tbxDataEvento.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -130,9 +130,10 @@
             this.btnSalvar.Location = new System.Drawing.Point(420, 352);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(280, 23);
-            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // tbxFileName
             // 

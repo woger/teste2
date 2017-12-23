@@ -34,14 +34,13 @@
             this.salasDoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.palestrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bannerDoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.palestranteNoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quantitativoDeSalasPorEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quantitativoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,8 +62,7 @@
             this.eventoToolStripMenuItem,
             this.salasDoEventoToolStripMenuItem,
             this.palestrantesToolStripMenuItem,
-            this.usuárioToolStripMenuItem,
-            this.bannerDoEventoToolStripMenuItem});
+            this.usuárioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -72,36 +70,30 @@
             // eventoToolStripMenuItem
             // 
             this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
-            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.eventoToolStripMenuItem.Text = "Evento";
             this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
             // 
             // salasDoEventoToolStripMenuItem
             // 
             this.salasDoEventoToolStripMenuItem.Name = "salasDoEventoToolStripMenuItem";
-            this.salasDoEventoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.salasDoEventoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.salasDoEventoToolStripMenuItem.Text = "Salas do evento";
             this.salasDoEventoToolStripMenuItem.Click += new System.EventHandler(this.salasDoEventoToolStripMenuItem_Click);
             // 
             // palestrantesToolStripMenuItem
             // 
             this.palestrantesToolStripMenuItem.Name = "palestrantesToolStripMenuItem";
-            this.palestrantesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.palestrantesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.palestrantesToolStripMenuItem.Text = "Palestrantes";
+            this.palestrantesToolStripMenuItem.Click += new System.EventHandler(this.palestrantesToolStripMenuItem_Click);
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
-            // 
-            // bannerDoEventoToolStripMenuItem
-            // 
-            this.bannerDoEventoToolStripMenuItem.Name = "bannerDoEventoToolStripMenuItem";
-            this.bannerDoEventoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.bannerDoEventoToolStripMenuItem.Text = "Banner do Evento";
-            this.bannerDoEventoToolStripMenuItem.Click += new System.EventHandler(this.bannerDoEventoToolStripMenuItem_Click);
             // 
             // palestranteNoEventoToolStripMenuItem
             // 
@@ -144,21 +136,21 @@
             this.relaçãoDePalestrasToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
             this.relaçãoDePalestrasToolStripMenuItem.Text = "Relação de Palestras sem Arquivo de Apresentação";
             // 
-            // label1
+            // lblNomeUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Location = new System.Drawing.Point(12, 33);
+            this.lblNomeUsuario.Name = "lblNomeUsuario";
+            this.lblNomeUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblNomeUsuario.TabIndex = 1;
+            this.lblNomeUsuario.Text = "label1";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 463);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNomeUsuario);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -187,8 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem quantitativoDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrantesXEventoXDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bannerDoEventoToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNomeUsuario;
     }
 }
 

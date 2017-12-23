@@ -85,10 +85,14 @@
     <Compile Include="ConexaoSingle.cs" />
     <Compile Include="Configuracoes\ArquivoBD.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
+    <Compile Include="DAO\PalestranteDAO.cs" />
+    <Compile Include="DAO\SalaDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="HelperUsuario.cs" />
+    <Compile Include="Palestrante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sala.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

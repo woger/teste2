@@ -85,6 +85,12 @@
     <Compile Include="FormBanner.Designer.cs">
       <DependentUpon>FormBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPalestrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPalestrante.Designer.cs">
+      <DependentUpon>FormPalestrante.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSalaEvento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="FormEvento.resx">
       <DependentUpon>FormEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPalestrante.resx">
+      <DependentUpon>FormPalestrante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSalaEvento.resx">
       <DependentUpon>FormSalaEvento.cs</DependentUpon>

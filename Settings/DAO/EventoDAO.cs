@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Settings.Configuracoes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -9,16 +11,16 @@ namespace Settings.DAO
 {
     public class EventoDAO
     {
-        public void SalvarEvento(String pNomeEvento, String pFileName, List<DateTime> pDatas)
+        public void SalvarEvento(String pNomeEvento, String pFileName, List<DateTime> pDatas, Bitmap pImagem )
         {
             //DataTable resultado = new DataTable();
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
             {
                 oConn.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                if (VerificaExistenciaEvento() != null)// Se não existe                
+                if (VerificaExistenciaEvento() == null)// Se não existe                
                     cmd.CommandText = @" INSERT INTO EVENTO.DBF (ID, NOME, FILE_NAME) 
-                                                            VALUES (1," + pNomeEvento + ", '" + pFileName + "');";
+                                                            VALUES (1, '" + pNomeEvento + "', '" + pFileName + "');";
                 else
                     cmd.CommandText = @" UPDATE EVENTO.DBF SET NOME = '" + pNomeEvento + "', FILE_NAME = '" + pFileName + "'";
 
@@ -41,6 +43,9 @@ namespace Settings.DAO
                         cmd.ExecuteNonQuery();
                     }
                 }
+
+                //Salva a imagem no diretório da app
+                pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);                
             }
         }
 
@@ -62,7 +67,7 @@ namespace Settings.DAO
                         evento = new Evento();
                         evento.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
                         evento.Nome = resultado.Rows[0]["NOME"].ToString();
-                        evento.PathBanner = resultado.Rows[0]["FILE_NAME"].ToString();
+                        evento.Arquivo = resultado.Rows[0]["FILE_NAME"].ToString();
                         evento.Datas = this.DatasEvento();
                         return evento;
                     }
@@ -86,7 +91,7 @@ namespace Settings.DAO
                     DA.Fill(resultado);
                     if (resultado.Rows.Count > 0)
                         for (int i = 0; i < resultado.Rows.Count; i++)
-                            datas.Add(DateTime.Parse(resultado.Rows[0]["DATA_EVENTO"].ToString()));
+                            datas.Add(DateTime.Parse(resultado.Rows[i][0].ToString()));
                 }
                 return datas;
             }

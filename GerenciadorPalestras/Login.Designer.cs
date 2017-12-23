@@ -76,7 +76,7 @@
             this.tbxSenha.Location = new System.Drawing.Point(500, 225);
             this.tbxSenha.MaxLength = 10;
             this.tbxSenha.Name = "tbxSenha";
-            this.tbxSenha.PasswordChar = '#';
+            this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(100, 20);
             this.tbxSenha.TabIndex = 4;
             // 

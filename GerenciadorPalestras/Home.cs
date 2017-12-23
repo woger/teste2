@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Settings;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace GerenciadorPalestras
         public Home()
         {
             InitializeComponent();
+            lblNomeUsuario.Text = "Bem-vindo " + HelperUsuario.UsuarioLogado().Nome;
         }
 
         private void eventoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,6 +60,19 @@ namespace GerenciadorPalestras
         {
             foreach (Form childForm in MdiChildren)
                 childForm.Close();
+        }
+
+        private void palestrantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.FecharJanelasFilhas();
+
+            FormPalestrante formPalestrante = new FormPalestrante();
+
+            formPalestrante.MdiParent = this;
+            formPalestrante.ControlBox = false;
+
+            formPalestrante.StartPosition = FormStartPosition.CenterScreen;
+            formPalestrante.Show();
         }
     }
 }

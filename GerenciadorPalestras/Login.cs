@@ -17,6 +17,7 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             ArquivoBD.CriarArquivosBD();
+            tbxLogin.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace GerenciadorPalestras
 {
     public partial class FormEvento : Form
     {
+        public int ID = 0;
         public FormEvento()
         {
             InitializeComponent();
@@ -21,8 +22,9 @@ namespace GerenciadorPalestras
             if(evento != null) // Se for edição
             {
                 tbxNomeEvento.Text = evento.Nome;
-                tbxFileName.Text = evento.PathBanner;
-                pictureBox1.Image = new Bitmap(evento.PathBanner);
+                tbxFileName.Text = evento.PathFile;
+                pictureBox1.Image = new Bitmap(evento.PathFile);
+                this.ID = evento.Codigo;
                 foreach (DateTime data in evento.Datas)
                     listBox1.Items.Add(data.ToString("dd/MM/yyyy"));
             }
@@ -42,9 +44,50 @@ namespace GerenciadorPalestras
         {
 
             if (!listBox1.Items.Contains(tbxDataEvento.Text))
+            {
                 listBox1.Items.Add(tbxDataEvento.Text);
+                tbxDataEvento.Text = string.Empty;
+            }
             else
                 MessageBox.Show("Data já incluída");
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tbxNomeEvento.Text))
+            {
+                MessageBox.Show("Nome do evento é obrigatório");
+                return;
+            }
+
+            if (String.IsNullOrEmpty(tbxFileName.Text))
+            {
+                MessageBox.Show("Banner é obrigatório");
+                return;
+            }
+
+            if(this.RetornaDatasInformadas().Count == 0)
+            {
+                MessageBox.Show("Informe uma data para o evento");
+                return;
+            }
+
+            Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            if (evento == null)
+                evento = new Evento();
+            evento.Nome = tbxNomeEvento.Text;
+            evento.Arquivo = openFileDialog1.SafeFileName;
+            evento.Datas = RetornaDatasInformadas();
+            new EventoDAO().SalvarEvento(evento.Nome, evento.Arquivo, evento.Datas, new Bitmap(tbxFileName.Text));
+            MessageBox.Show("Dados Salvos com sucesso");
+        }
+
+        protected List<DateTime> RetornaDatasInformadas()
+        {
+            List<DateTime> datas = new List<DateTime>();
+            for(int i=0; i< listBox1.Items.Count; i++)            
+                datas.Add(DateTime.Parse(listBox1.Items[i].ToString()));
+            return datas;
         }
     }
 }

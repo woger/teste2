@@ -1,0 +1,7 @@
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\bin\x86\Debug\Monitor.exe
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\bin\x86\Debug\Monitor.pdb
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\obj\x86\Debug\Monitor.csprojResolveAssemblyReference.cache
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\obj\x86\Debug\Monitor.Properties.Resources.resources
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\obj\x86\Debug\Monitor.csproj.GenerateResource.Cache
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\obj\x86\Debug\Monitor.exe
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Monitor\obj\x86\Debug\Monitor.pdb
