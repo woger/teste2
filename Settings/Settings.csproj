@@ -88,6 +88,7 @@
     <Compile Include="DAO\PalestranteDAO.cs" />
     <Compile Include="DAO\SalaDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="EnumPerfil.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="HelperUsuario.cs" />
     <Compile Include="Palestrante.cs" />

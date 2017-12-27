@@ -49,6 +49,15 @@ namespace GerenciadorPalestras
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Cadastro de Usuários do Evento
+            this.FecharJanelasFilhas();
+
+            FormUsuario formUsuario = new FormUsuario();
+
+            formUsuario.MdiParent = this;
+            formUsuario.ControlBox = false;
+
+            formUsuario.StartPosition = FormStartPosition.CenterScreen;
+            formUsuario.Show();
         }
 
         private void bannerDoEventoToolStripMenuItem_Click(object sender, EventArgs e)

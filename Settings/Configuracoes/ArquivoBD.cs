@@ -22,26 +22,27 @@ namespace Settings.Configuracoes
 
                 try
                 {
-                    using (OleDbCommand cmd = new OleDbCommand(" CREATE TABLE USUARIO.DBF ([ID] NUMERIC (18,0), [NOME] CHAR(100), [LOGIN] CHAR(100), [SENHA] CHAR(10));"))//this works and creates an empty .dbf file
+                    using (OleDbCommand cmd = new OleDbCommand(" CREATE TABLE USUARIO.DBF ([ID] NUMERIC (18,0), [CO_PERFIL] NUMERIC(1,0), [NOME] CHAR(100), [LOGIN] CHAR(100), [SENHA] CHAR(10));"))//this works and creates an empty .dbf file
                     {
                         cmd.Connection = oConn;
                         cmd.ExecuteNonQuery();
+
+                        using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                                                            VALUES(1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1)"))
+                        //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        {
+                            cmd2.Connection = oConn;
+                            cmd2.ExecuteNonQuery();
+                        }
                     }
                 }
                 catch { }
 
-                try
-                {
-                    using (OleDbCommand cmd = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA]) 
-                                                            VALUES(1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN')"))
-                    //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
-
-                    {
-                        cmd.Connection = oConn;
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch { }
+                //try
+                //{
+                    
+                //}
+                //catch { }
 
                 try
                 {

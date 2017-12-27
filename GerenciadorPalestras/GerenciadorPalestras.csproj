@@ -79,12 +79,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBanner.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBanner.Designer.cs">
-      <DependentUpon>FormBanner.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPalestrante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +117,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalasEvento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalasEvento.Designer.cs">
-      <DependentUpon>SalasEvento.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FormEvento.resx">
       <DependentUpon>FormEvento.cs</DependentUpon>
     </EmbeddedResource>

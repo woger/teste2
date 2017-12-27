@@ -15,9 +15,19 @@ namespace Settings
 
         public string Senha { get; set; }
 
-        public bool Ativo { get; set; }
+        //public bool Ativo { get; set; }
 
-        public DateTime? DataCriacao { get; set; }
+        //public DateTime? DataCriacao { get; set; }
 
+        public string PerfilToString
+        {
+            get
+            {
+                return Enum.GetName(typeof(EnumPerfil), this.Perfil);
+            }
+
+        }
+
+        public int Perfil { get; set; }
     }
 }

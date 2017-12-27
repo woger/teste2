@@ -37,10 +37,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(484, 288);
+            this.button1.Location = new System.Drawing.Point(639, 358);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.Size = new System.Drawing.Size(256, 23);
+            this.button1.TabIndex = 3;
             this.button1.Text = "Entrar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -48,7 +48,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(402, 178);
+            this.label1.Location = new System.Drawing.Point(636, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(402, 225);
+            this.label2.Location = new System.Drawing.Point(631, 260);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
@@ -65,26 +65,26 @@
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(500, 175);
+            this.tbxLogin.Location = new System.Drawing.Point(723, 199);
             this.tbxLogin.MaxLength = 20;
             this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(100, 20);
-            this.tbxLogin.TabIndex = 3;
+            this.tbxLogin.Size = new System.Drawing.Size(172, 20);
+            this.tbxLogin.TabIndex = 1;
             // 
             // tbxSenha
             // 
-            this.tbxSenha.Location = new System.Drawing.Point(500, 225);
+            this.tbxSenha.Location = new System.Drawing.Point(723, 260);
             this.tbxSenha.MaxLength = 10;
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.PasswordChar = '*';
-            this.tbxSenha.Size = new System.Drawing.Size(100, 20);
-            this.tbxSenha.TabIndex = 4;
+            this.tbxSenha.Size = new System.Drawing.Size(172, 20);
+            this.tbxSenha.TabIndex = 2;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 502);
+            this.ClientSize = new System.Drawing.Size(1806, 769);
             this.Controls.Add(this.tbxSenha);
             this.Controls.Add(this.tbxLogin);
             this.Controls.Add(this.label2);
