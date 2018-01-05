@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMontarAgendaEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMontarAgendaEvento.Designer.cs">
+      <DependentUpon>FormMontarAgendaEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPalestrante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormEvento.resx">
       <DependentUpon>FormEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMontarAgendaEvento.resx">
+      <DependentUpon>FormMontarAgendaEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPalestrante.resx">
       <DependentUpon>FormPalestrante.cs</DependentUpon>

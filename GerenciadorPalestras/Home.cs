@@ -83,5 +83,18 @@ namespace GerenciadorPalestras
             formPalestrante.StartPosition = FormStartPosition.CenterScreen;
             formPalestrante.Show();
         }
+
+        private void palestranteNoEventoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.FecharJanelasFilhas();
+
+            FormMontarAgendaEvento formMontarAgendaEvento = new FormMontarAgendaEvento();
+
+            formMontarAgendaEvento.MdiParent = this;
+            formMontarAgendaEvento.ControlBox = false;
+
+            formMontarAgendaEvento.StartPosition = FormStartPosition.CenterScreen;
+            formMontarAgendaEvento.Show();
+        }
     }
 }

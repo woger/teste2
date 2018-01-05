@@ -10,5 +10,10 @@ namespace Settings
         public int Codigo { get; set; }
 
         public string Nome { get; set; }
+
+        public override string ToString()
+        {
+            return this.Codigo + " - " + this.Nome;
+        }
     }
 }

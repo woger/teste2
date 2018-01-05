@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.tbxFileName = new System.Windows.Forms.TextBox();
+            this.btnExcluirData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,11 +144,22 @@
             this.tbxFileName.Size = new System.Drawing.Size(272, 20);
             this.tbxFileName.TabIndex = 11;
             // 
+            // btnExcluirData
+            // 
+            this.btnExcluirData.Location = new System.Drawing.Point(324, 186);
+            this.btnExcluirData.Name = "btnExcluirData";
+            this.btnExcluirData.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirData.TabIndex = 12;
+            this.btnExcluirData.Text = "Excluir Data";
+            this.btnExcluirData.UseVisualStyleBackColor = true;
+            this.btnExcluirData.Click += new System.EventHandler(this.btnExcluirData_Click);
+            // 
             // FormEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1261, 503);
+            this.Controls.Add(this.btnExcluirData);
             this.Controls.Add(this.tbxFileName);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.pictureBox1);
@@ -183,5 +195,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox tbxFileName;
+        private System.Windows.Forms.Button btnExcluirData;
     }
 }

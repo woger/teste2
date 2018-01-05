@@ -11,6 +11,9 @@ namespace Settings
 
         public string Nome { get; set; }
 
-
+        public override string ToString()
+        {
+            return this.Codigo + " - " + this.Nome;
+        }
     }
 }

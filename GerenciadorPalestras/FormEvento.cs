@@ -42,14 +42,30 @@ namespace GerenciadorPalestras
 
         private void btnAddData_Click(object sender, EventArgs e)
         {
+            DateTime data = DateTime.MinValue;
 
-            if (!listBox1.Items.Contains(tbxDataEvento.Text))
+            if (!DateTime.TryParse(tbxDataEvento.Text, out data) )
             {
-                listBox1.Items.Add(tbxDataEvento.Text);
-                tbxDataEvento.Text = string.Empty;
+                MessageBox.Show("A data informada é inválida");
+                return;
             }
             else
-                MessageBox.Show("Data já incluída");
+            {
+                if (data.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("Informe uma data igual ou superior a data atual.");
+                    return;
+                }
+
+                if (!listBox1.Items.Contains(tbxDataEvento.Text))
+                {
+                    listBox1.Items.Add(tbxDataEvento.Text);
+                    tbxDataEvento.Text = string.Empty;
+                }
+                else
+                    MessageBox.Show("Data já incluída");
+            }
+            tbxDataEvento.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -88,6 +104,14 @@ namespace GerenciadorPalestras
             for(int i=0; i< listBox1.Items.Count; i++)            
                 datas.Add(DateTime.Parse(listBox1.Items[i].ToString()));
             return datas;
+        }
+
+        private void btnExcluirData_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
         }
     }
 }

@@ -39,6 +39,34 @@ namespace Settings.DAO
             return palestrantes;
         }
 
+        public Palestrante BuscarPorCodigo(int pCodigo)
+        {
+            Palestrante palestrante = null;
+            //Sala usuario = null;
+            DataTable resultado = new DataTable();
+            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            {
+                oConn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRANTES.DBF where ID = " + pCodigo))
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                    {
+                        palestrante = new Palestrante();
+                        palestrante.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
+                        palestrante.Nome = resultado.Rows[0]["NOME"].ToString();
+                    }
+                }
+            }
+            return palestrante;
+        }
+
+
+
         public void Inserir(string pNome)
         {
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))

@@ -100,6 +100,7 @@
             this.palestranteNoEventoToolStripMenuItem.Name = "palestranteNoEventoToolStripMenuItem";
             this.palestranteNoEventoToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
             this.palestranteNoEventoToolStripMenuItem.Text = "Palestrante no Evento";
+            this.palestranteNoEventoToolStripMenuItem.Click += new System.EventHandler(this.palestranteNoEventoToolStripMenuItem_Click);
             // 
             // relatórioToolStripMenuItem
             // 
