@@ -87,7 +87,7 @@ namespace Settings.Configuracoes
 
                 try
                 {
-                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE SALA_PALESTRANTE_DATA.DBF ([ID] numeric(2,0), [ID_SALA] NUMERIC(2,0), [ID_PALESTRANTE] NUMERIC(2,0), [DATA] DATETIME);"))//this works and creates an empty .dbf file
+                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE SALA_PAL.DBF ([ID] numeric(2,0), [ID_SALA] NUMERIC(2,0), [ID_PALESTRANTE] NUMERIC(2,0), [DATA] DATETIME, [HORA] CHAR(10));"))//this works and creates an empty .dbf file
                     {
                         cmd.Connection = oConn;
                         cmd.ExecuteNonQuery();
