@@ -7,7 +7,7 @@ namespace Settings
 {
     public class AgendaEvento
     {
-        public int Codigo;
+        public int Codigo { get; set; }
 
 
         public DateTime Data { get; set; }

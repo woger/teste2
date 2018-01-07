@@ -83,7 +83,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
                 DataTable resultado = new DataTable();
-                using (OleDbCommand cmd = new OleDbCommand(@" SELECT * FROM DATAS.DBF"))//this works and creates an empty .dbf file
+                using (OleDbCommand cmd = new OleDbCommand(@" SELECT * FROM DATAS.DBF ORDER BY DATA_EVENT"))//this works and creates an empty .dbf file
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);

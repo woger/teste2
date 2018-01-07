@@ -96,5 +96,18 @@ namespace GerenciadorPalestras
             formMontarAgendaEvento.StartPosition = FormStartPosition.CenterScreen;
             formMontarAgendaEvento.Show();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja sair do sistema?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
