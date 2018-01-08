@@ -18,7 +18,7 @@ namespace Settings
         {
             get
             {
-                return this.Palestrante.Nome;
+                return this.Palestrante.Nome; 
             }
             
         }
