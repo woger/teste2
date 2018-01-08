@@ -18,7 +18,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRANTES.DBF"))
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRANTES.DBF ORDER BY NOME"))
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);

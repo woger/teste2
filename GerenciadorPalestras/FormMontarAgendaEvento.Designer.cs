@@ -43,8 +43,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ddlSalaFiltro = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.ddlPalestranteFiltro = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnLimparFiltroData = new System.Windows.Forms.Button();
+            this.btnLimparFiltroSala = new System.Windows.Forms.Button();
+            this.btnLimparFiltroPalestrante = new System.Windows.Forms.Button();
+            this.ddlFiltroPalestrantes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,25 +137,26 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(804, 138);
+            this.dataGridView1.Location = new System.Drawing.Point(632, 130);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(888, 582);
+            this.dataGridView1.Size = new System.Drawing.Size(614, 417);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // ddlDataFiltro
             // 
             this.ddlDataFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlDataFiltro.FormattingEnabled = true;
-            this.ddlDataFiltro.Location = new System.Drawing.Point(831, 106);
+            this.ddlDataFiltro.Location = new System.Drawing.Point(632, 89);
             this.ddlDataFiltro.Name = "ddlDataFiltro";
-            this.ddlDataFiltro.Size = new System.Drawing.Size(197, 21);
+            this.ddlDataFiltro.Size = new System.Drawing.Size(100, 21);
             this.ddlDataFiltro.TabIndex = 10;
             this.ddlDataFiltro.SelectedIndexChanged += new System.EventHandler(this.ddlDataFiltro_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(861, 80);
+            this.label6.Location = new System.Drawing.Point(629, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 11;
@@ -160,7 +165,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1167, 80);
+            this.label7.Location = new System.Drawing.Point(860, 63);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 13;
@@ -170,30 +175,18 @@
             // 
             this.ddlSalaFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSalaFiltro.FormattingEnabled = true;
-            this.ddlSalaFiltro.Location = new System.Drawing.Point(1137, 106);
+            this.ddlSalaFiltro.Location = new System.Drawing.Point(842, 89);
             this.ddlSalaFiltro.Name = "ddlSalaFiltro";
-            this.ddlSalaFiltro.Size = new System.Drawing.Size(197, 21);
+            this.ddlSalaFiltro.Size = new System.Drawing.Size(112, 21);
             this.ddlSalaFiltro.TabIndex = 12;
             this.ddlSalaFiltro.SelectedIndexChanged += new System.EventHandler(this.ddlSalaFiltro_SelectedIndexChanged);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1477, 80);
+            this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Filtrar por Palestrante";
-            // 
-            // ddlPalestranteFiltro
-            // 
-            this.ddlPalestranteFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlPalestranteFiltro.FormattingEnabled = true;
-            this.ddlPalestranteFiltro.Location = new System.Drawing.Point(1447, 106);
-            this.ddlPalestranteFiltro.Name = "ddlPalestranteFiltro";
-            this.ddlPalestranteFiltro.Size = new System.Drawing.Size(197, 21);
-            this.ddlPalestranteFiltro.TabIndex = 14;
-            this.ddlPalestranteFiltro.SelectedIndexChanged += new System.EventHandler(this.ddlPalestranteFiltro_SelectedIndexChanged);
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 19;
             // 
             // btnSalvar
             // 
@@ -205,14 +198,67 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1059, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Filtrar por Palestrante";
+            // 
+            // btnLimparFiltroData
+            // 
+            this.btnLimparFiltroData.Location = new System.Drawing.Point(739, 89);
+            this.btnLimparFiltroData.Name = "btnLimparFiltroData";
+            this.btnLimparFiltroData.Size = new System.Drawing.Size(33, 23);
+            this.btnLimparFiltroData.TabIndex = 21;
+            this.btnLimparFiltroData.Text = "x";
+            this.btnLimparFiltroData.UseVisualStyleBackColor = true;
+            this.btnLimparFiltroData.Click += new System.EventHandler(this.btnLimparFiltroData_Click);
+            // 
+            // btnLimparFiltroSala
+            // 
+            this.btnLimparFiltroSala.Location = new System.Drawing.Point(960, 89);
+            this.btnLimparFiltroSala.Name = "btnLimparFiltroSala";
+            this.btnLimparFiltroSala.Size = new System.Drawing.Size(33, 23);
+            this.btnLimparFiltroSala.TabIndex = 22;
+            this.btnLimparFiltroSala.Text = "x";
+            this.btnLimparFiltroSala.UseVisualStyleBackColor = true;
+            this.btnLimparFiltroSala.Click += new System.EventHandler(this.btnLimparFiltroSala_Click);
+            // 
+            // btnLimparFiltroPalestrante
+            // 
+            this.btnLimparFiltroPalestrante.Location = new System.Drawing.Point(1195, 87);
+            this.btnLimparFiltroPalestrante.Name = "btnLimparFiltroPalestrante";
+            this.btnLimparFiltroPalestrante.Size = new System.Drawing.Size(33, 23);
+            this.btnLimparFiltroPalestrante.TabIndex = 23;
+            this.btnLimparFiltroPalestrante.Text = "x";
+            this.btnLimparFiltroPalestrante.UseVisualStyleBackColor = true;
+            this.btnLimparFiltroPalestrante.Click += new System.EventHandler(this.btnLimparFiltroPalestrante_Click);
+            // 
+            // ddlFiltroPalestrantes
+            // 
+            this.ddlFiltroPalestrantes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlFiltroPalestrantes.FormattingEnabled = true;
+            this.ddlFiltroPalestrantes.Location = new System.Drawing.Point(1062, 88);
+            this.ddlFiltroPalestrantes.Name = "ddlFiltroPalestrantes";
+            this.ddlFiltroPalestrantes.Size = new System.Drawing.Size(121, 21);
+            this.ddlFiltroPalestrantes.TabIndex = 24;
+            this.ddlFiltroPalestrantes.SelectedIndexChanged += new System.EventHandler(this.ddlFiltroPalestrantes_SelectedIndexChanged);
+            // 
             // FormMontarAgendaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1805, 769);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.ddlFiltroPalestrantes);
+            this.Controls.Add(this.btnLimparFiltroPalestrante);
+            this.Controls.Add(this.btnLimparFiltroSala);
+            this.Controls.Add(this.btnLimparFiltroData);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.ddlPalestranteFiltro);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ddlSalaFiltro);
             this.Controls.Add(this.label6);
@@ -252,7 +298,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox ddlSalaFiltro;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox ddlPalestranteFiltro;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnLimparFiltroData;
+        private System.Windows.Forms.Button btnLimparFiltroSala;
+        private System.Windows.Forms.Button btnLimparFiltroPalestrante;
+        private System.Windows.Forms.ComboBox ddlFiltroPalestrantes;
     }
 }

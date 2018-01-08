@@ -41,6 +41,7 @@
             this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.palestranteNoEventoToolStripMenuItem,
-            this.relatórioToolStripMenuItem});
+            this.relatórioToolStripMenuItem,
+            this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(914, 24);
@@ -146,6 +148,13 @@
             this.lblNomeUsuario.TabIndex = 1;
             this.lblNomeUsuario.Text = "label1";
             // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +168,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -181,6 +191,7 @@
         private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrantesXEventoXDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrasToolStripMenuItem;
         private System.Windows.Forms.Label lblNomeUsuario;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }
 
