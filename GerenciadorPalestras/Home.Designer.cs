@@ -40,8 +40,9 @@
             this.quantitativoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             this.cadastroToolStripMenuItem,
             this.palestranteNoEventoToolStripMenuItem,
             this.relatórioToolStripMenuItem,
+            this.ajudaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -139,6 +141,13 @@
             this.relaçãoDePalestrasToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
             this.relaçãoDePalestrasToolStripMenuItem.Text = "Relação de Palestras sem Arquivo de Apresentação";
             // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // lblNomeUsuario
             // 
             this.lblNomeUsuario.AutoSize = true;
@@ -148,12 +157,12 @@
             this.lblNomeUsuario.TabIndex = 1;
             this.lblNomeUsuario.Text = "label1";
             // 
-            // sairToolStripMenuItem
+            // ajudaToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -192,6 +201,7 @@
         private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrasToolStripMenuItem;
         private System.Windows.Forms.Label lblNomeUsuario;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
     }
 }
 

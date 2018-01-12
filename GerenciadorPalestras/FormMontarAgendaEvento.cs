@@ -43,6 +43,7 @@ namespace GerenciadorPalestras
             ddlSalaFiltro.SelectedIndex = -1;
             ddlPalestrante.SelectedIndex = -1;
             ddlFiltroPalestrantes.SelectedIndex = -1;
+            tbxHorario.Text = string.Empty;
             MostrarDados();
             dataGridView1.Columns["Sala"].Visible = false;
             dataGridView1.Columns["Palestrante"].Visible = false;
@@ -65,8 +66,8 @@ namespace GerenciadorPalestras
             DateTime? Data = null;
             if (ddlDataFiltro.SelectedIndex != -1)
                 Data = DateTime.Parse(ddlDataFiltro.SelectedItem.ToString());
-
-            dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data);
+            if(CodigoPalestrante.HasValue || CodigoSala.HasValue || Data.HasValue)
+                dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data);
         }
 
         private void ClearData()
@@ -173,6 +174,7 @@ namespace GerenciadorPalestras
             ddlSala.SelectedItem = RetornaItem(ddlSala, dataGridView1.Rows[e.RowIndex].Cells["Sala"].Value.ToString());
             ddlPalestrante.SelectedItem = RetornaItem(ddlPalestrante, dataGridView1.Rows[e.RowIndex].Cells["Palestrante"].Value.ToString());
             tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells["Hora"].Value.ToString();
+            btnExcluir.Visible = true;
             //tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
             //tbxLogin.Text = dataGridView1.Rows[e.RowIndex].Cells["Login"].Value.ToString();
             //tbxSenha.Text = tbxConfirmaSenha.Text = dataGridView1.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
@@ -188,6 +190,20 @@ namespace GerenciadorPalestras
                     return ddlControle.Items[i];
             }
             return null;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (this.ID.HasValue)
+            {
+                if (MessageBox.Show("Tem certeza que deseja excluir esta palestra?", "Atenção", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    new AgendaEventoDAO().Excluir(this.ID.Value);
+                    MessageBox.Show("Registro excluído com sucesso");
+                    CarregaDadosIniciais();
+                    btnExcluir.Visible = false;
+                }
+            }
         }
     }
 }

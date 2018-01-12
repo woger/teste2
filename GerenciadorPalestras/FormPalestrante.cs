@@ -29,10 +29,20 @@ namespace GerenciadorPalestras
         {
             if (ID != 0)
             {
-                new PalestranteDAO().Excluir(this.ID);
-                MessageBox.Show("Palestrante excluído com sucesso");
-                ClearData();
-                this.MostrarDados();
+
+                try
+                {
+                    new PalestranteDAO().Excluir(this.ID);
+
+                    MessageBox.Show("Palestrante excluído com sucesso");
+                    ClearData();
+                    this.MostrarDados();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro ao excluir: " + ex.Message);
+                    return;
+                }
             }
             else
             {

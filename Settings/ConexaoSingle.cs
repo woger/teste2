@@ -9,5 +9,10 @@ namespace Settings
     public static class ConexaoSingle
     {
         public static string conexao = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + ArquivoBD.DIRETORIO_INSTALACAO + ";Extended Properties=dBase III";
+
+        public static string conexaoRemota(string path)
+        {
+            return "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + path + ";Extended Properties=dBase III";
+        }
     }
 }

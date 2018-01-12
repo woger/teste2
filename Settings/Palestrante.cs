@@ -11,6 +11,16 @@ namespace Settings
 
         public string Nome { get; set; }
 
+        public string NomeSobreNome()
+        {
+            string[] nome = this.Nome.Split(' ');
+            if (nome.Length > 1)
+            {
+                return nome[0] + " " + nome[nome.Length - 1];
+            }
+            return this.Nome;
+        }
+
         public override string ToString()
         {
             return this.Codigo + " - " + this.Nome;

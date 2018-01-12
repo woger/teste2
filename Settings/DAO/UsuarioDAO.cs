@@ -37,6 +37,75 @@ namespace Settings.DAO
             return usuario;
         }
 
+        public string RetornaSenhaPalestrante()
+        {
+
+            DataTable resultado = new DataTable();
+            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            {
+                oConn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = 'PALESTRANTE';"))//this works and creates an empty .dbf file
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                        return resultado.Rows[0]["SENHA"].ToString();
+                }
+            }
+            return null;
+        }
+
+        public string RetornaSenhaMonitor()
+        {
+
+            DataTable resultado = new DataTable();
+            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            {
+                oConn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = 'MONITOR';"))//this works and creates an empty .dbf file
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                        return resultado.Rows[0]["SENHA"].ToString();
+                }
+            }
+            return null;
+        }
+
+        public Usuario LoginRemoto(string login, string senha, string path)
+        {
+            Usuario usuario = null;
+            DataTable resultado = new DataTable();
+            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexaoRemota(path)))
+            {
+                oConn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = '" + login + "' AND [SENHA] = '" + senha + "';"))//this works and creates an empty .dbf file
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                    {
+                        usuario = new Usuario();
+                        usuario.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
+                        usuario.Nome = resultado.Rows[0]["NOME"].ToString();
+                        usuario.Login = resultado.Rows[0]["LOGIN"].ToString();
+                        usuario.Perfil = int.Parse(resultado.Rows[0]["CO_PERFIL"].ToString());
+                    }
+                }
+            }
+            return usuario;
+        }
+
         public Usuario BuscarPorID(int pID)
         {
             Usuario usuario = null;
@@ -105,10 +174,10 @@ namespace Settings.DAO
                                                             VALUES(" + (this.UltimoIdIncluido() + 1) + ", '" + usuario.Nome + "', '" + usuario.Login + "', '" + usuario.Senha + "', " + usuario.Perfil + ")";
                 else
                     cmd.CommandText = @" UPDATE USUARIO.DBF SET NOME = '" + usuario.Nome + "', LOGIN = '" + usuario.Login + "', SENHA = '" + usuario.Senha + "', CO_PERFIL = " + usuario.Perfil + " WHERE ID = " + usuario.Codigo;
-                                        
+
 
                 cmd.Connection = oConn;
-                cmd.ExecuteNonQuery();                
+                cmd.ExecuteNonQuery();
             }
         }
 

@@ -16,6 +16,7 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             lblNomeUsuario.Text = "Bem-vindo " + HelperUsuario.UsuarioLogado().Nome;
+            usuárioToolStripMenuItem.Visible = false; //Desabilitado para cadastros de novos usuários
         }
 
         private void eventoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,6 +109,19 @@ namespace GerenciadorPalestras
             {
                 Application.Exit();
             }
+        }
+
+        private void ajudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.FecharJanelasFilhas();
+
+            FormAjuda FormAjuda = new FormAjuda();
+
+            FormAjuda.MdiParent = this;
+            FormAjuda.ControlBox = false;
+
+            FormAjuda.StartPosition = FormStartPosition.CenterScreen;
+            FormAjuda.Show();
         }
     }
 }

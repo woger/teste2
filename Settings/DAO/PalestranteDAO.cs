@@ -100,6 +100,10 @@ namespace Settings.DAO
 
         public void Excluir(int pID)
         {
+            //Verifica se existe palestra cadastrada para este palestrante
+            if (new AgendaEventoDAO().BuscaAgendaPorPalestrante(pID).Count > 0)//Se existe palestra associada a esta sala
+                throw new Exception("Existe uma agenda cadastrada para este palestrante. Para excluir este cadastro, exclua a agenda associada ao palestrante.");
+
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
             {
                 oConn.Open();

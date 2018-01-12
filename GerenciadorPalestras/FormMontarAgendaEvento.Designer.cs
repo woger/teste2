@@ -49,6 +49,7 @@
             this.btnLimparFiltroSala = new System.Windows.Forms.Button();
             this.btnLimparFiltroPalestrante = new System.Windows.Forms.Button();
             this.ddlFiltroPalestrantes = new System.Windows.Forms.ComboBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,9 +191,9 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(225, 382);
+            this.btnSalvar.Location = new System.Drawing.Point(241, 382);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(177, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(143, 23);
             this.btnSalvar.TabIndex = 16;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -247,11 +248,23 @@
             this.ddlFiltroPalestrantes.TabIndex = 24;
             this.ddlFiltroPalestrantes.SelectedIndexChanged += new System.EventHandler(this.ddlFiltroPalestrantes_SelectedIndexChanged);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(390, 382);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(121, 23);
+            this.btnExcluir.TabIndex = 25;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // FormMontarAgendaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.ddlFiltroPalestrantes);
             this.Controls.Add(this.btnLimparFiltroPalestrante);
             this.Controls.Add(this.btnLimparFiltroSala);
@@ -304,5 +317,6 @@
         private System.Windows.Forms.Button btnLimparFiltroSala;
         private System.Windows.Forms.Button btnLimparFiltroPalestrante;
         private System.Windows.Forms.ComboBox ddlFiltroPalestrantes;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

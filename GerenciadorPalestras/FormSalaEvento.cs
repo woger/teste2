@@ -60,10 +60,19 @@ namespace GerenciadorPalestras
         {
             if (ID != 0)
             {
-                new SalaDAO().Excluir(this.ID);
-                MessageBox.Show("Sala excluída com sucesso");
-                ClearData();
-                this.MostrarDados();
+                try
+                {
+                    new SalaDAO().Excluir(this.ID);
+
+                    MessageBox.Show("Sala excluída com sucesso");
+                    ClearData();
+                    this.MostrarDados();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro ao excluir: "+ ex.Message);
+                    return;
+                }
             }
             else
             {

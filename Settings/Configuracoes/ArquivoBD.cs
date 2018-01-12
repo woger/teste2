@@ -10,6 +10,12 @@ namespace Settings.Configuracoes
     {
         public static string DIRETORIO_INSTALACAO = AppDomain.CurrentDomain.BaseDirectory;
 
+        public static string DIRETORIO_INSTALACAO_PALESTRAS = AppDomain.CurrentDomain.BaseDirectory + @"\PALESTRAS\";
+        public static string FORMATARDATA_DIRETORIO(DateTime pData)
+        {
+            return pData.ToString("dd-MM-yyyy");
+        }
+
         //public static string TABLE_USUARIO = 
 
         public static void CriarArquivosBD()
@@ -27,6 +33,7 @@ namespace Settings.Configuracoes
                         cmd.Connection = oConn;
                         cmd.ExecuteNonQuery();
 
+                        //Cria um usuário ADMIN
                         using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
                                                             VALUES(1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1)"))
                         //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
@@ -34,6 +41,26 @@ namespace Settings.Configuracoes
                             cmd2.Connection = oConn;
                             cmd2.ExecuteNonQuery();
                         }
+
+                        //Cria um usuário Monitor
+                        using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                                                            VALUES(2, 'MONITOR', 'MONITOR', '" + Settings.DAO.PassWord.ObterSenhaMonitor() + "', 3)"))
+                        //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        {
+                            cmd2.Connection = oConn;
+                            cmd2.ExecuteNonQuery();
+                        }
+
+
+                        //Cria um usuário Palestrante
+                        using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                                                            VALUES(2, 'PALESTRANTE', 'PALESTRANTE', '" + Settings.DAO.PassWord.ObterSenhaPalestrante() + "', 2)"))
+                        //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        {
+                            cmd2.Connection = oConn;
+                            cmd2.ExecuteNonQuery();
+                        }
+
                     }
                 }
                 catch { }
