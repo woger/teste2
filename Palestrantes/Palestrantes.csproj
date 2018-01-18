@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBaixaPalestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaixaPalestra.Designer.cs">
+      <DependentUpon>FormBaixaPalestra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConfiguracaoRede.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBaixaPalestra.resx">
+      <DependentUpon>FormBaixaPalestra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormConfiguracaoRede.resx">
       <DependentUpon>FormConfiguracaoRede.cs</DependentUpon>
     </EmbeddedResource>

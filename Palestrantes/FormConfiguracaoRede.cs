@@ -60,8 +60,18 @@ namespace Palestrantes
 
                 if (usuario != null)
                 {
-                    if(usuario.Perfil == (int)EnumPerfil.MONITOR)
-                        Process.Start(tbxIP.Text + @"\PALESTRAS\");
+                    if (usuario.Perfil == (int)EnumPerfil.MONITOR)
+                    {
+                        FormBaixaPalestra formEvento = new FormBaixaPalestra(tbxIP.Text);
+
+                        //formEvento.MdiParent = this;
+                        formEvento.ControlBox = false;
+
+                        formEvento.StartPosition = FormStartPosition.CenterScreen;
+                        formEvento.Show();
+                        this.Hide();
+                    }
+                    //Process.Start(tbxIP.Text + @"\PALESTRAS\");
                     else
                     {
                         FormEnvioPalestra formEvento = new FormEnvioPalestra(tbxIP.Text);
