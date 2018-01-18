@@ -41,12 +41,12 @@ namespace Settings.DAO
             return salas;
         }
 
-        public Sala BuscarPorCodigo(int pCodigo)
+        public Sala BuscarPorCodigo(int pCodigo, string pPath)
         {
             Sala sala = null;
             //Sala usuario = null;
             DataTable resultado = new DataTable();
-            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath)))
             {
                 oConn.Open();
 

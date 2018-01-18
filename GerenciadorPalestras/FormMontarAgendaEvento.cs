@@ -43,10 +43,11 @@ namespace GerenciadorPalestras
             ddlSalaFiltro.SelectedIndex = -1;
             ddlPalestrante.SelectedIndex = -1;
             ddlFiltroPalestrantes.SelectedIndex = -1;
-            tbxHorario.Text = string.Empty;
+            tbxHorario.Text = tbxTema.Text = string.Empty;
             MostrarDados();
-            dataGridView1.Columns["Sala"].Visible = false;
-            dataGridView1.Columns["Palestrante"].Visible = false;
+            dataGridView1.Columns["Sala"].Visible = dataGridView1.Columns["Palestrante"].Visible = dataGridView1.Columns["Codigo"].Visible
+                = dataGridView1.Columns["Data"].Visible = dataGridView1.Columns["Hora"].Visible = dataGridView1.Columns["Data"].Visible = dataGridView1.Columns["ArquivoPalestra"].Visible = dataGridView1.Columns["Tema"].Visible = false;
+            dataGridView1.Columns["TemaFormatado"].HeaderText = "Tema";
         }
 
         public void MostrarDados()
@@ -68,6 +69,7 @@ namespace GerenciadorPalestras
                 Data = DateTime.Parse(ddlDataFiltro.SelectedItem.ToString());
             if(CodigoPalestrante.HasValue || CodigoSala.HasValue || Data.HasValue)
                 dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data);
+            
         }
 
         private void ClearData()
@@ -119,9 +121,15 @@ namespace GerenciadorPalestras
                 return;
             }
 
+            if (String.IsNullOrEmpty(tbxTema.Text))
+            {
+                MessageBox.Show("Informe o tema da palestra");
+                return;
+            }
+
             try
             {
-                new AgendaEventoDAO().SalvarAgendaEvento(int.Parse(ddlPalestrante.SelectedItem.ToString().Split('-')[0].ToString().Trim()), int.Parse(ddlSala.SelectedItem.ToString().Split('-')[0].ToString().Trim()), RetornaDataHorarioEvento(), tbxHorario.Text, this.ID);
+                new AgendaEventoDAO().SalvarAgendaEvento(int.Parse(ddlPalestrante.SelectedItem.ToString().Split('-')[0].ToString().Trim()), int.Parse(ddlSala.SelectedItem.ToString().Split('-')[0].ToString().Trim()), RetornaDataHorarioEvento(), tbxHorario.Text, this.ID, tbxTema.Text);
                 MessageBox.Show("Dados salvos com sucesso");
                 this.MostrarDados();
                 ClearData();
@@ -174,6 +182,7 @@ namespace GerenciadorPalestras
             ddlSala.SelectedItem = RetornaItem(ddlSala, dataGridView1.Rows[e.RowIndex].Cells["Sala"].Value.ToString());
             ddlPalestrante.SelectedItem = RetornaItem(ddlPalestrante, dataGridView1.Rows[e.RowIndex].Cells["Palestrante"].Value.ToString());
             tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells["Hora"].Value.ToString();
+            tbxTema.Text = dataGridView1.Rows[e.RowIndex].Cells["Tema"].Value.ToString();
             btnExcluir.Visible = true;
             //tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
             //tbxLogin.Text = dataGridView1.Rows[e.RowIndex].Cells["Login"].Value.ToString();

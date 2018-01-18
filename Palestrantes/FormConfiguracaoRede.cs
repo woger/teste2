@@ -51,7 +51,7 @@ namespace Palestrantes
             }
 
             //Pega o diretorio da pasta compartilhada
-            var di = new DirectoryInfo(tbxIP.Text);
+            //var di = new DirectoryInfo(tbxIP.Text);
 
             //Procura o arquivo de BD para verificar se a autenticação é válida
             try
@@ -59,7 +59,21 @@ namespace Palestrantes
                 Usuario usuario = new UsuarioDAO().LoginRemoto(tbxLoginRede.Text, tbxSenhaRede.Text, tbxIP.Text);
 
                 if (usuario != null)
-                    Process.Start(tbxIP.Text + @"\PALESTRAS\");
+                {
+                    if(usuario.Perfil == (int)EnumPerfil.MONITOR)
+                        Process.Start(tbxIP.Text + @"\PALESTRAS\");
+                    else
+                    {
+                        FormEnvioPalestra formEvento = new FormEnvioPalestra(tbxIP.Text);
+
+                        //formEvento.MdiParent = this;
+                        formEvento.ControlBox = false;
+
+                        formEvento.StartPosition = FormStartPosition.CenterScreen;
+                        formEvento.Show();
+                        this.Hide();
+                    }
+                }
                 else
                 {
                     MessageBox.Show("Usuário e/ou senha inválidos. Tente novamente");

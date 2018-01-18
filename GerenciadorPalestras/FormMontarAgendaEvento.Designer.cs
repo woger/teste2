@@ -50,6 +50,8 @@
             this.btnLimparFiltroPalestrante = new System.Windows.Forms.Button();
             this.ddlFiltroPalestrantes = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbxTema = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +80,7 @@
             this.ddlData.Location = new System.Drawing.Point(242, 101);
             this.ddlData.Name = "ddlData";
             this.ddlData.Size = new System.Drawing.Size(269, 21);
-            this.ddlData.TabIndex = 2;
+            this.ddlData.TabIndex = 1;
             // 
             // ddlSala
             // 
@@ -87,7 +89,7 @@
             this.ddlSala.Location = new System.Drawing.Point(242, 168);
             this.ddlSala.Name = "ddlSala";
             this.ddlSala.Size = new System.Drawing.Size(269, 21);
-            this.ddlSala.TabIndex = 3;
+            this.ddlSala.TabIndex = 2;
             // 
             // label3
             // 
@@ -122,7 +124,7 @@
             this.tbxHorario.Mask = "00:00";
             this.tbxHorario.Name = "tbxHorario";
             this.tbxHorario.Size = new System.Drawing.Size(269, 20);
-            this.tbxHorario.TabIndex = 7;
+            this.tbxHorario.TabIndex = 3;
             this.tbxHorario.ValidatingType = typeof(System.DateTime);
             // 
             // ddlPalestrante
@@ -132,7 +134,7 @@
             this.ddlPalestrante.Location = new System.Drawing.Point(242, 290);
             this.ddlPalestrante.Name = "ddlPalestrante";
             this.ddlPalestrante.Size = new System.Drawing.Size(269, 21);
-            this.ddlPalestrante.TabIndex = 8;
+            this.ddlPalestrante.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -141,7 +143,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(632, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(614, 417);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.TabIndex = 15;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // ddlDataFiltro
@@ -151,7 +153,7 @@
             this.ddlDataFiltro.Location = new System.Drawing.Point(632, 89);
             this.ddlDataFiltro.Name = "ddlDataFiltro";
             this.ddlDataFiltro.Size = new System.Drawing.Size(100, 21);
-            this.ddlDataFiltro.TabIndex = 10;
+            this.ddlDataFiltro.TabIndex = 7;
             this.ddlDataFiltro.SelectedIndexChanged += new System.EventHandler(this.ddlDataFiltro_SelectedIndexChanged);
             // 
             // label6
@@ -179,7 +181,7 @@
             this.ddlSalaFiltro.Location = new System.Drawing.Point(842, 89);
             this.ddlSalaFiltro.Name = "ddlSalaFiltro";
             this.ddlSalaFiltro.Size = new System.Drawing.Size(112, 21);
-            this.ddlSalaFiltro.TabIndex = 12;
+            this.ddlSalaFiltro.TabIndex = 9;
             this.ddlSalaFiltro.SelectedIndexChanged += new System.EventHandler(this.ddlSalaFiltro_SelectedIndexChanged);
             // 
             // label8
@@ -194,7 +196,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(241, 382);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(143, 23);
-            this.btnSalvar.TabIndex = 16;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -213,7 +215,7 @@
             this.btnLimparFiltroData.Location = new System.Drawing.Point(739, 89);
             this.btnLimparFiltroData.Name = "btnLimparFiltroData";
             this.btnLimparFiltroData.Size = new System.Drawing.Size(33, 23);
-            this.btnLimparFiltroData.TabIndex = 21;
+            this.btnLimparFiltroData.TabIndex = 8;
             this.btnLimparFiltroData.Text = "x";
             this.btnLimparFiltroData.UseVisualStyleBackColor = true;
             this.btnLimparFiltroData.Click += new System.EventHandler(this.btnLimparFiltroData_Click);
@@ -223,7 +225,7 @@
             this.btnLimparFiltroSala.Location = new System.Drawing.Point(960, 89);
             this.btnLimparFiltroSala.Name = "btnLimparFiltroSala";
             this.btnLimparFiltroSala.Size = new System.Drawing.Size(33, 23);
-            this.btnLimparFiltroSala.TabIndex = 22;
+            this.btnLimparFiltroSala.TabIndex = 10;
             this.btnLimparFiltroSala.Text = "x";
             this.btnLimparFiltroSala.UseVisualStyleBackColor = true;
             this.btnLimparFiltroSala.Click += new System.EventHandler(this.btnLimparFiltroSala_Click);
@@ -233,7 +235,7 @@
             this.btnLimparFiltroPalestrante.Location = new System.Drawing.Point(1195, 87);
             this.btnLimparFiltroPalestrante.Name = "btnLimparFiltroPalestrante";
             this.btnLimparFiltroPalestrante.Size = new System.Drawing.Size(33, 23);
-            this.btnLimparFiltroPalestrante.TabIndex = 23;
+            this.btnLimparFiltroPalestrante.TabIndex = 12;
             this.btnLimparFiltroPalestrante.Text = "x";
             this.btnLimparFiltroPalestrante.UseVisualStyleBackColor = true;
             this.btnLimparFiltroPalestrante.Click += new System.EventHandler(this.btnLimparFiltroPalestrante_Click);
@@ -245,7 +247,7 @@
             this.ddlFiltroPalestrantes.Location = new System.Drawing.Point(1062, 88);
             this.ddlFiltroPalestrantes.Name = "ddlFiltroPalestrantes";
             this.ddlFiltroPalestrantes.Size = new System.Drawing.Size(121, 21);
-            this.ddlFiltroPalestrantes.TabIndex = 24;
+            this.ddlFiltroPalestrantes.TabIndex = 11;
             this.ddlFiltroPalestrantes.SelectedIndexChanged += new System.EventHandler(this.ddlFiltroPalestrantes_SelectedIndexChanged);
             // 
             // btnExcluir
@@ -259,11 +261,30 @@
             this.btnExcluir.Visible = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(83, 342);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Informe o Tema da Palestra";
+            // 
+            // tbxTema
+            // 
+            this.tbxTema.Location = new System.Drawing.Point(242, 342);
+            this.tbxTema.MaxLength = 40;
+            this.tbxTema.Name = "tbxTema";
+            this.tbxTema.Size = new System.Drawing.Size(269, 20);
+            this.tbxTema.TabIndex = 5;
+            // 
             // FormMontarAgendaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.tbxTema);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.ddlFiltroPalestrantes);
             this.Controls.Add(this.btnLimparFiltroPalestrante);
@@ -318,5 +339,7 @@
         private System.Windows.Forms.Button btnLimparFiltroPalestrante;
         private System.Windows.Forms.ComboBox ddlFiltroPalestrantes;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbxTema;
     }
 }

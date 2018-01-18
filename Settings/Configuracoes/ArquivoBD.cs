@@ -11,6 +11,8 @@ namespace Settings.Configuracoes
         public static string DIRETORIO_INSTALACAO = AppDomain.CurrentDomain.BaseDirectory;
 
         public static string DIRETORIO_INSTALACAO_PALESTRAS = AppDomain.CurrentDomain.BaseDirectory + @"\PALESTRAS\";
+
+        //public static string DIRETORIO_INSTALACAO_PALESTRAS_REMOTE = AppDomain.CurrentDomain.BaseDirectory + @"\PALESTRAS\";
         public static string FORMATARDATA_DIRETORIO(DateTime pData)
         {
             return pData.ToString("dd-MM-yyyy");
@@ -114,7 +116,7 @@ namespace Settings.Configuracoes
 
                 try
                 {
-                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE SALA_PAL.DBF ([ID] numeric(2,0), [ID_SALA] NUMERIC(2,0), [ID_PALESTRANTE] NUMERIC(2,0), [DATA] DATETIME, [HORA] CHAR(10));"))//this works and creates an empty .dbf file
+                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE SALA_PAL.DBF ([ID] numeric(2,0), [ID_SALA] NUMERIC(2,0), [ID_PALESTRANTE] NUMERIC(2,0), [DATA] DATETIME, [HORA] CHAR(10), [TEMA] CHAR(40), [FILENAME] CHAR(100));"))//this works and creates an empty .dbf file
                     {
                         cmd.Connection = oConn;
                         cmd.ExecuteNonQuery();

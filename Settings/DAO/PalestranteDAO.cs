@@ -18,7 +18,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRANTES.DBF ORDER BY NOME"))
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRA.DBF ORDER BY NOME"))
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
@@ -39,16 +39,16 @@ namespace Settings.DAO
             return palestrantes;
         }
 
-        public Palestrante BuscarPorCodigo(int pCodigo)
+        public Palestrante BuscarPorCodigo(int pCodigo, string path)
         {
             Palestrante palestrante = null;
             //Sala usuario = null;
             DataTable resultado = new DataTable();
-            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(path) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(path)))
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRANTES.DBF where ID = " + pCodigo))
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRA.DBF where ID = " + pCodigo))
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
@@ -73,7 +73,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(@" INSERT INTO PALESTRANTES.DBF ([ID], [NOME]) 
+                using (OleDbCommand cmd = new OleDbCommand(@" INSERT INTO PALESTRA.DBF ([ID], [NOME]) 
                                                             VALUES(" + (this.UltimoIdIncluido() + 1) + ", '" + pNome + "');"))
                 {
                     cmd.Connection = oConn;
@@ -88,7 +88,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(@" UPDATE PALESTRANTES.DBF set [NOME] = '" + pNome + "' where ID = " + pID))
+                using (OleDbCommand cmd = new OleDbCommand(@" UPDATE PALESTRA.DBF set [NOME] = '" + pNome + "' where ID = " + pID))
                 {
                     cmd.Connection = oConn;
                     //cmd.Parameters.AddWithValue("nome", pNome);
@@ -101,7 +101,7 @@ namespace Settings.DAO
         public void Excluir(int pID)
         {
             //Verifica se existe palestra cadastrada para este palestrante
-            if (new AgendaEventoDAO().BuscaAgendaPorPalestrante(pID).Count > 0)//Se existe palestra associada a esta sala
+            if (new AgendaEventoDAO().BuscaAgendaPorPalestrante(pID, null).Count > 0)//Se existe palestra associada a esta sala
                 throw new Exception("Existe uma agenda cadastrada para este palestrante. Para excluir este cadastro, exclua a agenda associada ao palestrante.");
 
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
@@ -121,7 +121,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT max(ID) FROM PALESTRANTES.DBF"))
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT max(ID) FROM PALESTRA.DBF"))
                 {
                     cmd.Connection = oConn;
 

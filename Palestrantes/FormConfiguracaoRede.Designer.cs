@@ -36,7 +36,6 @@
             this.tbxSenhaRede = new System.Windows.Forms.MaskedTextBox();
             this.btnTestarConexao = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSalvarConectar = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -91,11 +90,11 @@
             // 
             // btnTestarConexao
             // 
-            this.btnTestarConexao.Location = new System.Drawing.Point(331, 419);
+            this.btnTestarConexao.Location = new System.Drawing.Point(363, 417);
             this.btnTestarConexao.Name = "btnTestarConexao";
-            this.btnTestarConexao.Size = new System.Drawing.Size(75, 23);
+            this.btnTestarConexao.Size = new System.Drawing.Size(269, 23);
             this.btnTestarConexao.TabIndex = 6;
-            this.btnTestarConexao.Text = "Testar";
+            this.btnTestarConexao.Text = "Conectar";
             this.btnTestarConexao.UseVisualStyleBackColor = true;
             this.btnTestarConexao.Click += new System.EventHandler(this.btnTestarConexao_Click);
             // 
@@ -107,15 +106,6 @@
             this.label5.Size = new System.Drawing.Size(189, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Configuração Inicial para autenticação";
-            // 
-            // btnSalvarConectar
-            // 
-            this.btnSalvarConectar.Location = new System.Drawing.Point(430, 419);
-            this.btnSalvarConectar.Name = "btnSalvarConectar";
-            this.btnSalvarConectar.Size = new System.Drawing.Size(110, 23);
-            this.btnSalvarConectar.TabIndex = 10;
-            this.btnSalvarConectar.Text = "Salvar e Conextar";
-            this.btnSalvarConectar.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -134,7 +124,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 620);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btnSalvarConectar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTestarConexao);
             this.Controls.Add(this.tbxSenhaRede);
@@ -160,7 +149,6 @@
         private System.Windows.Forms.MaskedTextBox tbxSenhaRede;
         private System.Windows.Forms.Button btnTestarConexao;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnSalvarConectar;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

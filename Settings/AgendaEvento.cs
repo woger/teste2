@@ -9,10 +9,26 @@ namespace Settings
     {
         public int Codigo { get; set; }
 
+        public string TemaFormatado
+        {
+            get
+            {
+                return this.Data.ToString("dd/MM/yyy") + " - " + this.Hora + ": " + this.Tema.ToUpper();
+            }
 
+        }
         public DateTime Data { get; set; }
 
         public string Hora { get; set; }
+
+        public string NomeSala
+        {
+            get
+            {
+                return this.Sala.Nome;
+            }
+
+        }
 
         public string NomePalestrante
         {
@@ -23,14 +39,12 @@ namespace Settings
             
         }
 
-        public string NomeSala
-        {
-            get
-            {
-                return this.Sala.Nome;
-            }
+        
 
-        }
+        
+
+
+        
 
         //public string DataToString
         //{
@@ -49,7 +63,18 @@ namespace Settings
 
         public Palestrante Palestrante { get; set; }
 
-        
+        public string Tema { get; set; }
 
+        public string ArquivoPalestra { get; set; }
+
+        public string PathPalestra(string path)
+        {
+            //ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + ArquivoBD.FORMATARDATA_DIRETORIO(Data) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome()
+            if (String.IsNullOrEmpty(path))            
+                return Settings.Configuracoes.ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + Settings.Configuracoes.ArquivoBD.FORMATARDATA_DIRETORIO(this.Data) + @"\" + this.Sala.Nome + @"\" + this.Hora.Replace(":", "-") + @" - " + this.Palestrante.NomeSobreNome();
+            else
+                return path + @"\PALESTRAS\" + Settings.Configuracoes.ArquivoBD.FORMATARDATA_DIRETORIO(this.Data) + @"\" + this.Sala.Nome + @"\" + this.Hora.Replace(":", "-") + @" - " + this.Palestrante.NomeSobreNome();
+            
+        }
     }
 }
