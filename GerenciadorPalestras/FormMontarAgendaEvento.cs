@@ -27,8 +27,8 @@ namespace GerenciadorPalestras
 
         void CarregaDadosIniciais()
         {
-            ddlData.DataSource = new EventoDAO().DatasEvento();
-            ddlDataFiltro.DataSource = new EventoDAO().DatasEvento();
+            ddlData.DataSource = new EventoDAO().DatasEvento(null);
+            ddlDataFiltro.DataSource = new EventoDAO().DatasEvento(null);
 
             ddlSala.DataSource = new SalaDAO().ListarTodos();
             ddlSalaFiltro.DataSource = new SalaDAO().ListarTodos();
@@ -68,7 +68,7 @@ namespace GerenciadorPalestras
             if (ddlDataFiltro.SelectedIndex != -1)
                 Data = DateTime.Parse(ddlDataFiltro.SelectedItem.ToString());
             if(CodigoPalestrante.HasValue || CodigoSala.HasValue || Data.HasValue)
-                dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data);
+                dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data, null);
             
         }
 

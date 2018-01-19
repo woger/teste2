@@ -70,7 +70,7 @@ namespace Settings.DAO
                         evento.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
                         evento.Nome = resultado.Rows[0]["NOME"].ToString();
                         evento.Arquivo = resultado.Rows[0]["FILE_NAME"].ToString();
-                        evento.Datas = this.DatasEvento();
+                        evento.Datas = this.DatasEvento(null);
                         return evento;
                     }
                 }
@@ -78,10 +78,10 @@ namespace Settings.DAO
             }
         }
 
-        public List<DateTime> DatasEvento()
+        public List<DateTime> DatasEvento(string path)
         {
             List<DateTime> datas = new List<DateTime>();
-            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(path) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(path)))
             {
                 oConn.Open();
                 DataTable resultado = new DataTable();

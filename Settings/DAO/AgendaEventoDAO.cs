@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -74,6 +75,43 @@ namespace Settings.DAO
                     throw new Exception("Ocorreu um erro ao criar as pastas no diretório de instalação " + ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + ": " + e.Message);
                 }
             }
+        }
+
+
+        public void CriarPastasRemoto(string pPath, DateTime pData, int pSala, int pPalestrante, string pHora, string pDestinoArquivo, System.IO.FileStream pArquivo, string pNomeArquivo)
+        {
+            string pathFinal = string.Empty;
+
+            if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData))) //Se não existe a pasta da data
+                System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData));//Cria
+
+            Sala sala = new SalaDAO().BuscarPorCodigo(pSala, pPath);
+            if (sala != null)
+            {
+                if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome)) //Se não existe a pasta da sala para a data
+                    System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome);//Cria
+            }
+
+            Palestrante palestrante = new PalestranteDAO().BuscarPorCodigo(pPalestrante, pPath);
+            if (palestrante != null)
+            {
+                //Verifico se já existe a pasta para o horário
+                if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome())) //Se não existe a pasta do horário para a sala e para a data
+                    pathFinal = System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome()).FullName;//Cria
+            }
+
+
+
+
+            System.IO.FileStream arquivoSaida = System.IO.File.Create(pathFinal + @"\ " + pNomeArquivo); 
+            int b;
+
+            while ((b = pArquivo.ReadByte()) > -1)
+                arquivoSaida.WriteByte((byte)b);
+
+            arquivoSaida.Flush();
+            arquivoSaida.Close();
+            pArquivo.Close();
         }
 
         public AgendaEvento VerificaExistenciaEvento(int pSala, DateTime Data, string pHora, int? pCodigo)
@@ -184,12 +222,12 @@ namespace Settings.DAO
             return agendas;
         }
 
-        public List<AgendaEvento> BuscaAgendaPorSala(int pSala)
+        public List<AgendaEvento> BuscaAgendaPorSala(int pSala, string pPath)
         {
             List<AgendaEvento> agendas = new List<AgendaEvento>();
             //Sala usuario = null;
             DataTable resultado = new DataTable();
-            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath)))
             {
                 oConn.Open();
 
@@ -256,12 +294,12 @@ namespace Settings.DAO
             return agendas;
         }
 
-        public List<AgendaEvento> ListarTodos(int? pCodigoPalestrante, int? pCodigoSala, DateTime? data)
+        public List<AgendaEvento> ListarTodos(int? pCodigoPalestrante, int? pCodigoSala, DateTime? data, string pPath)
         {
             List<AgendaEvento> agendas = new List<AgendaEvento>();
             //Sala usuario = null;
             DataTable resultado = new DataTable();
-            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath)))
             {
                 oConn.Open();
 
@@ -297,9 +335,9 @@ namespace Settings.DAO
                         for (int i = 0; i < resultado.Rows.Count; i++)
                         {
                             AgendaEvento agendaEvento = new AgendaEvento();
-                            agendaEvento.Palestrante = new PalestranteDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_PALESTR"].ToString()), null);
+                            agendaEvento.Palestrante = new PalestranteDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_PALESTR"].ToString()), pPath);
                             agendaEvento.Codigo = int.Parse(resultado.Rows[i]["ID"].ToString());
-                            agendaEvento.Sala = new SalaDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_SALA"].ToString()), null);
+                            agendaEvento.Sala = new SalaDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_SALA"].ToString()), pPath);
                             agendaEvento.Data = DateTime.Parse(resultado.Rows[i]["DATA"].ToString());
                             agendaEvento.Hora = resultado.Rows[i]["HORA"].ToString();
                             agendaEvento.Tema = resultado.Rows[i]["TEMA"].ToString();
@@ -324,7 +362,7 @@ namespace Settings.DAO
 
                     OleDbDataReader r = cmd.ExecuteReader();
                     r.Read();
-                    if (!String.IsNullOrEmpty(r[0].ToString()))                 
+                    if (!String.IsNullOrEmpty(r[0].ToString()))
                         return int.Parse(r[0].ToString());
                 }
 

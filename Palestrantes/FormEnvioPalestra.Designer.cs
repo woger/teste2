@@ -52,6 +52,7 @@
             // 
             // ddlPalestrante
             // 
+            this.ddlPalestrante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlPalestrante.FormattingEnabled = true;
             this.ddlPalestrante.Location = new System.Drawing.Point(424, 170);
             this.ddlPalestrante.Name = "ddlPalestrante";
@@ -78,6 +79,7 @@
             // 
             // ddlTema
             // 
+            this.ddlTema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlTema.FormattingEnabled = true;
             this.ddlTema.Location = new System.Drawing.Point(424, 222);
             this.ddlTema.Name = "ddlTema";
