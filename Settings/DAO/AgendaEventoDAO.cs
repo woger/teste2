@@ -98,6 +98,8 @@ namespace Settings.DAO
                 //Verifico se já existe a pasta para o horário
                 if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome())) //Se não existe a pasta do horário para a sala e para a data
                     pathFinal = System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome()).FullName;//Cria
+                else
+                    pathFinal = pDestinoArquivo + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome();//Cria
             }
 
 

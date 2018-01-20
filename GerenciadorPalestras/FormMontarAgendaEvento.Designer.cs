@@ -58,18 +58,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(814, 46);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(567, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
+            this.label1.Size = new System.Drawing.Size(210, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Monte a Agenda do Evento";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 176);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(80, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.Size = new System.Drawing.Size(116, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Selecione a Sala";
             // 
@@ -77,7 +79,7 @@
             // 
             this.ddlData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlData.FormattingEnabled = true;
-            this.ddlData.Location = new System.Drawing.Point(242, 101);
+            this.ddlData.Location = new System.Drawing.Point(264, 170);
             this.ddlData.Name = "ddlData";
             this.ddlData.Size = new System.Drawing.Size(269, 21);
             this.ddlData.TabIndex = 1;
@@ -86,7 +88,7 @@
             // 
             this.ddlSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSala.FormattingEnabled = true;
-            this.ddlSala.Location = new System.Drawing.Point(242, 168);
+            this.ddlSala.Location = new System.Drawing.Point(264, 237);
             this.ddlSala.Name = "ddlSala";
             this.ddlSala.Size = new System.Drawing.Size(269, 21);
             this.ddlSala.TabIndex = 2;
@@ -94,33 +96,36 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 290);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(80, 359);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 13);
+            this.label3.Size = new System.Drawing.Size(160, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Selecione o Palestrante";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 109);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(80, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(117, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Selecione a Data";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 239);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(80, 308);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 13);
+            this.label5.Size = new System.Drawing.Size(120, 15);
             this.label5.TabIndex = 6;
             this.label5.Text = "Informe o Horário";
             // 
             // tbxHorario
             // 
-            this.tbxHorario.Location = new System.Drawing.Point(242, 236);
+            this.tbxHorario.Location = new System.Drawing.Point(264, 305);
             this.tbxHorario.Mask = "00:00";
             this.tbxHorario.Name = "tbxHorario";
             this.tbxHorario.Size = new System.Drawing.Size(269, 20);
@@ -131,7 +136,7 @@
             // 
             this.ddlPalestrante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlPalestrante.FormattingEnabled = true;
-            this.ddlPalestrante.Location = new System.Drawing.Point(242, 290);
+            this.ddlPalestrante.Location = new System.Drawing.Point(264, 359);
             this.ddlPalestrante.Name = "ddlPalestrante";
             this.ddlPalestrante.Size = new System.Drawing.Size(269, 21);
             this.ddlPalestrante.TabIndex = 4;
@@ -140,7 +145,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(632, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(632, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(614, 417);
             this.dataGridView1.TabIndex = 15;
@@ -150,7 +155,7 @@
             // 
             this.ddlDataFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlDataFiltro.FormattingEnabled = true;
-            this.ddlDataFiltro.Location = new System.Drawing.Point(632, 89);
+            this.ddlDataFiltro.Location = new System.Drawing.Point(632, 158);
             this.ddlDataFiltro.Name = "ddlDataFiltro";
             this.ddlDataFiltro.Size = new System.Drawing.Size(100, 21);
             this.ddlDataFiltro.TabIndex = 7;
@@ -159,18 +164,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(629, 63);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(629, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.Size = new System.Drawing.Size(104, 15);
             this.label6.TabIndex = 11;
             this.label6.Text = "Filtrar por Data";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(860, 63);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(839, 130);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.Size = new System.Drawing.Size(103, 15);
             this.label7.TabIndex = 13;
             this.label7.Text = "Filtrar por Sala";
             // 
@@ -178,7 +185,7 @@
             // 
             this.ddlSalaFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSalaFiltro.FormattingEnabled = true;
-            this.ddlSalaFiltro.Location = new System.Drawing.Point(842, 89);
+            this.ddlSalaFiltro.Location = new System.Drawing.Point(842, 158);
             this.ddlSalaFiltro.Name = "ddlSalaFiltro";
             this.ddlSalaFiltro.Size = new System.Drawing.Size(112, 21);
             this.ddlSalaFiltro.TabIndex = 9;
@@ -193,7 +200,8 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(241, 382);
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(263, 451);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(143, 23);
             this.btnSalvar.TabIndex = 6;
@@ -204,15 +212,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1059, 63);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1059, 132);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 13);
+            this.label9.Size = new System.Drawing.Size(147, 15);
             this.label9.TabIndex = 18;
             this.label9.Text = "Filtrar por Palestrante";
             // 
             // btnLimparFiltroData
             // 
-            this.btnLimparFiltroData.Location = new System.Drawing.Point(739, 89);
+            this.btnLimparFiltroData.Location = new System.Drawing.Point(739, 158);
             this.btnLimparFiltroData.Name = "btnLimparFiltroData";
             this.btnLimparFiltroData.Size = new System.Drawing.Size(33, 23);
             this.btnLimparFiltroData.TabIndex = 8;
@@ -222,7 +231,7 @@
             // 
             // btnLimparFiltroSala
             // 
-            this.btnLimparFiltroSala.Location = new System.Drawing.Point(960, 89);
+            this.btnLimparFiltroSala.Location = new System.Drawing.Point(960, 158);
             this.btnLimparFiltroSala.Name = "btnLimparFiltroSala";
             this.btnLimparFiltroSala.Size = new System.Drawing.Size(33, 23);
             this.btnLimparFiltroSala.TabIndex = 10;
@@ -232,7 +241,7 @@
             // 
             // btnLimparFiltroPalestrante
             // 
-            this.btnLimparFiltroPalestrante.Location = new System.Drawing.Point(1195, 87);
+            this.btnLimparFiltroPalestrante.Location = new System.Drawing.Point(1195, 156);
             this.btnLimparFiltroPalestrante.Name = "btnLimparFiltroPalestrante";
             this.btnLimparFiltroPalestrante.Size = new System.Drawing.Size(33, 23);
             this.btnLimparFiltroPalestrante.TabIndex = 12;
@@ -244,7 +253,7 @@
             // 
             this.ddlFiltroPalestrantes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlFiltroPalestrantes.FormattingEnabled = true;
-            this.ddlFiltroPalestrantes.Location = new System.Drawing.Point(1062, 88);
+            this.ddlFiltroPalestrantes.Location = new System.Drawing.Point(1062, 157);
             this.ddlFiltroPalestrantes.Name = "ddlFiltroPalestrantes";
             this.ddlFiltroPalestrantes.Size = new System.Drawing.Size(121, 21);
             this.ddlFiltroPalestrantes.TabIndex = 11;
@@ -252,7 +261,8 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(390, 382);
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(412, 451);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(121, 23);
             this.btnExcluir.TabIndex = 25;
@@ -264,15 +274,16 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(83, 342);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(80, 412);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 13);
+            this.label10.Size = new System.Drawing.Size(185, 15);
             this.label10.TabIndex = 26;
             this.label10.Text = "Informe o Tema da Palestra";
             // 
             // tbxTema
             // 
-            this.tbxTema.Location = new System.Drawing.Point(242, 342);
+            this.tbxTema.Location = new System.Drawing.Point(264, 411);
             this.tbxTema.MaxLength = 40;
             this.tbxTema.Name = "tbxTema";
             this.tbxTema.Size = new System.Drawing.Size(269, 20);

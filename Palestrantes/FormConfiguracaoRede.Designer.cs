@@ -42,50 +42,53 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(266, 282);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 13);
+            this.label1.Size = new System.Drawing.Size(184, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Informe o caminho da rede.";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(266, 323);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 13);
+            this.label2.Size = new System.Drawing.Size(308, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Informe seu login de palestrante ou de Monitor";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(266, 362);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.Size = new System.Drawing.Size(111, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Informe a senha";
             // 
             // tbxIP
             // 
-            this.tbxIP.Location = new System.Drawing.Point(574, 282);
+            this.tbxIP.Location = new System.Drawing.Point(580, 282);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(358, 20);
             this.tbxIP.TabIndex = 3;
             // 
             // tbxLoginRede
             // 
-            this.tbxLoginRede.Location = new System.Drawing.Point(574, 323);
+            this.tbxLoginRede.Location = new System.Drawing.Point(580, 323);
             this.tbxLoginRede.Name = "tbxLoginRede";
-            this.tbxLoginRede.Size = new System.Drawing.Size(146, 20);
+            this.tbxLoginRede.Size = new System.Drawing.Size(226, 20);
             this.tbxLoginRede.TabIndex = 4;
             // 
             // tbxSenhaRede
             // 
-            this.tbxSenhaRede.Location = new System.Drawing.Point(574, 362);
+            this.tbxSenhaRede.Location = new System.Drawing.Point(580, 362);
             this.tbxSenhaRede.Name = "tbxSenhaRede";
             this.tbxSenhaRede.PasswordChar = '*';
-            this.tbxSenhaRede.Size = new System.Drawing.Size(146, 20);
+            this.tbxSenhaRede.Size = new System.Drawing.Size(226, 20);
             this.tbxSenhaRede.TabIndex = 5;
             // 
             // btnTestarConexao
@@ -101,9 +104,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(304, 77);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(372, 68);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 13);
+            this.label5.Size = new System.Drawing.Size(296, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "Configuração Inicial para autenticação";
             // 
