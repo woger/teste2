@@ -69,6 +69,8 @@ namespace GerenciadorPalestras
                 Data = DateTime.Parse(ddlDataFiltro.SelectedItem.ToString());
             if(CodigoPalestrante.HasValue || CodigoSala.HasValue || Data.HasValue)
                 dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data, null);
+            else
+                dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos();//CodigoPalestrante, CodigoSala, Data, null);
             
         }
 
@@ -81,7 +83,8 @@ namespace GerenciadorPalestras
             ddlSalaFiltro.SelectedIndex = -1;
             ddlPalestrante.SelectedIndex = -1;
             ddlFiltroPalestrantes.SelectedIndex = -1;
-            tbxHorario.Text = String.Empty;
+            tbxTema.Text = tbxHorario.Text = String.Empty;
+            
         }
 
         private void ddlSalaFiltro_SelectedIndexChanged(object sender, EventArgs e)

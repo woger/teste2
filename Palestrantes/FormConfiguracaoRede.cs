@@ -65,7 +65,7 @@ namespace Palestrantes
                         FormBaixaPalestra formEvento = new FormBaixaPalestra(tbxIP.Text);
 
                         //formEvento.MdiParent = this;
-                        formEvento.ControlBox = false;
+                        //formEvento.ControlBox = false;
 
                         formEvento.StartPosition = FormStartPosition.CenterScreen;
                         formEvento.Show();
@@ -77,7 +77,7 @@ namespace Palestrantes
                         FormEnvioPalestra formEvento = new FormEnvioPalestra(tbxIP.Text);
 
                         //formEvento.MdiParent = this;
-                        formEvento.ControlBox = false;
+                        //formEvento.ControlBox = false;
 
                         formEvento.StartPosition = FormStartPosition.CenterScreen;
                         formEvento.Show();

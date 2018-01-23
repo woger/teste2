@@ -30,7 +30,7 @@ namespace Settings.Configuracoes
 
                 try
                 {
-                    using (OleDbCommand cmd = new OleDbCommand(" CREATE TABLE USUARIO.DBF ([ID] NUMERIC (18,0), [CO_PERFIL] NUMERIC(1,0), [NOME] CHAR(100), [LOGIN] CHAR(100), [SENHA] CHAR(10));"))//this works and creates an empty .dbf file
+                    using (OleDbCommand cmd = new OleDbCommand(" CREATE TABLE USUARIO.DBF ([ID] NUMERIC (18,0), [CO_PERFIL] NUMERIC(1,0), [NOME] CHAR(100), [LOGIN] CHAR(100), [SENHA] CHAR(20));"))//this works and creates an empty .dbf file
                     {
                         cmd.Connection = oConn;
                         cmd.ExecuteNonQuery();
@@ -56,7 +56,7 @@ namespace Settings.Configuracoes
 
                         //Cria um usuário Palestrante
                         using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
-                                                            VALUES(2, 'PALESTRANTE', 'PALESTRANTE', '" + Settings.DAO.PassWord.ObterSenhaPalestrante() + "', 2)"))
+                                                            VALUES(3, 'PALESTRANTE', 'PALESTRANTE', '" + Settings.DAO.PassWord.ObterSenhaPalestrante() + "', 2)"))
                         //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
                         {
                             cmd2.Connection = oConn;
