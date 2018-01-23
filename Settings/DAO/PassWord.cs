@@ -14,12 +14,12 @@ namespace Settings.DAO
 
         public static string ObterSenhaPalestrante()
         {
-            return POSSIVEIS_SENHAS_PALESTRANTE.ElementAt(new Random().Next(0, POSSIVEIS_SENHAS_PALESTRANTE.Length));
+            return POSSIVEIS_SENHAS_PALESTRANTE.ElementAt(new Random().Next(0, POSSIVEIS_SENHAS_PALESTRANTE.Length -1));
         }
 
         public static string ObterSenhaMonitor()
         {
-            return POSSIVEIS_SENHAS_MONITOR.ElementAt(new Random().Next(0, POSSIVEIS_SENHAS_PALESTRANTE.Length));
+            return POSSIVEIS_SENHAS_MONITOR.ElementAt(new Random().Next(0, POSSIVEIS_SENHAS_PALESTRANTE.Length -1));
         }
     }
 }

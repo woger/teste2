@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 649);
+            this.ClientSize = new System.Drawing.Size(983, 660);
             this.Controls.Add(this.btnExplorar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNomeArquivo);

@@ -23,6 +23,7 @@ namespace GerenciadorPalestras
         public void MostrarDados()
         {
             dataGridView1.DataSource = new PalestranteDAO().ListarTodos();
+            dataGridView1.Columns["Codigo"].Visible = false;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

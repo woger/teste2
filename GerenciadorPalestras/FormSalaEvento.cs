@@ -22,6 +22,7 @@ namespace GerenciadorPalestras
         public void MostrarDados()
         {
             dataGridView1.DataSource = new SalaDAO().ListarTodos();
+            dataGridView1.Columns["Codigo"].Visible = false;
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
