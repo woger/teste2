@@ -24,6 +24,7 @@ namespace GerenciadorPalestras
         {
             dataGridView1.DataSource = new PalestranteDAO().ListarTodos();
             dataGridView1.Columns["Codigo"].Visible = false;
+            tbxPalestrante.Focus();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -94,6 +95,7 @@ namespace GerenciadorPalestras
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             tbxPalestrante.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tbxPalestrante.Focus();
         }
     }
 }

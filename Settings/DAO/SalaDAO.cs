@@ -20,7 +20,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM SALAS.DBF"))
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM SALAS.DBF ORDER BY NOME"))
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);

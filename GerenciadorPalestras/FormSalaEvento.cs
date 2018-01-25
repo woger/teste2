@@ -17,12 +17,14 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             MostrarDados();
+            
         }
 
         public void MostrarDados()
         {
             dataGridView1.DataSource = new SalaDAO().ListarTodos();
             dataGridView1.Columns["Codigo"].Visible = false;
+            tbxNomeSala.Focus();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -92,6 +94,7 @@ namespace GerenciadorPalestras
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             tbxNomeSala.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tbxNomeSala.Focus();
         }
     }
 }

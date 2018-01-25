@@ -30,12 +30,55 @@ namespace GerenciadorPalestras
             ddlData.DataSource = new EventoDAO().DatasEvento(null);
             ddlDataFiltro.DataSource = new EventoDAO().DatasEvento(null);
 
-            ddlSala.DataSource = new SalaDAO().ListarTodos();
-            ddlSalaFiltro.DataSource = new SalaDAO().ListarTodos();
-            //List<Palestrante> palestrantes = 
+            List<Sala> salas = new SalaDAO().ListarTodos().OrderBy(s => s.Nome).ToList();
+            if (salas.Count > 0)
+            {
+                Dictionary<int, string> dictionarySalas = new Dictionary<int, string>();
+                for (int i = 0; i < salas.Count; i++)
+                    dictionarySalas.Add(salas[i].Codigo, salas[i].Nome);
+                ddlSala.DataSource = new BindingSource(dictionarySalas, null);
+                ddlSala.DisplayMember = "Value";
+                ddlSala.ValueMember = "Key";
+                ddlSala.SelectedIndex = -1;
+            }
 
-            ddlPalestrante.DataSource = new PalestranteDAO().ListarTodos();
-            ddlFiltroPalestrantes.DataSource = new PalestranteDAO().ListarTodos();
+            List<Sala> salasFiltro = new SalaDAO().ListarTodos().OrderBy(s => s.Nome).ToList();
+            if (salasFiltro.Count > 0)
+            {
+                Dictionary<int, string> dictionarySalasFiltro = new Dictionary<int, string>();
+                for (int i = 0; i < salasFiltro.Count; i++)
+                    dictionarySalasFiltro.Add(salasFiltro[i].Codigo, salasFiltro[i].Nome);
+                ddlSalaFiltro.DataSource = new BindingSource(dictionarySalasFiltro, null);
+                ddlSalaFiltro.DisplayMember = "Value";
+                ddlSalaFiltro.ValueMember = "Key";
+                ddlSalaFiltro.SelectedIndex = -1;
+            }
+            //ddlSalaFiltro.DataSource = new SalaDAO().ListarTodos();
+            List<Palestrante> palestrantes = new PalestranteDAO().ListarTodos();
+            if (salasFiltro.Count > 0)
+            {
+                Dictionary<int, string> dictionaryPalestrantes = new Dictionary<int, string>();
+                for (int i = 0; i < palestrantes.Count; i++)
+                    dictionaryPalestrantes.Add(salasFiltro[i].Codigo, salasFiltro[i].Nome);
+                ddlPalestrante.DataSource = new BindingSource(dictionaryPalestrantes, null);
+                ddlPalestrante.DisplayMember = "Value";
+                ddlPalestrante.ValueMember = "Key";
+                ddlPalestrante.SelectedIndex = -1;
+            }
+
+            List<Palestrante> palestrantesFiltro = new PalestranteDAO().ListarTodos();
+            if (palestrantesFiltro.Count > 0)
+            {
+                Dictionary<int, string> dictionaryPalestrantesFiltro = new Dictionary<int, string>();
+                for (int i = 0; i < palestrantesFiltro.Count; i++)
+                    dictionaryPalestrantesFiltro.Add(palestrantesFiltro[i].Codigo, palestrantesFiltro[i].Nome);
+                ddlFiltroPalestrantes.DataSource = new BindingSource(dictionaryPalestrantesFiltro, null);
+                ddlFiltroPalestrantes.DisplayMember = "Value";
+                ddlFiltroPalestrantes.ValueMember = "Key";
+                ddlFiltroPalestrantes.SelectedIndex = -1;
+            }
+            //.DataSource =
+            //ddlFiltroPalestrantes.DataSource = new PalestranteDAO().ListarTodos();
 
             ddlData.SelectedIndex = -1;
             ddlDataFiltro.SelectedIndex = -1;
@@ -59,19 +102,19 @@ namespace GerenciadorPalestras
         {
             int? CodigoPalestrante = null;
             if (ddlFiltroPalestrantes.SelectedIndex != -1)
-                CodigoPalestrante = int.Parse(ddlFiltroPalestrantes.SelectedItem.ToString().Split('-')[0]);
+                CodigoPalestrante =  ((KeyValuePair<int, string>)ddlFiltroPalestrantes.SelectedItem).Key;//int.Parse(ddlFiltroPalestrantes.SelectedItem.ToString().Split('-')[0]);
             int? CodigoSala = null;
             if (ddlSalaFiltro.SelectedIndex != -1)
-                CodigoSala = int.Parse(ddlSalaFiltro.SelectedItem.ToString().Split('-')[0]);
+                CodigoSala = ((KeyValuePair<int, string>)ddlSalaFiltro.SelectedItem).Key; //int.Parse(ddlSalaFiltro.SelectedItem.ToString().Split('-')[0]);
 
             DateTime? Data = null;
             if (ddlDataFiltro.SelectedIndex != -1)
                 Data = DateTime.Parse(ddlDataFiltro.SelectedItem.ToString());
-            if(CodigoPalestrante.HasValue || CodigoSala.HasValue || Data.HasValue)
+            if (CodigoPalestrante.HasValue || CodigoSala.HasValue || Data.HasValue)
                 dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos(CodigoPalestrante, CodigoSala, Data, null);
             else
                 dataGridView1.DataSource = new AgendaEventoDAO().ListarTodos();//CodigoPalestrante, CodigoSala, Data, null);
-            
+
         }
 
         private void ClearData()
@@ -84,7 +127,7 @@ namespace GerenciadorPalestras
             ddlPalestrante.SelectedIndex = -1;
             ddlFiltroPalestrantes.SelectedIndex = -1;
             tbxTema.Text = tbxHorario.Text = String.Empty;
-            
+
         }
 
         private void ddlSalaFiltro_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,7 +175,7 @@ namespace GerenciadorPalestras
 
             try
             {
-                new AgendaEventoDAO().SalvarAgendaEvento(int.Parse(ddlPalestrante.SelectedItem.ToString().Split('-')[0].ToString().Trim()), int.Parse(ddlSala.SelectedItem.ToString().Split('-')[0].ToString().Trim()), RetornaDataHorarioEvento(), tbxHorario.Text, this.ID, tbxTema.Text);
+                new AgendaEventoDAO().SalvarAgendaEvento(((KeyValuePair<int, string>)ddlPalestrante.SelectedItem).Key, ((KeyValuePair<int, string>)ddlSala.SelectedItem).Key, RetornaDataHorarioEvento(), tbxHorario.Text, this.ID, tbxTema.Text);
                 MessageBox.Show("Dados salvos com sucesso");
                 this.MostrarDados();
                 ClearData();
