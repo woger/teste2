@@ -42,8 +42,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(266, 282);
+            this.label1.Location = new System.Drawing.Point(67, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 15);
             this.label1.TabIndex = 0;
@@ -52,8 +53,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(266, 323);
+            this.label2.Location = new System.Drawing.Point(67, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(308, 15);
             this.label2.TabIndex = 1;
@@ -62,8 +64,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(266, 362);
+            this.label3.Location = new System.Drawing.Point(67, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 15);
             this.label3.TabIndex = 2;
@@ -71,21 +74,21 @@
             // 
             // tbxIP
             // 
-            this.tbxIP.Location = new System.Drawing.Point(580, 282);
+            this.tbxIP.Location = new System.Drawing.Point(381, 223);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(358, 20);
             this.tbxIP.TabIndex = 3;
             // 
             // tbxLoginRede
             // 
-            this.tbxLoginRede.Location = new System.Drawing.Point(580, 323);
+            this.tbxLoginRede.Location = new System.Drawing.Point(381, 271);
             this.tbxLoginRede.Name = "tbxLoginRede";
             this.tbxLoginRede.Size = new System.Drawing.Size(226, 20);
             this.tbxLoginRede.TabIndex = 4;
             // 
             // tbxSenhaRede
             // 
-            this.tbxSenhaRede.Location = new System.Drawing.Point(580, 362);
+            this.tbxSenhaRede.Location = new System.Drawing.Point(381, 315);
             this.tbxSenhaRede.Name = "tbxSenhaRede";
             this.tbxSenhaRede.PasswordChar = '*';
             this.tbxSenhaRede.Size = new System.Drawing.Size(226, 20);
@@ -93,7 +96,7 @@
             // 
             // btnTestarConexao
             // 
-            this.btnTestarConexao.Location = new System.Drawing.Point(363, 417);
+            this.btnTestarConexao.Location = new System.Drawing.Point(156, 377);
             this.btnTestarConexao.Name = "btnTestarConexao";
             this.btnTestarConexao.Size = new System.Drawing.Size(269, 23);
             this.btnTestarConexao.TabIndex = 6;
@@ -104,17 +107,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(372, 68);
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(26, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(296, 18);
+            this.label5.Size = new System.Drawing.Size(593, 29);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Configuração Inicial para autenticação";
+            this.label5.Text = "CONFIGURAÇÃO INICIAL PARA AUTENTICAÇÃO";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(269, 299);
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.linkLabel1.Location = new System.Drawing.Point(70, 247);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(75, 13);
             this.linkLabel1.TabIndex = 11;
@@ -126,7 +132,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 660);
+            this.BackgroundImage = global::Palestrantes.Properties.Resources.bg_interno;
+            this.ClientSize = new System.Drawing.Size(1234, 662);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTestarConexao);

@@ -40,9 +40,9 @@
             this.quantitativoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoDePalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
-            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(914, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -141,6 +141,13 @@
             this.relaçãoDePalestrasToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
             this.relaçãoDePalestrasToolStripMenuItem.Text = "Relação de Palestras sem Arquivo de Apresentação";
             // 
+            // ajudaToolStripMenuItem
+            // 
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
+            // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
@@ -157,18 +164,11 @@
             this.lblNomeUsuario.TabIndex = 1;
             this.lblNomeUsuario.Text = "label1";
             // 
-            // ajudaToolStripMenuItem
-            // 
-            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.ajudaToolStripMenuItem.Text = "Ajuda";
-            this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 463);
+            this.ClientSize = new System.Drawing.Size(1234, 662);
             this.Controls.Add(this.lblNomeUsuario);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;

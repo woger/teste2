@@ -24,5 +24,10 @@ namespace GerenciadorPalestras
             richTextBox1.Text = richTextBox1.Text.Replace("@PALESTRANTE", new Settings.DAO.UsuarioDAO().RetornaSenhaPalestrante());
             richTextBox1.Text = richTextBox1.Text.Replace("@MONITOR", new Settings.DAO.UsuarioDAO().RetornaSenhaMonitor());
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

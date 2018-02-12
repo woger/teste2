@@ -48,58 +48,67 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(728, 25);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label1.Location = new System.Drawing.Point(24, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(333, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro de Usuários";
+            this.label1.Text = "CADASTRO DE USUÁRIOS";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(606, 78);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 212);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(608, 129);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(62, 263);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Login";
             // 
             // tbxNome
             // 
-            this.tbxNome.Location = new System.Drawing.Point(659, 78);
+            this.tbxNome.Location = new System.Drawing.Point(113, 212);
             this.tbxNome.Name = "tbxNome";
-            this.tbxNome.Size = new System.Drawing.Size(473, 20);
+            this.tbxNome.Size = new System.Drawing.Size(329, 20);
             this.tbxNome.TabIndex = 1;
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Location = new System.Drawing.Point(659, 126);
+            this.tbxLogin.Location = new System.Drawing.Point(113, 260);
             this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(346, 20);
+            this.tbxLogin.Size = new System.Drawing.Size(329, 20);
             this.tbxLogin.TabIndex = 2;
             // 
             // ddlPerfil
             // 
             this.ddlPerfil.FormattingEnabled = true;
-            this.ddlPerfil.Location = new System.Drawing.Point(659, 173);
+            this.ddlPerfil.Location = new System.Drawing.Point(113, 307);
             this.ddlPerfil.Name = "ddlPerfil";
-            this.ddlPerfil.Size = new System.Drawing.Size(346, 21);
+            this.ddlPerfil.Size = new System.Drawing.Size(329, 21);
             this.ddlPerfil.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(611, 181);
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(65, 315);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Perfil";
             // 
@@ -107,24 +116,26 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(370, 506);
+            this.dataGridView1.Location = new System.Drawing.Point(517, 228);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(927, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(793, 243);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(752, 428);
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(514, 203);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 13);
+            this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Usuários Cadastrados";
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(699, 350);
+            this.btnSalvar.Location = new System.Drawing.Point(113, 432);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(306, 23);
             this.btnSalvar.TabIndex = 6;
@@ -134,7 +145,7 @@
             // 
             // tbxSenha
             // 
-            this.tbxSenha.Location = new System.Drawing.Point(659, 218);
+            this.tbxSenha.Location = new System.Drawing.Point(113, 352);
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(177, 20);
@@ -142,7 +153,7 @@
             // 
             // tbxConfirmaSenha
             // 
-            this.tbxConfirmaSenha.Location = new System.Drawing.Point(659, 258);
+            this.tbxConfirmaSenha.Location = new System.Drawing.Point(113, 392);
             this.tbxConfirmaSenha.Name = "tbxConfirmaSenha";
             this.tbxConfirmaSenha.PasswordChar = '*';
             this.tbxConfirmaSenha.Size = new System.Drawing.Size(177, 20);
@@ -151,18 +162,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(603, 221);
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(57, 355);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Senha";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(569, 265);
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 399);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.Size = new System.Drawing.Size(88, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Repetir Senha";
             // 
@@ -170,7 +185,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1810, 768);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bg_interno;
+            this.ClientSize = new System.Drawing.Size(1234, 662);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbxConfirmaSenha);
