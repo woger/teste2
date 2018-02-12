@@ -12,6 +12,7 @@ namespace GerenciadorPalestras
 {
     public partial class FormPalestrante : Form
     {
+        public static System.Timers.Timer aTimer = new System.Timers.Timer();
         int ID = 0;
 
         public FormPalestrante()
@@ -35,8 +36,8 @@ namespace GerenciadorPalestras
                 try
                 {
                     new PalestranteDAO().Excluir(this.ID);
-
-                    MessageBox.Show("Palestrante excluído com sucesso");
+                    MensagemSucesso("Palestrante excluído com sucesso");
+                    //MessageBox.Show("Palestrante excluído com sucesso");
                     ClearData();
                     this.MostrarDados();
                 }
@@ -53,6 +54,22 @@ namespace GerenciadorPalestras
             }
         }
 
+        void MensagemSucesso(string texto)
+        {
+            lblDadosSalvos.Text = texto;
+            lblDadosSalvos.Visible = true;
+
+            aTimer.Elapsed += aTimer_Elapsed;
+            aTimer.Interval = 2000; //milisecunde
+            aTimer.Enabled = true;
+        }
+
+        void aTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            aTimer.Enabled = false;
+            this.Invoke(new MethodInvoker(() => lblDadosSalvos.Visible = false));
+        }
+
         private void ClearData()
         {
             tbxPalestrante.Text = string.Empty;
@@ -64,7 +81,8 @@ namespace GerenciadorPalestras
             if (ID != 0 && !String.IsNullOrEmpty(tbxPalestrante.Text))
             {
                 new PalestranteDAO().Atualizar(this.ID, tbxPalestrante.Text);
-                MessageBox.Show("Palestrante atualizado com sucesso");
+                MensagemSucesso("Palestrante atualizado com sucesso");
+                //MessageBox.Show("Palestrante atualizado com sucesso");
                 ClearData();
                 this.MostrarDados();
             }
@@ -80,7 +98,8 @@ namespace GerenciadorPalestras
             if (!String.IsNullOrEmpty(tbxPalestrante.Text))
             {
                 new PalestranteDAO().Inserir(tbxPalestrante.Text.Trim());
-                MessageBox.Show("Palestrante incluído com sucesso");
+                MensagemSucesso("Palestrante incluído com sucesso");
+                //MessageBox.Show("Palestrante incluído com sucesso");
                 this.MostrarDados();
                 ClearData();
             }
