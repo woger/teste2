@@ -23,7 +23,8 @@ namespace GerenciadorPalestras
             {
                 tbxNomeEvento.Text = evento.Nome;
                 tbxFileName.Text = evento.PathFile;
-                pictureBox1.Image = new Bitmap(evento.PathFile);
+                if(!String.IsNullOrEmpty(evento.PathFile))
+                    pictureBox1.Image = new Bitmap(evento.PathFile);
                 this.ID = evento.Codigo;
                 foreach (DateTime data in evento.Datas)
                     listBox1.Items.Add(data.ToString("dd/MM/yyyy"));

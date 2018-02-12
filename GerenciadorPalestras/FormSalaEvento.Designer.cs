@@ -130,7 +130,7 @@
             // lblDadosSalvos
             // 
             this.lblDadosSalvos.AutoSize = true;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(658, 310);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(234, 341);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(140, 13);
             this.lblDadosSalvos.TabIndex = 8;
@@ -143,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bg_interno;
             this.ClientSize = new System.Drawing.Size(1234, 662);
+            this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExcluir);

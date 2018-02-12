@@ -128,7 +128,7 @@
             // lblDadosSalvos
             // 
             this.lblDadosSalvos.AutoSize = true;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(636, 309);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(241, 335);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
             this.lblDadosSalvos.TabIndex = 14;
