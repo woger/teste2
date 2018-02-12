@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxNomeSala = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblDadosSalvos = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,11 +123,22 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Salas Cadastradas";
             // 
+            // lblDadosSalvos
+            // 
+            this.lblDadosSalvos.AutoSize = true;
+            this.lblDadosSalvos.Location = new System.Drawing.Point(658, 310);
+            this.lblDadosSalvos.Name = "lblDadosSalvos";
+            this.lblDadosSalvos.Size = new System.Drawing.Size(140, 13);
+            this.lblDadosSalvos.TabIndex = 8;
+            this.lblDadosSalvos.Text = "Dados Salvos com Sucesso";
+            this.lblDadosSalvos.Visible = false;
+            // 
             // FormSalaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1394, 771);
+            this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExcluir);
@@ -153,5 +167,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDadosSalvos;
+        private System.Windows.Forms.Timer timer1;
     }
 }

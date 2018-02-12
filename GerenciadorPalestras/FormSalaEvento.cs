@@ -12,6 +12,8 @@ namespace GerenciadorPalestras
 {
     public partial class FormSalaEvento : Form
     {
+
+        public static System.Timers.Timer aTimer = new System.Timers.Timer();
         int ID = 0;
         public FormSalaEvento()
         {
@@ -32,7 +34,8 @@ namespace GerenciadorPalestras
             if (!String.IsNullOrEmpty(tbxNomeSala.Text))
             {
                 new SalaDAO().Inserir(tbxNomeSala.Text.Trim());
-                MessageBox.Show("Sala incluída com sucesso");
+                //MessageBox.Show("Sala incluída com sucesso");
+                MensagemSucesso("Sala incluída com sucesso");
                 this.MostrarDados();
                 ClearData();
             }
@@ -43,12 +46,29 @@ namespace GerenciadorPalestras
             }
         }
 
+        void MensagemSucesso(string texto)
+        {
+            lblDadosSalvos.Text = texto;
+            lblDadosSalvos.Visible = true;
+
+            aTimer.Elapsed += aTimer_Elapsed;
+            aTimer.Interval = 2000; //milisecunde
+            aTimer.Enabled = true;
+        }
+
+        void aTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            aTimer.Enabled = false;
+            this.Invoke(new MethodInvoker(() => lblDadosSalvos.Visible = false));
+        }
+
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             if (ID != 0 && !String.IsNullOrEmpty(tbxNomeSala.Text))
             {
                 new SalaDAO().Atualizar(this.ID, tbxNomeSala.Text);
-                MessageBox.Show("Sala atualizada com sucesso");
+                //MessageBox.Show("Sala atualizada com sucesso");
+                MensagemSucesso("Sala atualizada com sucesso");
                 ClearData();
                 this.MostrarDados();
             }
@@ -67,7 +87,8 @@ namespace GerenciadorPalestras
                 {
                     new SalaDAO().Excluir(this.ID);
 
-                    MessageBox.Show("Sala excluída com sucesso");
+                    //MessageBox.Show("Sala excluída com sucesso");
+                    MensagemSucesso("Sala excluída com sucesso");
                     ClearData();
                     this.MostrarDados();
                 }

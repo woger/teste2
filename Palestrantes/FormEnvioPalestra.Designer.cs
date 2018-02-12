@@ -124,9 +124,9 @@
             this.lblNomeArquivo.AutoSize = true;
             this.lblNomeArquivo.Location = new System.Drawing.Point(421, 273);
             this.lblNomeArquivo.Name = "lblNomeArquivo";
-            this.lblNomeArquivo.Size = new System.Drawing.Size(35, 13);
+            this.lblNomeArquivo.Size = new System.Drawing.Size(86, 13);
             this.lblNomeArquivo.TabIndex = 9;
-            this.lblNomeArquivo.Text = "label6";
+            this.lblNomeArquivo.Text = "Nenhum Arquivo";
             // 
             // label6
             // 

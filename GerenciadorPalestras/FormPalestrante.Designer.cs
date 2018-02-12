@@ -36,6 +36,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblDadosSalvos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,11 +121,22 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Palestrantes Cadastrados";
             // 
+            // lblDadosSalvos
+            // 
+            this.lblDadosSalvos.AutoSize = true;
+            this.lblDadosSalvos.Location = new System.Drawing.Point(636, 309);
+            this.lblDadosSalvos.Name = "lblDadosSalvos";
+            this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
+            this.lblDadosSalvos.TabIndex = 14;
+            this.lblDadosSalvos.Text = "label4";
+            this.lblDadosSalvos.Visible = false;
+            // 
             // FormPalestrante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1394, 771);
+            this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExcluir);
@@ -153,5 +165,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDadosSalvos;
     }
 }
