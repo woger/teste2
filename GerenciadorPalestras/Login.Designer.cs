@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +39,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(614, 460);
+            this.button1.Location = new System.Drawing.Point(556, 458);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 29);
             this.button1.TabIndex = 3;
@@ -54,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(505, 396);
+            this.label1.Location = new System.Drawing.Point(447, 395);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 1;
@@ -66,7 +65,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(684, 396);
+            this.label2.Location = new System.Drawing.Point(625, 395);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 2;
@@ -75,7 +74,7 @@
             // tbxLogin
             // 
             this.tbxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxLogin.Location = new System.Drawing.Point(504, 415);
+            this.tbxLogin.Location = new System.Drawing.Point(446, 413);
             this.tbxLogin.MaxLength = 20;
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(172, 20);
@@ -84,7 +83,7 @@
             // tbxSenha
             // 
             this.tbxSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxSenha.Location = new System.Drawing.Point(682, 415);
+            this.tbxSenha.Location = new System.Drawing.Point(624, 413);
             this.tbxSenha.MaxLength = 10;
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.PasswordChar = '*';
@@ -96,9 +95,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(94)))), ((int)(((byte)(166)))));
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1234, 662);
+            this.ClientSize = new System.Drawing.Size(1234, 661);
             this.Controls.Add(this.tbxSenha);
             this.Controls.Add(this.tbxLogin);
             this.Controls.Add(this.label2);

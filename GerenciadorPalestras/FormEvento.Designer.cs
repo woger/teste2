@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEvento));
             this.label1 = new System.Windows.Forms.Label();
             this.tbxNomeEvento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,7 +99,7 @@
             // 
             // btnBuscarBanner
             // 
-            this.btnBuscarBanner.Location = new System.Drawing.Point(980, 216);
+            this.btnBuscarBanner.Location = new System.Drawing.Point(1019, 217);
             this.btnBuscarBanner.Name = "btnBuscarBanner";
             this.btnBuscarBanner.Size = new System.Drawing.Size(183, 23);
             this.btnBuscarBanner.TabIndex = 5;
@@ -123,7 +122,7 @@
             this.tbxDataEvento.Location = new System.Drawing.Point(190, 278);
             this.tbxDataEvento.Mask = "00/00/0000";
             this.tbxDataEvento.Name = "tbxDataEvento";
-            this.tbxDataEvento.Size = new System.Drawing.Size(78, 20);
+            this.tbxDataEvento.Size = new System.Drawing.Size(120, 20);
             this.tbxDataEvento.TabIndex = 2;
             // 
             // pictureBox1
@@ -137,7 +136,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(418, 517);
+            this.btnSalvar.Location = new System.Drawing.Point(30, 533);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(280, 23);
             this.btnSalvar.TabIndex = 6;
@@ -148,7 +147,7 @@
             // tbxFileName
             // 
             this.tbxFileName.Enabled = false;
-            this.tbxFileName.Location = new System.Drawing.Point(702, 218);
+            this.tbxFileName.Location = new System.Drawing.Point(741, 219);
             this.tbxFileName.Name = "tbxFileName";
             this.tbxFileName.Size = new System.Drawing.Size(272, 20);
             this.tbxFileName.TabIndex = 11;
@@ -179,8 +178,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1234, 662);
+            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
+            this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnExcluirData);
             this.Controls.Add(this.tbxFileName);

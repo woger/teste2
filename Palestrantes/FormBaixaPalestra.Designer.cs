@@ -58,7 +58,7 @@
             // 
             this.ddlData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlData.FormattingEnabled = true;
-            this.ddlData.Location = new System.Drawing.Point(281, 255);
+            this.ddlData.Location = new System.Drawing.Point(190, 220);
             this.ddlData.Name = "ddlData";
             this.ddlData.Size = new System.Drawing.Size(402, 21);
             this.ddlData.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.ddlSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSala.FormattingEnabled = true;
-            this.ddlSala.Location = new System.Drawing.Point(281, 313);
+            this.ddlSala.Location = new System.Drawing.Point(190, 278);
             this.ddlSala.Name = "ddlSala";
             this.ddlSala.Size = new System.Drawing.Size(402, 21);
             this.ddlSala.TabIndex = 3;
@@ -77,7 +77,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(137, 258);
+            this.label2.Location = new System.Drawing.Point(46, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 4;
@@ -88,7 +88,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(137, 316);
+            this.label3.Location = new System.Drawing.Point(46, 281);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 5;
@@ -99,7 +99,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(137, 369);
+            this.label4.Location = new System.Drawing.Point(46, 334);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 15);
             this.label4.TabIndex = 6;
@@ -109,14 +109,14 @@
             // 
             this.ddlPalestrante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlPalestrante.FormattingEnabled = true;
-            this.ddlPalestrante.Location = new System.Drawing.Point(281, 366);
+            this.ddlPalestrante.Location = new System.Drawing.Point(190, 331);
             this.ddlPalestrante.Name = "ddlPalestrante";
             this.ddlPalestrante.Size = new System.Drawing.Size(402, 21);
             this.ddlPalestrante.TabIndex = 7;
             // 
             // btnBaixarPorData
             // 
-            this.btnBaixarPorData.Location = new System.Drawing.Point(722, 254);
+            this.btnBaixarPorData.Location = new System.Drawing.Point(631, 219);
             this.btnBaixarPorData.Name = "btnBaixarPorData";
             this.btnBaixarPorData.Size = new System.Drawing.Size(103, 23);
             this.btnBaixarPorData.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             // btnBaixarPorSala
             // 
-            this.btnBaixarPorSala.Location = new System.Drawing.Point(722, 312);
+            this.btnBaixarPorSala.Location = new System.Drawing.Point(631, 277);
             this.btnBaixarPorSala.Name = "btnBaixarPorSala";
             this.btnBaixarPorSala.Size = new System.Drawing.Size(103, 23);
             this.btnBaixarPorSala.TabIndex = 9;
@@ -136,7 +136,7 @@
             // 
             // btnBaixarPorHorario
             // 
-            this.btnBaixarPorHorario.Location = new System.Drawing.Point(722, 365);
+            this.btnBaixarPorHorario.Location = new System.Drawing.Point(631, 330);
             this.btnBaixarPorHorario.Name = "btnBaixarPorHorario";
             this.btnBaixarPorHorario.Size = new System.Drawing.Size(103, 23);
             this.btnBaixarPorHorario.TabIndex = 10;
@@ -146,7 +146,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 450);
+            this.button1.Location = new System.Drawing.Point(190, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(215, 23);
             this.button1.TabIndex = 11;
@@ -158,8 +158,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Palestrantes.Properties.Resources.bg_interno;
-            this.ClientSize = new System.Drawing.Size(1234, 662);
+            this.BackgroundImage = global::Palestrantes.Properties.Resources.bgInterno;
+            this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBaixarPorHorario);
             this.Controls.Add(this.btnBaixarPorSala);

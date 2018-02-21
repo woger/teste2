@@ -61,8 +61,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bg_interno;
-            this.ClientSize = new System.Drawing.Size(1234, 662);
+            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
+            this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox1);
             this.Name = "FormAjuda";
