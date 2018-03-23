@@ -27,3 +27,4 @@ C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nov
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Login.resources
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Properties.Resources.resources
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.csproj.GenerateResource.Cache
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormAjuda.resources

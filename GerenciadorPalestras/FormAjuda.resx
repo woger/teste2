@@ -118,18 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Para o funcionamento correto da solução, orientamos que realize o compartilhamento da pasta de instalação da aplicação
+    <value>NA APLICACAO CLIENTE UTILIZE AS SEGUINTES CREDENCIAIS:
 
-Deverá compartilhar o diretório @diretorio, com permissão de leitura e escrita.
-
-Para os "Palestrantes" utilizarem o sistema, deverão utilizar as seguintes credenciais:
-
-LOGIN: PALESTRANTE
+LOGIN: MEDIADESK
 SENHA: @PALESTRANTE
 
 Para os "Monitores" utilizarem o sistema, deverão utilizar as seguintes credenciais:
 
-LOGIN: MONITOR
+LOGIN: HOUSEMIX
 SENHA: @MONITOR</value>
   </data>
 </root>

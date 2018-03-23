@@ -5,3 +5,8 @@ C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nov
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.csproj.GenerateResource.Cache
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.exe
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.pdb
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\bin\x86\Debug\Settings.dll
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\bin\x86\Debug\Settings.pdb
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.FormBaixaPalestra.resources
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.FormConfiguracaoRede.resources
+C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.FormEnvioPalestra.resources

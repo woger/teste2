@@ -64,9 +64,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.label1.Location = new System.Drawing.Point(20, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 29);
+            this.label1.Size = new System.Drawing.Size(370, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MONTE A AGENDA DO EVENTO";
+            this.label1.Text = "PROGRAMAÇÃO DO EVENTO";
             // 
             // label2
             // 

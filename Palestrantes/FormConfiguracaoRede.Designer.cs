@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxIP = new System.Windows.Forms.MaskedTextBox();
-            this.tbxLoginRede = new System.Windows.Forms.TextBox();
             this.tbxSenhaRede = new System.Windows.Forms.MaskedTextBox();
             this.btnTestarConexao = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.ddlUsuarios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,13 +78,6 @@
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(358, 20);
             this.tbxIP.TabIndex = 3;
-            // 
-            // tbxLoginRede
-            // 
-            this.tbxLoginRede.Location = new System.Drawing.Point(356, 263);
-            this.tbxLoginRede.Name = "tbxLoginRede";
-            this.tbxLoginRede.Size = new System.Drawing.Size(226, 20);
-            this.tbxLoginRede.TabIndex = 4;
             // 
             // tbxSenhaRede
             // 
@@ -128,17 +121,25 @@
             this.linkLabel1.Text = "Exibir Exemplo";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // ddlUsuarios
+            // 
+            this.ddlUsuarios.FormattingEnabled = true;
+            this.ddlUsuarios.Location = new System.Drawing.Point(356, 259);
+            this.ddlUsuarios.Name = "ddlUsuarios";
+            this.ddlUsuarios.Size = new System.Drawing.Size(226, 21);
+            this.ddlUsuarios.TabIndex = 12;
+            // 
             // FormConfiguracaoRede
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Palestrantes.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
+            this.Controls.Add(this.ddlUsuarios);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTestarConexao);
             this.Controls.Add(this.tbxSenhaRede);
-            this.Controls.Add(this.tbxLoginRede);
             this.Controls.Add(this.tbxIP);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -156,11 +157,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox tbxIP;
-        private System.Windows.Forms.TextBox tbxLoginRede;
         private System.Windows.Forms.MaskedTextBox tbxSenhaRede;
         private System.Windows.Forms.Button btnTestarConexao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ComboBox ddlUsuarios;
     }
 }
 

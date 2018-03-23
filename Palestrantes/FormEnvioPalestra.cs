@@ -116,55 +116,62 @@ namespace Palestrantes
             }
 
             int keyAgenda = ((KeyValuePair<int, string>)ddlTema.SelectedItem).Key;
-
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Multiselect = true;
-            if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
+            try
             {
-
-                //string nomeArquivo = dialog.SafeFileName;
-                AgendaEvento agenda = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
-                if (agenda != null)
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;
+                if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
                 {
-                    string[] arquivosSelecionados = dialog.FileNames;
-                    for (int i = 0; i < arquivosSelecionados.Length; i++)
+
+                    //string nomeArquivo = dialog.SafeFileName;
+                    AgendaEvento agenda = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
+                    if (agenda != null)
                     {
-                        FileStream arquivoUsuario = File.OpenRead(arquivosSelecionados[i]);
-                        FileStream arquivoSaida = File.Create(agenda.PathPalestra(this.pathDiretorio) + @"/ " + Path.GetFileName(arquivosSelecionados[i]));
-                        int b;
+                        string[] arquivosSelecionados = dialog.FileNames;
+                        for (int i = 0; i < arquivosSelecionados.Length; i++)
+                        {
+                            FileStream arquivoUsuario = File.OpenRead(arquivosSelecionados[i]);
+                            FileStream arquivoSaida = File.Create(agenda.PathPalestra(this.pathDiretorio) + @"/ " + Path.GetFileName(arquivosSelecionados[i]));
+                            int b;
 
-                        while ((b = arquivoUsuario.ReadByte()) > -1)
-                            arquivoSaida.WriteByte((byte)b);
+                            while ((b = arquivoUsuario.ReadByte()) > -1)
+                                arquivoSaida.WriteByte((byte)b);
 
-                        arquivoSaida.Flush();
-                        arquivoSaida.Close();
-                        arquivoUsuario.Close();
+                            arquivoSaida.Flush();
+                            arquivoSaida.Close();
+                            arquivoUsuario.Close();
+                        }
+
+
+
+                        //new AgendaEventoDAO().AtualizarArquivoPalestra(agenda.Codigo, dialog.SafeFileName, this.pathDiretorio);
+                        ddlTema_SelectedIndexChanged(null, null);
+                        MessageBox.Show("Arquivo(s) enviado(s) com sucesso");
                     }
 
-                    
+                    //using (var fileStream = File.Create(agenda.PathPalestra(this.pathDiretorio) + @"/ " + nomeArquivo))
+                    ////using (var fileStream = new FileStream(agenda.PathPalestra(this.pathDiretorio) + @"/ " + nomeArquivo))
+                    //{
 
-                    //new AgendaEventoDAO().AtualizarArquivoPalestra(agenda.Codigo, dialog.SafeFileName, this.pathDiretorio);
-                    ddlTema_SelectedIndexChanged(null, null);
-                    MessageBox.Show("Arquivo(s) enviado(s) com sucesso");
+                    //    StreamWriter writer = new StreamWriter(fileStream); // do anything you want, e.g. read it
+                    //    //using (StreamWriter writer = new StreamWriter(new FileStream(path, FileMode.Open), new UTF8Encoding())) // do anything you want, e.g. read it
+                    //    {
+                    //        byte[] bytes = new byte[fileStream.Length];
+                    //        fileStream.Read(bytes, 0, (int)fileStream.Length);
+                    //        writer.Write(bytes, 0, bytes.Length);
+
+                    //        //fileStream.Write(reader.)
+                    //        //reader.InputStream.Seek(0, SeekOrigin.Begin);
+                    //        //reader.InputStream.CopyTo(fileStream);
+                    //    }
+                    //}
+
                 }
-
-                //using (var fileStream = File.Create(agenda.PathPalestra(this.pathDiretorio) + @"/ " + nomeArquivo))
-                ////using (var fileStream = new FileStream(agenda.PathPalestra(this.pathDiretorio) + @"/ " + nomeArquivo))
-                //{
-
-                //    StreamWriter writer = new StreamWriter(fileStream); // do anything you want, e.g. read it
-                //    //using (StreamWriter writer = new StreamWriter(new FileStream(path, FileMode.Open), new UTF8Encoding())) // do anything you want, e.g. read it
-                //    {
-                //        byte[] bytes = new byte[fileStream.Length];
-                //        fileStream.Read(bytes, 0, (int)fileStream.Length);
-                //        writer.Write(bytes, 0, bytes.Length);
-
-                //        //fileStream.Write(reader.)
-                //        //reader.InputStream.Seek(0, SeekOrigin.Begin);
-                //        //reader.InputStream.CopyTo(fileStream);
-                //    }
-                //}
-
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show("Ocorreu um erro: O sistema está sem permissão de escrita no diretório informado. Por favor, tente novamente após a autorização");
+                return;
             }
         }
 
@@ -177,6 +184,7 @@ namespace Palestrantes
             }
 
             int keyAgenda = ((KeyValuePair<int, string>)ddlTema.SelectedItem).Key;
+
             AgendaEvento agenda = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
             if (agenda != null)
             {

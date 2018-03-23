@@ -59,7 +59,7 @@ namespace GerenciadorPalestras
             {
                 Dictionary<int, string> dictionaryPalestrantes = new Dictionary<int, string>();
                 for (int i = 0; i < palestrantes.Count; i++)
-                    dictionaryPalestrantes.Add(salasFiltro[i].Codigo, salasFiltro[i].Nome);
+                    dictionaryPalestrantes.Add(palestrantes[i].Codigo, palestrantes[i].Nome);
                 ddlPalestrante.DataSource = new BindingSource(dictionaryPalestrantes, null);
                 ddlPalestrante.DisplayMember = "Value";
                 ddlPalestrante.ValueMember = "Key";

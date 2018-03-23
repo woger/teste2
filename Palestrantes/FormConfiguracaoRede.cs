@@ -18,9 +18,19 @@ namespace Palestrantes
 {
     public partial class FormConfiguracaoRede : Form
     {
+        public string CAMINHO_REDE = @"\\10.10.10.10\SERVER";
         public FormConfiguracaoRede()
         {
             InitializeComponent();
+
+            Dictionary<int, string> dictionaryUsuarios = new Dictionary<int, string>();
+
+            dictionaryUsuarios.Add(2, "MEDIADESK");
+            dictionaryUsuarios.Add(3, "HOUSEMIX");
+            ddlUsuarios.DataSource = new BindingSource(dictionaryUsuarios, null);
+            ddlUsuarios.DisplayMember = "Value";
+            ddlUsuarios.ValueMember = "Key";
+            ddlUsuarios.SelectedIndex = -1;
 
         }
 
@@ -29,14 +39,15 @@ namespace Palestrantes
 
 
             //return di.GetFiles(pattern);
-            if (String.IsNullOrEmpty(tbxIP.Text))
+            if (!String.IsNullOrEmpty(tbxIP.Text))
             {
-                MessageBox.Show("Preencha o IP da máquina servidora");
-                return;
+                //MessageBox.Show("Preencha o IP da máquina servidora");
+                //return;
+                CAMINHO_REDE = tbxIP.Text;
             }
 
 
-            if (String.IsNullOrEmpty(tbxLoginRede.Text))
+            if (ddlUsuarios.SelectedIndex == -1)
             {
                 MessageBox.Show("Preencha o nome do usuário da máquina servidora");
                 return;
@@ -56,13 +67,13 @@ namespace Palestrantes
             //Procura o arquivo de BD para verificar se a autenticação é válida
             try
             {
-                Usuario usuario = new UsuarioDAO().LoginRemoto(tbxLoginRede.Text, tbxSenhaRede.Text, tbxIP.Text);
+                Usuario usuario = new UsuarioDAO().LoginRemoto(((KeyValuePair<int, string>)ddlUsuarios.SelectedItem).Value, tbxSenhaRede.Text, this.CAMINHO_REDE);
 
                 if (usuario != null)
                 {
                     if (usuario.Perfil == (int)EnumPerfil.MONITOR)
                     {
-                        FormBaixaPalestra formEvento = new FormBaixaPalestra(tbxIP.Text);
+                        FormBaixaPalestra formEvento = new FormBaixaPalestra(this.CAMINHO_REDE);
 
                         //formEvento.MdiParent = this;
                         //formEvento.ControlBox = false;
@@ -74,7 +85,7 @@ namespace Palestrantes
                     //Process.Start(tbxIP.Text + @"\PALESTRAS\");
                     else
                     {
-                        FormEnvioPalestra formEvento = new FormEnvioPalestra(tbxIP.Text);
+                        FormEnvioPalestra formEvento = new FormEnvioPalestra(this.CAMINHO_REDE);
 
                         //formEvento.MdiParent = this;
                         //formEvento.ControlBox = false;
@@ -97,10 +108,10 @@ namespace Palestrantes
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show(@"Exemplo: \\servidor\nome do compartilhamento.     \\PC-RECEPCAO\GERENCIADOR");
+        //private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
+        //    MessageBox.Show(@"Exemplo: \\servidor\nome do compartilhamento.     \\PC-RECEPCAO\GERENCIADOR");
 
-        }
+        //}
     }
 }

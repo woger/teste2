@@ -170,9 +170,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.label4.Location = new System.Drawing.Point(25, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(403, 29);
+            this.label4.Size = new System.Drawing.Size(260, 29);
             this.label4.TabIndex = 13;
-            this.label4.Text = "PARAMETRIZAÇÃO DO EVENTO";
+            this.label4.Text = "DADOS DO EVENTO";
             // 
             // FormEvento
             // 
