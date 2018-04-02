@@ -49,7 +49,7 @@ namespace Palestrantes
 
             if (ddlUsuarios.SelectedIndex == -1)
             {
-                MessageBox.Show("Preencha o nome do usuário da máquina servidora");
+                MessageBox.Show("Preencha o nome do usuário");
                 return;
             }
 
@@ -57,7 +57,7 @@ namespace Palestrantes
 
             if (String.IsNullOrEmpty(tbxSenhaRede.Text))
             {
-                MessageBox.Show("Preencha o a senha do usuário da máquina servidora ");
+                MessageBox.Show("Informe a senha");
                 return;
             }
 

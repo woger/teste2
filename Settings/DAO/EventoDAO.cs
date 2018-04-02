@@ -41,8 +41,8 @@ namespace Settings.DAO
                         cmd.Connection = oConn;
                         cmd.Parameters.Add("@data", OleDbType.Date).Value = pDatas[i];
                         cmd.ExecuteNonQuery();
-                        if(!System.IO.Directory.Exists(ArquivoBD.DIRETORIO_INSTALACAO + @"\PALESTRAS\" + ArquivoBD.FORMATARDATA_DIRETORIO(pDatas[i]))) //Se não existe a pasta 
-                            System.IO.Directory.CreateDirectory(ArquivoBD.DIRETORIO_INSTALACAO + @"\PALESTRAS\" + ArquivoBD.FORMATARDATA_DIRETORIO(pDatas[i]));//Cria
+                        if(!System.IO.Directory.Exists(ArquivoBD.DIRETORIO_INSTALACAO + @"\PALESTRAS\")) //Se não existe a pasta 
+                            System.IO.Directory.CreateDirectory(ArquivoBD.DIRETORIO_INSTALACAO + @"\PALESTRAS\");//Cria
                     }
                 }
 

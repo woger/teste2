@@ -11,12 +11,12 @@ namespace Settings.DAO
     {
         public SalaDAO() { }
 
-        public List<Sala> ListarTodos()
+        public List<Sala> ListarTodos(string pPath)
         {
             List<Sala> salas = new List<Sala>();
             //Sala usuario = null;
             DataTable resultado = new DataTable();
-            using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath)))
             {
                 oConn.Open();
 

@@ -30,7 +30,7 @@ namespace GerenciadorPalestras
             ddlData.DataSource = new EventoDAO().DatasEvento(null);
             ddlDataFiltro.DataSource = new EventoDAO().DatasEvento(null);
 
-            List<Sala> salas = new SalaDAO().ListarTodos().OrderBy(s => s.Nome).ToList();
+            List<Sala> salas = new SalaDAO().ListarTodos(string.Empty).OrderBy(s => s.Nome).ToList();
             if (salas.Count > 0)
             {
                 Dictionary<int, string> dictionarySalas = new Dictionary<int, string>();
@@ -42,7 +42,7 @@ namespace GerenciadorPalestras
                 ddlSala.SelectedIndex = -1;
             }
 
-            List<Sala> salasFiltro = new SalaDAO().ListarTodos().OrderBy(s => s.Nome).ToList();
+            List<Sala> salasFiltro = new SalaDAO().ListarTodos(string.Empty).OrderBy(s => s.Nome).ToList();
             if (salasFiltro.Count > 0)
             {
                 Dictionary<int, string> dictionarySalasFiltro = new Dictionary<int, string>();
@@ -55,7 +55,7 @@ namespace GerenciadorPalestras
             }
             //ddlSalaFiltro.DataSource = new SalaDAO().ListarTodos();
             List<Palestrante> palestrantes = new PalestranteDAO().ListarTodos();
-            if (salasFiltro.Count > 0)
+            if (palestrantes.Count > 0)
             {
                 Dictionary<int, string> dictionaryPalestrantes = new Dictionary<int, string>();
                 for (int i = 0; i < palestrantes.Count; i++)

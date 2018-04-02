@@ -24,9 +24,12 @@ namespace GerenciadorPalestras
 
         public void MostrarDados()
         {
-            dataGridView1.DataSource = new SalaDAO().ListarTodos();
+            dataGridView1.DataSource = new SalaDAO().ListarTodos(string.Empty);
             dataGridView1.Columns["Codigo"].Visible = false;
             tbxNomeSala.Focus();
+
+            this.btnAtualizar.Visible = this.btnExcluir.Visible = false;
+            this.btnIncluir.Visible = true;
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -116,6 +119,17 @@ namespace GerenciadorPalestras
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             tbxNomeSala.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             tbxNomeSala.Focus();
+
+            if (this.ID == 0)
+            {
+                this.btnAtualizar.Visible = this.btnExcluir.Visible = false;
+                this.btnIncluir.Visible = true;
+            }
+            else
+            {
+                this.btnAtualizar.Visible = this.btnExcluir.Visible = true;
+                this.btnIncluir.Visible = false;
+            }
         }
     }
 }

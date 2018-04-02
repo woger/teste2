@@ -35,7 +35,6 @@
             this.tbxSenhaRede = new System.Windows.Forms.MaskedTextBox();
             this.btnTestarConexao = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.ddlUsuarios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -57,9 +56,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 266);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(308, 15);
+            this.label2.Size = new System.Drawing.Size(119, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Informe seu login de palestrante ou de Monitor";
+            this.label2.Text = "Informe seu login";
             // 
             // label3
             // 
@@ -109,18 +108,6 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "CONFIGURAÇÃO INICIAL PARA AUTENTICAÇÃO";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.linkLabel1.Location = new System.Drawing.Point(39, 239);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(75, 13);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Exibir Exemplo";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // ddlUsuarios
             // 
             this.ddlUsuarios.FormattingEnabled = true;
@@ -136,7 +123,6 @@
             this.BackgroundImage = global::Palestrantes.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.ddlUsuarios);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTestarConexao);
             this.Controls.Add(this.tbxSenhaRede);
@@ -160,7 +146,6 @@
         private System.Windows.Forms.MaskedTextBox tbxSenhaRede;
         private System.Windows.Forms.Button btnTestarConexao;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ComboBox ddlUsuarios;
     }
 }

@@ -45,7 +45,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = 'PALESTRANTE';"))//this works and creates an empty .dbf file
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = 'MEDIADESK';"))//this works and creates an empty .dbf file
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
@@ -66,7 +66,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = 'MONITOR';"))//this works and creates an empty .dbf file
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM USUARIO.DBF WHERE [LOGIN] = 'HOUSEMIX';"))//this works and creates an empty .dbf file
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);

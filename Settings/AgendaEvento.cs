@@ -71,9 +71,9 @@ namespace Settings
         {
             //ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + ArquivoBD.FORMATARDATA_DIRETORIO(Data) + @"\" + sala.Nome + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome()
             if (String.IsNullOrEmpty(path))            
-                return Settings.Configuracoes.ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + Settings.Configuracoes.ArquivoBD.FORMATARDATA_DIRETORIO(this.Data) + @"\" + this.Sala.Nome + @"\" + this.Hora.Replace(":", "-") + @" - " + this.Palestrante.NomeSobreNome();
+                return Settings.Configuracoes.ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS +  @"\" + this.Sala.Nome + @"\" + Settings.Configuracoes.ArquivoBD.FORMATARDATA_DIRETORIO(this.Data) + @"\" + this.Hora.Replace(":", "-") + @" - " + this.Palestrante.NomeSobreNome();
             else
-                return path + @"\PALESTRAS\" + Settings.Configuracoes.ArquivoBD.FORMATARDATA_DIRETORIO(this.Data) + @"\" + this.Sala.Nome + @"\" + this.Hora.Replace(":", "-") + @" - " + this.Palestrante.NomeSobreNome();
+                return path + @"\PALESTRAS\" +  @"\" + this.Sala.Nome + @"\" + Settings.Configuracoes.ArquivoBD.FORMATARDATA_DIRETORIO(this.Data) + @"\" + this.Hora.Replace(":", "-") + @" - " + this.Palestrante.NomeSobreNome();
             
         }
     }

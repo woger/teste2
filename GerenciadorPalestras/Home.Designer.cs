@@ -35,11 +35,6 @@
             this.palestrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.palestranteNoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quantitativoDeSalasPorEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quantitativoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relaçãoDePalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -50,7 +45,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.palestranteNoEventoToolStripMenuItem,
-            this.relatórioToolStripMenuItem,
             this.ajudaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -105,41 +99,6 @@
             this.palestranteNoEventoToolStripMenuItem.Text = "Palestrante no Evento";
             this.palestranteNoEventoToolStripMenuItem.Click += new System.EventHandler(this.palestranteNoEventoToolStripMenuItem_Click);
             // 
-            // relatórioToolStripMenuItem
-            // 
-            this.relatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quantitativoDeSalasPorEventoToolStripMenuItem,
-            this.quantitativoDeToolStripMenuItem,
-            this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem,
-            this.relaçãoDePalestrasToolStripMenuItem});
-            this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.relatórioToolStripMenuItem.Text = "Relatório ";
-            // 
-            // quantitativoDeSalasPorEventoToolStripMenuItem
-            // 
-            this.quantitativoDeSalasPorEventoToolStripMenuItem.Name = "quantitativoDeSalasPorEventoToolStripMenuItem";
-            this.quantitativoDeSalasPorEventoToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
-            this.quantitativoDeSalasPorEventoToolStripMenuItem.Text = "Quantitativo de Salas Por Evento";
-            // 
-            // quantitativoDeToolStripMenuItem
-            // 
-            this.quantitativoDeToolStripMenuItem.Name = "quantitativoDeToolStripMenuItem";
-            this.quantitativoDeToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
-            this.quantitativoDeToolStripMenuItem.Text = "Quantitativo de  Palestrante Por Evento";
-            // 
-            // relaçãoDePalestrantesXEventoXDiaToolStripMenuItem
-            // 
-            this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem.Name = "relaçãoDePalestrantesXEventoXDiaToolStripMenuItem";
-            this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
-            this.relaçãoDePalestrantesXEventoXDiaToolStripMenuItem.Text = "Relação de Palestrantes x Evento x Dia";
-            // 
-            // relaçãoDePalestrasToolStripMenuItem
-            // 
-            this.relaçãoDePalestrasToolStripMenuItem.Name = "relaçãoDePalestrasToolStripMenuItem";
-            this.relaçãoDePalestrasToolStripMenuItem.Size = new System.Drawing.Size(341, 22);
-            this.relaçãoDePalestrasToolStripMenuItem.Text = "Relação de Palestras sem Arquivo de Apresentação";
-            // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
@@ -183,11 +142,6 @@
         private System.Windows.Forms.ToolStripMenuItem palestrantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem palestranteNoEventoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quantitativoDeSalasPorEventoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quantitativoDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrantesXEventoXDiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relaçãoDePalestrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
     }

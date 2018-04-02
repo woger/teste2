@@ -15,7 +15,7 @@ namespace GerenciadorPalestras
         public Home()
         {
             InitializeComponent();
-            lblNomeUsuario.Text = "Bem-vindo " + HelperUsuario.UsuarioLogado().Nome;
+            //lblNomeUsuario.Text = "Bem-vindo " + HelperUsuario.UsuarioLogado().Nome;
             usuárioToolStripMenuItem.Visible = false; //Desabilitado para cadastros de novos usuários
         }
 
