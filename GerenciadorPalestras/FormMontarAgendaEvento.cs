@@ -18,11 +18,17 @@ namespace GerenciadorPalestras
         public FormMontarAgendaEvento()
         {
             InitializeComponent();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             CarregaDadosIniciais();
             this.WindowState = FormWindowState.Maximized;
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
+
+            Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            if (evento != null) // Se for edição
+            {
+                panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+            }
         }
 
         void CarregaDadosIniciais()

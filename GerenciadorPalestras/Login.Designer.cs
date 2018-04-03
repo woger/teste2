@@ -105,7 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(94)))), ((int)(((byte)(166)))));
-            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgLogin;
+            this.BackgroundImage = global::Server.Properties.Resources.bgLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1234, 681);
             this.Controls.Add(this.panelBanner);
@@ -116,7 +116,7 @@
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Formulário de Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

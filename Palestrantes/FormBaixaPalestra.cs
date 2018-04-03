@@ -19,13 +19,19 @@ namespace Palestrantes
         public FormBaixaPalestra()
         {
             InitializeComponent();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            
         }
 
         public FormBaixaPalestra(string path)
         {
             InitializeComponent();
             this.pathDiretorio = path;
+            Evento evento = new EventoDAO().VerificaExistenciaEvento(this.pathDiretorio);
+            if (evento != null) // Se for edição
+            {
+                panelBanner.BackgroundImage = new Bitmap(path + @"\" + evento.Arquivo);
+            }
             //List<AgendaEvento> agendas = new AgendaEventoDAO().ListarTodos(null, null, null, this.pathDiretorio);
             //ddlData.DataSource = agendas.Select(p => p.Data).Distinct().ToList();
             //ddlData.SelectedIndex = -1;
@@ -119,9 +125,9 @@ namespace Palestrantes
                 {
                     string[] arquivosPalestra = Directory.GetFiles(agendasData[i].PathPalestra(this.pathDiretorio));
                     for (int j = 0; j < arquivosPalestra.Length; j++)
-                        new AgendaEventoDAO().CriarPastasRemoto(this.pathDiretorio, agendasData[i].Data, agendasData[i].Sala.Codigo, agendasData[i].Palestrante.Codigo, agendasData[i].Hora, @"C:\", File.OpenRead(arquivosPalestra[j]), Path.GetFileName(arquivosPalestra[j]));
+                        new AgendaEventoDAO().CriarPastasRemoto(this.pathDiretorio, agendasData[i].Data, agendasData[i].Sala.Codigo, agendasData[i].Palestrante.Codigo, agendasData[i].Hora, @"C:\PALESTRA\", File.OpenRead(arquivosPalestra[j]), Path.GetFileName(arquivosPalestra[j]));
                 }
-                MessageBox.Show("Dados Salvos com sucesso");
+                MessageBox.Show(@"Dados Salvos com sucesso em C:\PALESTRA");
             //}
         }
 

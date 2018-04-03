@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorPalestras", "GerenciadorPalestras\GerenciadorPalestras.csproj", "{CB74614E-A042-4A4D-9DAB-FBDDA19E3101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "GerenciadorPalestras\Server.csproj", "{CB74614E-A042-4A4D-9DAB-FBDDA19E3101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palestrantes", "Palestrantes\Palestrantes.csproj", "{9F6F050F-7248-43BC-90C8-96B4270566D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Palestrantes\Client.csproj", "{9F6F050F-7248-43BC-90C8-96B4270566D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settings", "Settings\Settings.csproj", "{1F749FA5-E2DA-4FBB-9B3E-B14BE7EF81E8}"
 EndProject

@@ -1,4 +1,5 @@
-﻿using Settings.DAO;
+﻿using Settings;
+using Settings.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,12 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             MostrarDados();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
-            
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            if (evento != null) // Se for edição
+            {
+                panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+            }
         }
 
         public void MostrarDados()

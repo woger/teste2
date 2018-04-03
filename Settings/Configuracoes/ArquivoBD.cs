@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -124,6 +125,13 @@ namespace Settings.Configuracoes
                 }
                 catch { }
 
+                //SETA OS ARQUIVOS DO BD OCULTOS NO DIRETÓRIO
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\USUARIO.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\EVENTO.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\DATAS.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\SALAS.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\PALESTRA.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\SALA_PAL.DBF", FileAttributes.Hidden);
 
                 oConn.Close();
             }

@@ -17,15 +17,17 @@ namespace GerenciadorPalestras
         public FormEvento()
         {
             InitializeComponent();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             //Verifica se já existe evento
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if(evento != null) // Se for edição
             {
                 tbxNomeEvento.Text = evento.Nome;
                 tbxFileName.Text = evento.PathFile;
-                if(!String.IsNullOrEmpty(evento.PathFile))
-                    pictureBox1.Image = new Bitmap(evento.PathFile);
+                if (!String.IsNullOrEmpty(evento.PathFile))
+                {
+                    pictureBox1.Image = panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+                }
                 this.ID = evento.Codigo;
                 foreach (DateTime data in evento.Datas)
                     listBox1.Items.Add(data.ToString("dd/MM/yyyy"));
@@ -37,10 +39,20 @@ namespace GerenciadorPalestras
             openFileDialog1.Filter = "Arquivos Imagem | *.jpeg; *.jpg; *.png";
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+                pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
                 tbxFileName.Text = openFileDialog1.FileName;
             }
         }
+
+        private Image Resize(Image img, int iWidth, int iHeight)
+        {
+            Bitmap bmp = new Bitmap(iWidth, iHeight);
+            Graphics graphic = Graphics.FromImage((Image)bmp);
+            graphic.DrawImage(img, 0, 0, iWidth, iHeight);
+
+            return (Image)bmp;
+        }
+
 
         private void btnAddData_Click(object sender, EventArgs e)
         {

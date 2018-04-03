@@ -53,7 +53,7 @@
             // 
             this.ddlSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSala.FormattingEnabled = true;
-            this.ddlSala.Location = new System.Drawing.Point(108, 280);
+            this.ddlSala.Location = new System.Drawing.Point(374, 281);
             this.ddlSala.Name = "ddlSala";
             this.ddlSala.Size = new System.Drawing.Size(402, 21);
             this.ddlSala.TabIndex = 3;
@@ -64,7 +64,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(46, 281);
+            this.label3.Location = new System.Drawing.Point(275, 281);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 5;
@@ -72,7 +72,7 @@
             // 
             // btnBaixarPorSala
             // 
-            this.btnBaixarPorSala.Location = new System.Drawing.Point(213, 329);
+            this.btnBaixarPorSala.Location = new System.Drawing.Point(477, 336);
             this.btnBaixarPorSala.Name = "btnBaixarPorSala";
             this.btnBaixarPorSala.Size = new System.Drawing.Size(177, 23);
             this.btnBaixarPorSala.TabIndex = 9;
@@ -82,9 +82,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(190, 415);
+            this.button1.Location = new System.Drawing.Point(798, 281);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 23);
+            this.button1.Size = new System.Drawing.Size(142, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "Limpar Seleção";
             this.button1.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Palestrantes.Properties.Resources.bgInterno;
+            this.BackgroundImage = global::Client.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.button1);

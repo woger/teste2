@@ -155,9 +155,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
+            this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1234, 763);
+            this.ClientSize = new System.Drawing.Size(1234, 741);
             this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -170,7 +170,7 @@
             this.Controls.Add(this.panelBanner);
             this.Name = "FormSalaEvento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormSalaEvento";
+            this.Text = "Cadastro de Salas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

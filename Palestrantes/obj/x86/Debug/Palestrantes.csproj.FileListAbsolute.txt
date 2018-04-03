@@ -22,3 +22,15 @@ D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\
 D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.csproj.GenerateResource.Cache
 D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.exe
 D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\bin\x86\Debug\Palestrantes.exe
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\bin\x86\Debug\Palestrantes.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\bin\x86\Debug\Settings.dll
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\bin\x86\Debug\Settings.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.csprojResolveAssemblyReference.cache
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.FormBaixaPalestra.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.FormConfiguracaoRede.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.FormEnvioPalestra.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.Properties.Resources.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.csproj.GenerateResource.Cache
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.exe
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Palestrantes\obj\x86\Debug\Palestrantes.pdb

@@ -72,13 +72,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
-            this.ClientSize = new System.Drawing.Size(1234, 763);
+            this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
+            this.ClientSize = new System.Drawing.Size(1234, 741);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox1);
             this.Name = "FormAjuda";
-            this.Text = "FormAjuda";
+            this.Text = "Formulário de Ajuda";
             this.ResumeLayout(false);
             this.PerformLayout();
 

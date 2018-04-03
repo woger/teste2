@@ -1,5 +1,6 @@
 ﻿using Settings;
 using Settings.Configuracoes;
+using Settings.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,12 @@ namespace GerenciadorPalestras
             InitializeComponent();
             ArquivoBD.CriarArquivosBD();
             tbxLogin.Focus();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            if (evento != null) // Se for edição
+            {
+                panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

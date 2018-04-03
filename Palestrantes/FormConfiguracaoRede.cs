@@ -22,7 +22,7 @@ namespace Palestrantes
         public FormConfiguracaoRede()
         {
             InitializeComponent();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             Dictionary<int, string> dictionaryUsuarios = new Dictionary<int, string>();
 
             dictionaryUsuarios.Add(2, "MEDIADESK");
@@ -32,6 +32,12 @@ namespace Palestrantes
             ddlUsuarios.ValueMember = "Key";
             ddlUsuarios.SelectedIndex = -1;
 
+            ///TODO Descomentar na versão de produção
+            //Evento evento = new EventoDAO().VerificaExistenciaEvento(this.CAMINHO_REDE);
+            //if (evento != null) // Se for edição
+            //{
+            //    panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+            //}
         }
 
         private void btnTestarConexao_Click(object sender, EventArgs e)

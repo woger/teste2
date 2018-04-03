@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
+            this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 763);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.label7);

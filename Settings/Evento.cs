@@ -19,7 +19,7 @@ namespace Settings
         {
             get
             {
-                return ArquivoBD.DIRETORIO_INSTALACAO + @"\" + this.Arquivo;
+                return ArquivoBD.DIRETORIO_INSTALACAO +  this.Arquivo;
             }
         }
 

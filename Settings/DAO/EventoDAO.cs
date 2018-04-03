@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -18,6 +19,19 @@ namespace Settings.DAO
             {
                 oConn.Open();
                 OleDbCommand cmd = new OleDbCommand();
+
+                //Salva a imagem no diretório da app
+                if (System.IO.File.Exists(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName))
+                {
+                    string nomeArquivo = Path.GetFileNameWithoutExtension(pFileName);
+                    string extensao = Path.GetExtension(pFileName);
+                    pFileName = nomeArquivo + new Random(5).Next(0, 10).ToString() + extensao;
+                    pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);
+                }
+                else
+                    pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);
+
+
                 if (VerificaExistenciaEvento() == null)// Se não existe                
                     cmd.CommandText = @" INSERT INTO EVENTO.DBF (ID, NOME, FILE_NAME) 
                                                             VALUES (1, '" + pNomeEvento + "', '" + pFileName + "');";
@@ -46,8 +60,7 @@ namespace Settings.DAO
                     }
                 }
 
-                //Salva a imagem no diretório da app
-                pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);                
+                
             }
         }
 
@@ -71,6 +84,33 @@ namespace Settings.DAO
                         evento.Nome = resultado.Rows[0]["NOME"].ToString();
                         evento.Arquivo = resultado.Rows[0]["FILE_NAME"].ToString();
                         evento.Datas = this.DatasEvento(null);
+                        return evento;
+                    }
+                }
+                return evento;
+            }
+        }
+
+        public Evento VerificaExistenciaEvento(String path)
+        {
+            Evento evento = null;
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(path) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(path)))
+            {
+                oConn.Open();
+                DataTable resultado = new DataTable();
+                using (OleDbCommand cmd = new OleDbCommand(@" SELECT * FROM EVENTO.DBF"))//this works and creates an empty .dbf file
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                    {
+                        evento = new Evento();
+                        evento.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
+                        evento.Nome = resultado.Rows[0]["NOME"].ToString();
+                        evento.Arquivo = resultado.Rows[0]["FILE_NAME"].ToString();
+                        evento.Datas = this.DatasEvento(path);
                         return evento;
                     }
                 }

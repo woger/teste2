@@ -20,13 +20,18 @@ namespace Palestrantes
         public FormEnvioPalestra()
         {
             InitializeComponent();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
         }
 
         public FormEnvioPalestra(string path)
         {
             InitializeComponent();
             this.pathDiretorio = path;
+            Evento evento = new EventoDAO().VerificaExistenciaEvento(this.pathDiretorio);
+            if (evento != null) // Se for edição
+            {
+                panelBanner.BackgroundImage = new Bitmap(path + @"\" + evento.Arquivo);
+            }
 
             List<Palestrante> palestrantes = new AgendaEventoDAO().ListarPalestrantesEvento(this.pathDiretorio);
             if (palestrantes.Count > 0)
@@ -71,10 +76,10 @@ namespace Palestrantes
             AgendaEvento agendaSelecionada = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
             if (agendaSelecionada != null)
             {
-                
+
                 string[] files = Directory.GetFiles(agendaSelecionada.PathPalestra(this.pathDiretorio));
-                if(files.Length > 0)
-                
+                if (files.Length > 0)
+
                 {
                     for (int i = 0; i < files.Length; i++)
                     {

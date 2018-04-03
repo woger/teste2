@@ -80,7 +80,7 @@
             this.tbxIP.Location = new System.Drawing.Point(253, 286);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(358, 20);
-            this.tbxIP.TabIndex = 3;
+            this.tbxIP.TabIndex = 1;
             // 
             // tbxSenhaRede
             // 
@@ -88,14 +88,14 @@
             this.tbxSenhaRede.Name = "tbxSenhaRede";
             this.tbxSenhaRede.PasswordChar = '*';
             this.tbxSenhaRede.Size = new System.Drawing.Size(226, 20);
-            this.tbxSenhaRede.TabIndex = 5;
+            this.tbxSenhaRede.TabIndex = 3;
             // 
             // btnTestarConexao
             // 
             this.btnTestarConexao.Location = new System.Drawing.Point(39, 454);
             this.btnTestarConexao.Name = "btnTestarConexao";
             this.btnTestarConexao.Size = new System.Drawing.Size(269, 23);
-            this.btnTestarConexao.TabIndex = 6;
+            this.btnTestarConexao.TabIndex = 4;
             this.btnTestarConexao.Text = "Conectar";
             this.btnTestarConexao.UseVisualStyleBackColor = true;
             this.btnTestarConexao.Click += new System.EventHandler(this.btnTestarConexao_Click);
@@ -114,11 +114,12 @@
             // 
             // ddlUsuarios
             // 
+            this.ddlUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlUsuarios.FormattingEnabled = true;
             this.ddlUsuarios.Location = new System.Drawing.Point(253, 330);
             this.ddlUsuarios.Name = "ddlUsuarios";
             this.ddlUsuarios.Size = new System.Drawing.Size(226, 21);
-            this.ddlUsuarios.TabIndex = 12;
+            this.ddlUsuarios.TabIndex = 2;
             // 
             // panelBanner
             // 
@@ -133,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Palestrantes.Properties.Resources.bgInterno;
+            this.BackgroundImage = global::Client.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.ddlUsuarios);

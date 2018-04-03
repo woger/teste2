@@ -159,6 +159,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(589, 316);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(614, 373);
+            this.dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -322,8 +323,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
-            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
-            this.ClientSize = new System.Drawing.Size(1234, 763);
+            this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
+            this.ClientSize = new System.Drawing.Size(1234, 741);
             this.Controls.Add(this.tbxTema);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcluir);
@@ -351,7 +352,7 @@
             this.Controls.Add(this.panelBanner);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FormMontarAgendaEvento";
-            this.Text = "FormMontarAgendaEvento";
+            this.Text = "Programação do Evento";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

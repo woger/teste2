@@ -92,10 +92,10 @@ namespace Settings.DAO
                     System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + sala.Nome);//Cria
             }
 
-            System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\"  + @"\" + sala.Nome + ArquivoBD.FORMATARDATA_DIRETORIO(pData));//Cria
+            //System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\"  + @"\" + sala.Nome + ArquivoBD.FORMATARDATA_DIRETORIO(pData));//Cria
 
-            if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" + @"\" + sala.Nome + ArquivoBD.FORMATARDATA_DIRETORIO(pData))) //Se não existe a pasta da data
-                System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + @"\" + sala.Nome + ArquivoBD.FORMATARDATA_DIRETORIO(pData));//Cria
+            if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData))) //Se não existe a pasta da data
+                System.IO.Directory.CreateDirectory(pDestinoArquivo + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData));//Cria
 
             
 
@@ -103,10 +103,10 @@ namespace Settings.DAO
             if (palestrante != null)
             {
                 //Verifico se já existe a pasta para o horário
-                if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" +  @"\" + sala.Nome + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome())) //Se não existe a pasta do horário para a sala e para a data
+                if (!System.IO.Directory.Exists(pDestinoArquivo + @"\" +  @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome())) //Se não existe a pasta do horário para a sala e para a data
                     pathFinal = System.IO.Directory.CreateDirectory(pDestinoArquivo +  @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome()).FullName;//Cria
                 else
-                    pathFinal = pDestinoArquivo + @"\" +  @"\" + sala.Nome + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome();//Cria
+                    pathFinal = pDestinoArquivo + @"\" +  @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(pData) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome();//Cria
             }
 
 
@@ -253,9 +253,9 @@ namespace Settings.DAO
                         for (int i = 0; i < resultado.Rows.Count; i++)
                         {
                             AgendaEvento agendaEvento = new AgendaEvento();
-                            agendaEvento.Palestrante = new PalestranteDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_PALESTR"].ToString()), null);
+                            agendaEvento.Palestrante = new PalestranteDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_PALESTR"].ToString()), String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath));
                             agendaEvento.Codigo = int.Parse(resultado.Rows[i]["ID"].ToString());
-                            agendaEvento.Sala = new SalaDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_SALA"].ToString()), null);
+                            agendaEvento.Sala = new SalaDAO().BuscarPorCodigo(int.Parse(resultado.Rows[i]["ID_SALA"].ToString()), String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath));
                             agendaEvento.Data = DateTime.Parse(resultado.Rows[i]["DATA"].ToString());
                             agendaEvento.Hora = resultado.Rows[i]["HORA"].ToString();
                             agendaEvento.Tema = resultado.Rows[i]["TEMA"].ToString();

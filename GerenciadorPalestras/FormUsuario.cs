@@ -18,13 +18,19 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             MostrarDados();
-            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             dataGridView1.Columns["Senha"].Visible = false;
             dataGridView1.Columns["Perfil"].Visible = false;
             dataGridView1.Columns["PerfilToString"].HeaderText = "Perfil";
             ddlPerfil.DataSource = Enum.GetValues(typeof(EnumPerfil));
             ddlPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             ddlPerfil.SelectedItem = null;
+
+            Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            if (evento != null) // Se for edição
+            {
+                panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+            }
         }
 
         public void MostrarDados()

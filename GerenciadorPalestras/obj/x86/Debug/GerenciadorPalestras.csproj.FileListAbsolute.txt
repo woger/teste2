@@ -34,3 +34,18 @@ D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\GerenciadorPalestras\obj\x8
 D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.csproj.GenerateResource.Cache
 D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.exe
 D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\bin\x86\Debug\GerenciadorPalestras.exe
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\bin\x86\Debug\GerenciadorPalestras.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\bin\x86\Debug\Settings.dll
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\bin\x86\Debug\Settings.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.csprojResolveAssemblyReference.cache
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormAjuda.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormEvento.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormMontarAgendaEvento.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormPalestrante.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormSalaEvento.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.FormUsuario.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Home.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Login.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.Properties.Resources.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\GerenciadorPalestras\obj\x86\Debug\GerenciadorPalestras.csproj.GenerateResource.Cache

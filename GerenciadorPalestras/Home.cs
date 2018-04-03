@@ -118,7 +118,7 @@ namespace GerenciadorPalestras
             FormAjuda FormAjuda = new FormAjuda();
 
             FormAjuda.MdiParent = this;
-            FormAjuda.ControlBox = false;
+            //FormAjuda.ControlBox = false;
 
             FormAjuda.StartPosition = FormStartPosition.CenterScreen;
             FormAjuda.Show();
