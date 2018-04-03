@@ -19,6 +19,7 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             MostrarDados();
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             
         }
 

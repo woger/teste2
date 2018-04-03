@@ -20,6 +20,7 @@ namespace Palestrantes
         public FormEnvioPalestra()
         {
             InitializeComponent();
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
         }
 
         public FormEnvioPalestra(string path)

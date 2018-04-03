@@ -10,3 +10,15 @@ C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nov
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.FormBaixaPalestra.resources
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.FormConfiguracaoRede.resources
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Palestrantes\obj\x86\Debug\Palestrantes.FormEnvioPalestra.resources
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\bin\x86\Debug\Palestrantes.exe
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\bin\x86\Debug\Palestrantes.pdb
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\bin\x86\Debug\Settings.dll
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\bin\x86\Debug\Settings.pdb
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.csprojResolveAssemblyReference.cache
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.FormBaixaPalestra.resources
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.FormConfiguracaoRede.resources
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.FormEnvioPalestra.resources
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.Properties.Resources.resources
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.csproj.GenerateResource.Cache
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.exe
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Palestrantes\obj\x86\Debug\Palestrantes.pdb

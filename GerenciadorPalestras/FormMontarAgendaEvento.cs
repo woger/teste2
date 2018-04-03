@@ -18,7 +18,7 @@ namespace GerenciadorPalestras
         public FormMontarAgendaEvento()
         {
             InitializeComponent();
-
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             CarregaDadosIniciais();
             this.WindowState = FormWindowState.Maximized;
             this.MinimumSize = this.Size;

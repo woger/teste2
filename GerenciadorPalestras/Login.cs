@@ -18,6 +18,7 @@ namespace GerenciadorPalestras
             InitializeComponent();
             ArquivoBD.CriarArquivosBD();
             tbxLogin.Focus();
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
         }
 
         private void button1_Click(object sender, EventArgs e)

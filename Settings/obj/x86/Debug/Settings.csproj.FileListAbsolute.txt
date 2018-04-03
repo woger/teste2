@@ -11,3 +11,9 @@ C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nov
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Settings\obj\x86\Debug\Settings.pdb
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Settings\bin\x86\Debug\Settings.dll
 C:\Users\Rogério\Documents\visual studio 2015\Projects\GerenciadorPalestras\Nova pasta\Settings\bin\x86\Debug\Settings.pdb
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Settings\bin\x86\Debug\Settings.dll
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Settings\bin\x86\Debug\Settings.pdb
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Settings\obj\x86\Debug\Settings.Properties.Resources.resources
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Settings\obj\x86\Debug\Settings.csproj.GenerateResource.Cache
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Settings\obj\x86\Debug\Settings.dll
+D:\Andre\other\Projetos\GerenciadorPalestras2\teste2\Settings\obj\x86\Debug\Settings.pdb

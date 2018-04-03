@@ -39,6 +39,7 @@
             this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnExplorar = new System.Windows.Forms.Button();
+            this.panelBanner = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(25, 123);
+            this.label1.Location = new System.Drawing.Point(25, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 29);
             this.label1.TabIndex = 0;
@@ -57,7 +58,7 @@
             // 
             this.ddlPalestrante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlPalestrante.FormattingEnabled = true;
-            this.ddlPalestrante.Location = new System.Drawing.Point(241, 214);
+            this.ddlPalestrante.Location = new System.Drawing.Point(227, 294);
             this.ddlPalestrante.Name = "ddlPalestrante";
             this.ddlPalestrante.Size = new System.Drawing.Size(362, 21);
             this.ddlPalestrante.TabIndex = 1;
@@ -65,9 +66,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 217);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(24, 297);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 15);
             this.label2.TabIndex = 2;
@@ -76,9 +78,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 269);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(24, 349);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 15);
             this.label3.TabIndex = 4;
@@ -88,7 +91,7 @@
             // 
             this.ddlTema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlTema.FormattingEnabled = true;
-            this.ddlTema.Location = new System.Drawing.Point(241, 266);
+            this.ddlTema.Location = new System.Drawing.Point(227, 346);
             this.ddlTema.Name = "ddlTema";
             this.ddlTema.Size = new System.Drawing.Size(362, 21);
             this.ddlTema.TabIndex = 3;
@@ -96,9 +99,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(41, 311);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(27, 391);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 15);
             this.label4.TabIndex = 6;
@@ -107,9 +111,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 430);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(27, 510);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(447, 17);
             this.label5.TabIndex = 7;
@@ -117,7 +122,7 @@
             // 
             // btnEnviarArquivo
             // 
-            this.btnEnviarArquivo.Location = new System.Drawing.Point(494, 427);
+            this.btnEnviarArquivo.Location = new System.Drawing.Point(480, 507);
             this.btnEnviarArquivo.Name = "btnEnviarArquivo";
             this.btnEnviarArquivo.Size = new System.Drawing.Size(75, 23);
             this.btnEnviarArquivo.TabIndex = 8;
@@ -128,7 +133,9 @@
             // lblNomeArquivo
             // 
             this.lblNomeArquivo.AutoSize = true;
-            this.lblNomeArquivo.Location = new System.Drawing.Point(238, 312);
+            this.lblNomeArquivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
+            this.lblNomeArquivo.ForeColor = System.Drawing.Color.White;
+            this.lblNomeArquivo.Location = new System.Drawing.Point(224, 392);
             this.lblNomeArquivo.Name = "lblNomeArquivo";
             this.lblNomeArquivo.Size = new System.Drawing.Size(86, 13);
             this.lblNomeArquivo.TabIndex = 9;
@@ -137,9 +144,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 466);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(27, 546);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(352, 17);
             this.label6.TabIndex = 10;
@@ -147,7 +155,7 @@
             // 
             // btnExplorar
             // 
-            this.btnExplorar.Location = new System.Drawing.Point(494, 463);
+            this.btnExplorar.Location = new System.Drawing.Point(480, 543);
             this.btnExplorar.Name = "btnExplorar";
             this.btnExplorar.Size = new System.Drawing.Size(75, 23);
             this.btnExplorar.TabIndex = 11;
@@ -155,12 +163,22 @@
             this.btnExplorar.UseVisualStyleBackColor = true;
             this.btnExplorar.Click += new System.EventHandler(this.btnExplorar_Click);
             // 
+            // panelBanner
+            // 
+            this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
+            this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBanner.Location = new System.Drawing.Point(0, 0);
+            this.panelBanner.Name = "panelBanner";
+            this.panelBanner.Size = new System.Drawing.Size(1234, 158);
+            this.panelBanner.TabIndex = 31;
+            // 
             // FormEnvioPalestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Palestrantes.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
+            this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.btnExplorar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNomeArquivo);
@@ -192,5 +210,6 @@
         private System.Windows.Forms.Label lblNomeArquivo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnExplorar;
+        private System.Windows.Forms.Panel panelBanner;
     }
 }

@@ -19,7 +19,7 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             MostrarDados();
-
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
         }
 
         public void MostrarDados()
@@ -129,6 +129,11 @@ namespace GerenciadorPalestras
                 this.btnAtualizar.Visible = this.btnExcluir.Visible = true;
                 this.btnIncluir.Visible = false;
             }
+        }
+
+        private void panelBanner_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

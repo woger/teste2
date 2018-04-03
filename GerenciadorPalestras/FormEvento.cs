@@ -17,6 +17,7 @@ namespace GerenciadorPalestras
         public FormEvento()
         {
             InitializeComponent();
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             //Verifica se já existe evento
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if(evento != null) // Se for edição
@@ -113,6 +114,16 @@ namespace GerenciadorPalestras
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

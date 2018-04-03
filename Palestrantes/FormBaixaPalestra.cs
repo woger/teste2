@@ -19,6 +19,7 @@ namespace Palestrantes
         public FormBaixaPalestra()
         {
             InitializeComponent();
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
         }
 
         public FormBaixaPalestra(string path)

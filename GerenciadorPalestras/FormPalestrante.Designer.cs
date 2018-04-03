@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPalestrante));
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -38,13 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDadosSalvos = new System.Windows.Forms.Label();
+            this.panelBanner = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(336, 283);
+            this.btnExcluir.Location = new System.Drawing.Point(648, 368);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 11;
@@ -55,7 +55,7 @@
             // btnAtualizar
             // 
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(221, 283);
+            this.btnAtualizar.Location = new System.Drawing.Point(533, 368);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(86, 23);
             this.btnAtualizar.TabIndex = 10;
@@ -66,7 +66,7 @@
             // btnIncluir
             // 
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir.Location = new System.Drawing.Point(279, 283);
+            this.btnIncluir.Location = new System.Drawing.Point(591, 368);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(75, 23);
             this.btnIncluir.TabIndex = 9;
@@ -76,7 +76,7 @@
             // 
             // tbxPalestrante
             // 
-            this.tbxPalestrante.Location = new System.Drawing.Point(188, 219);
+            this.tbxPalestrante.Location = new System.Drawing.Point(491, 304);
             this.tbxPalestrante.Name = "tbxPalestrante";
             this.tbxPalestrante.Size = new System.Drawing.Size(272, 20);
             this.tbxPalestrante.TabIndex = 8;
@@ -84,20 +84,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 222);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(556, 286);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.Size = new System.Drawing.Size(142, 15);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Palestrante";
+            this.label1.Text = "Nome do Palestrante";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(83, 389);
+            this.dataGridView1.Location = new System.Drawing.Point(415, 474);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(424, 150);
             this.dataGridView1.TabIndex = 6;
@@ -109,7 +110,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(19, 122);
+            this.label2.Location = new System.Drawing.Point(19, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(404, 29);
             this.label2.TabIndex = 12;
@@ -118,9 +119,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(80, 373);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(552, 458);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 13);
             this.label3.TabIndex = 13;
@@ -129,19 +131,32 @@
             // lblDadosSalvos
             // 
             this.lblDadosSalvos.AutoSize = true;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(241, 335);
+            this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
+            this.lblDadosSalvos.Location = new System.Drawing.Point(610, 420);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
             this.lblDadosSalvos.TabIndex = 14;
             this.lblDadosSalvos.Text = "label4";
             this.lblDadosSalvos.Visible = false;
             // 
+            // panelBanner
+            // 
+            this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
+            this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBanner.Location = new System.Drawing.Point(0, 0);
+            this.panelBanner.Name = "panelBanner";
+            this.panelBanner.Size = new System.Drawing.Size(1234, 158);
+            this.panelBanner.TabIndex = 29;
+            this.panelBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBanner_Paint);
+            // 
             // FormPalestrante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1234, 701);
+            this.BackgroundImage = global::GerenciadorPalestras.Properties.Resources.bgInterno;
+            this.ClientSize = new System.Drawing.Size(1234, 763);
+            this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -172,5 +187,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDadosSalvos;
+        private System.Windows.Forms.Panel panelBanner;
     }
 }

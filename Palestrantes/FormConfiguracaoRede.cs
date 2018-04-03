@@ -22,7 +22,7 @@ namespace Palestrantes
         public FormConfiguracaoRede()
         {
             InitializeComponent();
-
+            panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             Dictionary<int, string> dictionaryUsuarios = new Dictionary<int, string>();
 
             dictionaryUsuarios.Add(2, "MEDIADESK");
