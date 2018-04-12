@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using Server;
+using Settings;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,17 @@ namespace GerenciadorPalestras
     public partial class FormEvento : Form
     {
         public int ID = 0;
+        public static System.Timers.Timer aTimer = new System.Timers.Timer();
+        
+
         public FormEvento()
         {
             InitializeComponent();
+            //var form = (Home2)Tag;
+            //form.Show();
+            //Close();
+            panelBanner.Width = this.Width;
+            
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             //Verifica se já existe evento
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
@@ -26,12 +35,28 @@ namespace GerenciadorPalestras
                 tbxFileName.Text = evento.PathFile;
                 if (!String.IsNullOrEmpty(evento.PathFile))
                 {
-                    pictureBox1.Image = panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+                    pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
+                    panelBanner.BackgroundImage = Resize(new Bitmap(evento.PathFile), panelBanner.Width, panelBanner.Height);
                 }
                 this.ID = evento.Codigo;
                 foreach (DateTime data in evento.Datas)
                     listBox1.Items.Add(data.ToString("dd/MM/yyyy"));
             }
+        }
+        void MensagemSucesso(string texto)
+        {
+            lblDadosSalvos.Text = texto;
+            lblDadosSalvos.Visible = true;
+
+            aTimer.Elapsed += aTimer_Elapsed;
+            aTimer.Interval = 2000; //milisecunde
+            aTimer.Enabled = true;
+        }
+
+        void aTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            aTimer.Enabled = false;
+            this.Invoke(new MethodInvoker(() => lblDadosSalvos.Visible = false));
         }
 
         private void btnBuscarBanner_Click(object sender, EventArgs e)
@@ -109,7 +134,7 @@ namespace GerenciadorPalestras
             evento.Arquivo = openFileDialog1.SafeFileName;
             evento.Datas = RetornaDatasInformadas();
             new EventoDAO().SalvarEvento(evento.Nome, evento.Arquivo, evento.Datas, new Bitmap(tbxFileName.Text));
-            MessageBox.Show("Dados Salvos com sucesso");
+            MensagemSucesso("Dados Salvos com sucesso");
         }
 
         protected List<DateTime> RetornaDatasInformadas()
@@ -136,6 +161,19 @@ namespace GerenciadorPalestras
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Home2 home = new Home2();
+
+            //formMontarAgendaEvento.MdiParent = this;
+            //formMontarAgendaEvento.ControlBox = false;
+
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
+            
         }
     }
 }

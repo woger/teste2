@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using Server;
+using Settings;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace GerenciadorPalestras
     {
         public FormAjuda()
         {
+            
             InitializeComponent();
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             richTextBox1.Select(0, 10);
@@ -36,6 +38,18 @@ namespace GerenciadorPalestras
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Home2 home = new Home2();
+
+            //formMontarAgendaEvento.MdiParent = this;
+            //formMontarAgendaEvento.ControlBox = false;
+
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
         }
     }
 }

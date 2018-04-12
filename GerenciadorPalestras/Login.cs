@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using Server;
+using Settings;
 using Settings.Configuracoes;
 using Settings.DAO;
 using System;
@@ -37,7 +38,7 @@ namespace GerenciadorPalestras
 
                 HelperUsuario.RegistrarLogin(usuario);
 
-                new Home().ShowDialog();
+                new Home2().ShowDialog();
                 this.Close();
             }
             else

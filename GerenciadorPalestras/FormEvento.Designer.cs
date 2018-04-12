@@ -43,6 +43,7 @@
             this.btnExcluirData = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panelBanner = new System.Windows.Forms.Panel();
+            this.lblDadosSalvos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,6 +182,9 @@
             // 
             // panelBanner
             // 
+            this.panelBanner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
             this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
@@ -188,6 +192,18 @@
             this.panelBanner.Size = new System.Drawing.Size(1234, 158);
             this.panelBanner.TabIndex = 16;
             this.panelBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblDadosSalvos
+            // 
+            this.lblDadosSalvos.AutoSize = true;
+            this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
+            this.lblDadosSalvos.Location = new System.Drawing.Point(182, 535);
+            this.lblDadosSalvos.Name = "lblDadosSalvos";
+            this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
+            this.lblDadosSalvos.TabIndex = 29;
+            this.lblDadosSalvos.Text = "label4";
+            this.lblDadosSalvos.Visible = false;
             // 
             // FormEvento
             // 
@@ -197,6 +213,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 741);
+            this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnExcluirData);
@@ -211,9 +228,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxNomeEvento);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "FormEvento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dados do Evento";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -238,5 +257,6 @@
         private System.Windows.Forms.Button btnExcluirData;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelBanner;
+        private System.Windows.Forms.Label lblDadosSalvos;
     }
 }

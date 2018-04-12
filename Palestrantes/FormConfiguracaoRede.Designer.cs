@@ -34,7 +34,6 @@
             this.tbxIP = new System.Windows.Forms.MaskedTextBox();
             this.tbxSenhaRede = new System.Windows.Forms.MaskedTextBox();
             this.btnTestarConexao = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.ddlUsuarios = new System.Windows.Forms.ComboBox();
             this.panelBanner = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -45,7 +44,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(36, 286);
+            this.label1.Location = new System.Drawing.Point(280, 344);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 15);
             this.label1.TabIndex = 0;
@@ -54,71 +53,60 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.label2.BackColor = System.Drawing.Color.LightGray;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 334);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(421, 366);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 15);
+            this.label2.Size = new System.Drawing.Size(43, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Informe seu login";
+            this.label2.Text = "Login";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(36, 378);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(642, 366);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 15);
+            this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Informe a senha";
+            this.label3.Text = "Senha";
             // 
             // tbxIP
             // 
-            this.tbxIP.Location = new System.Drawing.Point(253, 286);
+            this.tbxIP.Location = new System.Drawing.Point(517, 343);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(358, 20);
             this.tbxIP.TabIndex = 1;
             // 
             // tbxSenhaRede
             // 
-            this.tbxSenhaRede.Location = new System.Drawing.Point(253, 378);
+            this.tbxSenhaRede.Location = new System.Drawing.Point(640, 385);
             this.tbxSenhaRede.Name = "tbxSenhaRede";
             this.tbxSenhaRede.PasswordChar = '*';
-            this.tbxSenhaRede.Size = new System.Drawing.Size(226, 20);
+            this.tbxSenhaRede.Size = new System.Drawing.Size(182, 20);
             this.tbxSenhaRede.TabIndex = 3;
             // 
             // btnTestarConexao
             // 
-            this.btnTestarConexao.Location = new System.Drawing.Point(39, 454);
+            this.btnTestarConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestarConexao.Location = new System.Drawing.Point(535, 429);
             this.btnTestarConexao.Name = "btnTestarConexao";
-            this.btnTestarConexao.Size = new System.Drawing.Size(269, 23);
+            this.btnTestarConexao.Size = new System.Drawing.Size(174, 23);
             this.btnTestarConexao.TabIndex = 4;
-            this.btnTestarConexao.Text = "Conectar";
+            this.btnTestarConexao.Text = "Entrar";
             this.btnTestarConexao.UseVisualStyleBackColor = true;
             this.btnTestarConexao.Click += new System.EventHandler(this.btnTestarConexao_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(26, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(593, 29);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "CONFIGURAÇÃO INICIAL PARA AUTENTICAÇÃO";
             // 
             // ddlUsuarios
             // 
             this.ddlUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlUsuarios.FormattingEnabled = true;
-            this.ddlUsuarios.Location = new System.Drawing.Point(253, 330);
+            this.ddlUsuarios.Location = new System.Drawing.Point(419, 384);
             this.ddlUsuarios.Name = "ddlUsuarios";
-            this.ddlUsuarios.Size = new System.Drawing.Size(226, 21);
+            this.ddlUsuarios.Size = new System.Drawing.Size(177, 21);
             this.ddlUsuarios.TabIndex = 2;
             // 
             // panelBanner
@@ -134,11 +122,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Client.Properties.Resources.bgInterno;
+            this.BackgroundImage = global::Client.Properties.Resources.bgLogin_Client;
             this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.ddlUsuarios);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTestarConexao);
             this.Controls.Add(this.tbxSenhaRede);
             this.Controls.Add(this.tbxIP);
@@ -160,7 +147,6 @@
         private System.Windows.Forms.MaskedTextBox tbxIP;
         private System.Windows.Forms.MaskedTextBox tbxSenhaRede;
         private System.Windows.Forms.Button btnTestarConexao;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox ddlUsuarios;
         private System.Windows.Forms.Panel panelBanner;
     }

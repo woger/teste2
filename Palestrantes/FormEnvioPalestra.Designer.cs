@@ -34,10 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ddlTema = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnEnviarArquivo = new System.Windows.Forms.Button();
             this.lblNomeArquivo = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnExplorar = new System.Windows.Forms.Button();
             this.panelBanner = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -102,31 +100,20 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(280, 385);
+            this.label4.Location = new System.Drawing.Point(280, 482);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Arquivo(s) da apresentação";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(280, 488);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(447, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Para enviar novo(s) arquivo(s) da apresentação, clique aqui";
-            // 
             // btnEnviarArquivo
             // 
-            this.btnEnviarArquivo.Location = new System.Drawing.Point(733, 485);
+            this.btnEnviarArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarArquivo.Location = new System.Drawing.Point(681, 377);
             this.btnEnviarArquivo.Name = "btnEnviarArquivo";
-            this.btnEnviarArquivo.Size = new System.Drawing.Size(75, 23);
+            this.btnEnviarArquivo.Size = new System.Drawing.Size(161, 38);
             this.btnEnviarArquivo.TabIndex = 8;
-            this.btnEnviarArquivo.Text = "Enviar";
+            this.btnEnviarArquivo.Text = "Enviar arquivos";
             this.btnEnviarArquivo.UseVisualStyleBackColor = true;
             this.btnEnviarArquivo.Click += new System.EventHandler(this.btnEnviarArquivo_Click);
             // 
@@ -135,31 +122,20 @@
             this.lblNomeArquivo.AutoSize = true;
             this.lblNomeArquivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.lblNomeArquivo.ForeColor = System.Drawing.Color.White;
-            this.lblNomeArquivo.Location = new System.Drawing.Point(477, 386);
+            this.lblNomeArquivo.Location = new System.Drawing.Point(477, 484);
             this.lblNomeArquivo.Name = "lblNomeArquivo";
             this.lblNomeArquivo.Size = new System.Drawing.Size(86, 13);
             this.lblNomeArquivo.TabIndex = 9;
             this.lblNomeArquivo.Text = "Nenhum Arquivo";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(280, 524);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(352, 17);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Para abrir a pasta com os arquivos, clique aqui";
-            // 
             // btnExplorar
             // 
-            this.btnExplorar.Location = new System.Drawing.Point(733, 521);
+            this.btnExplorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExplorar.Location = new System.Drawing.Point(480, 377);
             this.btnExplorar.Name = "btnExplorar";
-            this.btnExplorar.Size = new System.Drawing.Size(75, 23);
+            this.btnExplorar.Size = new System.Drawing.Size(161, 38);
             this.btnExplorar.TabIndex = 11;
-            this.btnExplorar.Text = "Explorar";
+            this.btnExplorar.Text = "Explorar arquivos";
             this.btnExplorar.UseVisualStyleBackColor = true;
             this.btnExplorar.Click += new System.EventHandler(this.btnExplorar_Click);
             // 
@@ -180,18 +156,17 @@
             this.ClientSize = new System.Drawing.Size(1234, 701);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.btnExplorar);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNomeArquivo);
             this.Controls.Add(this.btnEnviarArquivo);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ddlTema);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ddlPalestrante);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "FormEnvioPalestra";
-            this.Text = "FormEnvioPalestra";
+            this.Text = "Enviar Palestra";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,10 +180,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox ddlTema;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEnviarArquivo;
         private System.Windows.Forms.Label lblNomeArquivo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnExplorar;
         private System.Windows.Forms.Panel panelBanner;
     }

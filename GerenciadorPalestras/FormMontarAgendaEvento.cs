@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using Server;
+using Settings;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -14,15 +15,35 @@ namespace GerenciadorPalestras
     public partial class FormMontarAgendaEvento : Form
     {
         int? ID = null;
+        public static System.Timers.Timer aTimer = new System.Timers.Timer();
+
+        void MensagemSucesso(string texto)
+        {
+            lblDadosSalvos.Text = texto;
+            lblDadosSalvos.Visible = true;
+
+            aTimer.Elapsed += aTimer_Elapsed;
+            aTimer.Interval = 2000; //milisecunde
+            aTimer.Enabled = true;
+        }
+
+        void aTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            aTimer.Enabled = false;
+            this.Invoke(new MethodInvoker(() => lblDadosSalvos.Visible = false));
+        }
 
         public FormMontarAgendaEvento()
         {
             InitializeComponent();
+            panelBanner.Width = this.Width;
+            
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             CarregaDadosIniciais();
-            this.WindowState = FormWindowState.Maximized;
-            this.MinimumSize = this.Size;
-            this.MaximumSize = this.Size;
+            //this.WindowState = FormWindowState.Maximized;
+            //this.MinimumSize = this.Size;
+            //this.MaximumSize = this.Size;
+            btnExcluir.Visible = false;
 
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if (evento != null) // Se for edição
@@ -182,9 +203,11 @@ namespace GerenciadorPalestras
             try
             {
                 new AgendaEventoDAO().SalvarAgendaEvento(((KeyValuePair<int, string>)ddlPalestrante.SelectedItem).Key, ((KeyValuePair<int, string>)ddlSala.SelectedItem).Key, RetornaDataHorarioEvento(), tbxHorario.Text, this.ID, tbxTema.Text);
-                MessageBox.Show("Dados salvos com sucesso");
+                //MessageBox.Show("Dados salvos com sucesso");
+                MensagemSucesso("Dados salvos com sucesso");
                 this.MostrarDados();
                 ClearData();
+                btnExcluir.Visible = false;
             }
             catch (Exception ex)
             {
@@ -236,6 +259,7 @@ namespace GerenciadorPalestras
             tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells["Hora"].Value.ToString();
             tbxTema.Text = dataGridView1.Rows[e.RowIndex].Cells["Tema"].Value.ToString();
             btnExcluir.Visible = true;
+            btnSalvar.Visible = false;
             //tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
             //tbxLogin.Text = dataGridView1.Rows[e.RowIndex].Cells["Login"].Value.ToString();
             //tbxSenha.Text = tbxConfirmaSenha.Text = dataGridView1.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
@@ -260,11 +284,23 @@ namespace GerenciadorPalestras
                 if (MessageBox.Show("Tem certeza que deseja excluir esta palestra?", "Atenção", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     new AgendaEventoDAO().Excluir(this.ID.Value);
-                    MessageBox.Show("Registro excluído com sucesso");
+                    MensagemSucesso("Registro excluído com sucesso");
                     CarregaDadosIniciais();
                     btnExcluir.Visible = false;
                 }
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Home2 home = new Home2();
+
+            //formMontarAgendaEvento.MdiParent = this;
+            //formMontarAgendaEvento.ControlBox = false;
+
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
         }
     }
 }

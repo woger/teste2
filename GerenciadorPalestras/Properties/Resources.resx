@@ -124,4 +124,25 @@
   <data name="bgInterno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgInterno.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ADM___Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADM - Dashboard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="evento2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\evento2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Palestrante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Palestrante.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Programacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Programacao.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Salas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Salas.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

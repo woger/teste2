@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ddlData = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ddlSalaFiltro = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.btnLimparFiltroData = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tbxTema = new System.Windows.Forms.TextBox();
             this.panelBanner = new System.Windows.Forms.Panel();
+            this.lblDadosSalvos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,10 +157,17 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(589, 316);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(614, 373);
-            this.dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -207,17 +215,11 @@
             this.ddlSalaFiltro.TabIndex = 9;
             this.ddlSalaFiltro.SelectedIndexChanged += new System.EventHandler(this.ddlSalaFiltro_SelectedIndexChanged);
             // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 19;
-            // 
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(233, 562);
+            this.btnSalvar.ForeColor = System.Drawing.Color.Black;
+            this.btnSalvar.Location = new System.Drawing.Point(320, 562);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(124, 23);
             this.btnSalvar.TabIndex = 6;
@@ -239,6 +241,7 @@
             // 
             // btnLimparFiltroData
             // 
+            this.btnLimparFiltroData.ForeColor = System.Drawing.Color.Black;
             this.btnLimparFiltroData.Location = new System.Drawing.Point(701, 278);
             this.btnLimparFiltroData.Name = "btnLimparFiltroData";
             this.btnLimparFiltroData.Size = new System.Drawing.Size(33, 23);
@@ -249,6 +252,7 @@
             // 
             // btnLimparFiltroSala
             // 
+            this.btnLimparFiltroSala.ForeColor = System.Drawing.Color.Black;
             this.btnLimparFiltroSala.Location = new System.Drawing.Point(922, 278);
             this.btnLimparFiltroSala.Name = "btnLimparFiltroSala";
             this.btnLimparFiltroSala.Size = new System.Drawing.Size(33, 23);
@@ -259,6 +263,7 @@
             // 
             // btnLimparFiltroPalestrante
             // 
+            this.btnLimparFiltroPalestrante.ForeColor = System.Drawing.Color.Black;
             this.btnLimparFiltroPalestrante.Location = new System.Drawing.Point(1157, 278);
             this.btnLimparFiltroPalestrante.Name = "btnLimparFiltroPalestrante";
             this.btnLimparFiltroPalestrante.Size = new System.Drawing.Size(33, 23);
@@ -280,7 +285,8 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(363, 562);
+            this.btnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluir.Location = new System.Drawing.Point(304, 562);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(140, 23);
             this.btnExcluir.TabIndex = 25;
@@ -311,6 +317,8 @@
             // 
             // panelBanner
             // 
+            this.panelBanner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
             this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
@@ -318,13 +326,25 @@
             this.panelBanner.Size = new System.Drawing.Size(1234, 158);
             this.panelBanner.TabIndex = 27;
             // 
+            // lblDadosSalvos
+            // 
+            this.lblDadosSalvos.AutoSize = true;
+            this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
+            this.lblDadosSalvos.Location = new System.Drawing.Point(317, 618);
+            this.lblDadosSalvos.Name = "lblDadosSalvos";
+            this.lblDadosSalvos.Size = new System.Drawing.Size(0, 13);
+            this.lblDadosSalvos.TabIndex = 28;
+            this.lblDadosSalvos.Visible = false;
+            // 
             // FormMontarAgendaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 741);
+            this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.tbxTema);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcluir);
@@ -334,7 +354,6 @@
             this.Controls.Add(this.btnLimparFiltroData);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ddlSalaFiltro);
             this.Controls.Add(this.label6);
@@ -351,8 +370,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBanner);
             this.ForeColor = System.Drawing.Color.White;
+            this.MaximizeBox = false;
             this.Name = "FormMontarAgendaEvento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Programação do Evento";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -375,7 +398,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox ddlSalaFiltro;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnLimparFiltroData;
@@ -386,5 +408,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbxTema;
         private System.Windows.Forms.Panel panelBanner;
+        private System.Windows.Forms.Label lblDadosSalvos;
     }
 }

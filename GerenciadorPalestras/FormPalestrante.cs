@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using Server;
+using Settings;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -140,6 +141,18 @@ namespace GerenciadorPalestras
         private void panelBanner_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Home2 home = new Home2();
+
+            //formMontarAgendaEvento.MdiParent = this;
+            //formMontarAgendaEvento.ControlBox = false;
+
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
         }
     }
 }

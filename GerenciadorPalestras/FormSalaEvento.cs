@@ -1,4 +1,5 @@
-﻿using Settings;
+﻿using Server;
+using Settings;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -136,6 +137,18 @@ namespace GerenciadorPalestras
                 this.btnAtualizar.Visible = this.btnExcluir.Visible = true;
                 this.btnIncluir.Visible = false;
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Home2 home = new Home2();
+
+            //formMontarAgendaEvento.MdiParent = this;
+            //formMontarAgendaEvento.ControlBox = false;
+
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
         }
     }
 }

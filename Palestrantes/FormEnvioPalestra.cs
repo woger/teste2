@@ -72,30 +72,33 @@ namespace Palestrantes
         {
             //Vou buscar o arquivo enviado para palestra e coloco no link para ele verificar o arquivo existente
             lblNomeArquivo.Text = string.Empty;
-            int keyAgenda = ((KeyValuePair<int, string>)ddlTema.SelectedItem).Key;
-            AgendaEvento agendaSelecionada = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
-            if (agendaSelecionada != null)
+            if (ddlTema.SelectedItem != null)
             {
-
-                string[] files = Directory.GetFiles(agendaSelecionada.PathPalestra(this.pathDiretorio));
-                if (files.Length > 0)
-
+                int keyAgenda = ((KeyValuePair<int, string>)ddlTema.SelectedItem).Key;
+                AgendaEvento agendaSelecionada = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
+                if (agendaSelecionada != null)
                 {
-                    for (int i = 0; i < files.Length; i++)
+
+                    string[] files = Directory.GetFiles(agendaSelecionada.PathPalestra(this.pathDiretorio));
+                    if (files.Length > 0)
+
                     {
-                        string nome = Path.GetFileName(files[i]);
-                        if (i == 0)
-                            lblNomeArquivo.Text = "* " + nome;
-                        else
-                            lblNomeArquivo.Text += "\r\n* " + nome;
+                        for (int i = 0; i < files.Length; i++)
+                        {
+                            string nome = Path.GetFileName(files[i]);
+                            if (i == 0)
+                                lblNomeArquivo.Text = "* " + nome;
+                            else
+                                lblNomeArquivo.Text += "\r\n* " + nome;
+                        }
+                        //lblNomeArquivo.Text = agendaSelecionada.ArquivoPalestra;
+                        //lnkFile.Links.Clear();
+                        //lnkFile.Links.Add(0, agendaSelecionada.ArquivoPalestra.Length, @"\" + agendaSelecionada.PathPalestra(this.pathDiretorio) + @"\" + agendaSelecionada.ArquivoPalestra + @"\");
+                        //lnkFile.LinkClicked += lnkFile_LinkClicked;
                     }
-                    //lblNomeArquivo.Text = agendaSelecionada.ArquivoPalestra;
-                    //lnkFile.Links.Clear();
-                    //lnkFile.Links.Add(0, agendaSelecionada.ArquivoPalestra.Length, @"\" + agendaSelecionada.PathPalestra(this.pathDiretorio) + @"\" + agendaSelecionada.ArquivoPalestra + @"\");
-                    //lnkFile.LinkClicked += lnkFile_LinkClicked;
+                    else
+                        lblNomeArquivo.Text = "Arquivo ainda não enviado";
                 }
-                else
-                    lblNomeArquivo.Text = "Arquivo ainda não enviado";
             }
         }
 

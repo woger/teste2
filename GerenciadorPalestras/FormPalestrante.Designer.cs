@@ -98,7 +98,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(415, 474);
+            this.dataGridView1.Location = new System.Drawing.Point(422, 474);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(424, 150);
             this.dataGridView1.TabIndex = 6;
@@ -135,13 +135,14 @@
             this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
             this.lblDadosSalvos.Location = new System.Drawing.Point(610, 420);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
-            this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
+            this.lblDadosSalvos.Size = new System.Drawing.Size(0, 13);
             this.lblDadosSalvos.TabIndex = 14;
-            this.lblDadosSalvos.Text = "label4";
             this.lblDadosSalvos.Visible = false;
             // 
             // panelBanner
             // 
+            this.panelBanner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
             this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
@@ -154,6 +155,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 741);
             this.Controls.Add(this.panelBanner);
@@ -166,9 +169,11 @@
             this.Controls.Add(this.tbxPalestrante);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "FormPalestrante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Palestrantes";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

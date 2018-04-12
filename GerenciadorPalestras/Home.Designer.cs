@@ -28,122 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salasDoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.palestrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.palestranteNoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem,
-            this.palestranteNoEventoToolStripMenuItem,
-            this.ajudaToolStripMenuItem,
-            this.sairToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eventoToolStripMenuItem,
-            this.salasDoEventoToolStripMenuItem,
-            this.palestrantesToolStripMenuItem,
-            this.usuárioToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            // 
-            // eventoToolStripMenuItem
-            // 
-            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
-            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.eventoToolStripMenuItem.Text = "Evento";
-            this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
-            // 
-            // salasDoEventoToolStripMenuItem
-            // 
-            this.salasDoEventoToolStripMenuItem.Name = "salasDoEventoToolStripMenuItem";
-            this.salasDoEventoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.salasDoEventoToolStripMenuItem.Text = "Salas do evento";
-            this.salasDoEventoToolStripMenuItem.Click += new System.EventHandler(this.salasDoEventoToolStripMenuItem_Click);
-            // 
-            // palestrantesToolStripMenuItem
-            // 
-            this.palestrantesToolStripMenuItem.Name = "palestrantesToolStripMenuItem";
-            this.palestrantesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.palestrantesToolStripMenuItem.Text = "Palestrantes";
-            this.palestrantesToolStripMenuItem.Click += new System.EventHandler(this.palestrantesToolStripMenuItem_Click);
-            // 
-            // usuárioToolStripMenuItem
-            // 
-            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.usuárioToolStripMenuItem.Text = "Usuário";
-            this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
-            // 
-            // palestranteNoEventoToolStripMenuItem
-            // 
-            this.palestranteNoEventoToolStripMenuItem.Name = "palestranteNoEventoToolStripMenuItem";
-            this.palestranteNoEventoToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
-            this.palestranteNoEventoToolStripMenuItem.Text = "Palestrante no Evento";
-            this.palestranteNoEventoToolStripMenuItem.Click += new System.EventHandler(this.palestranteNoEventoToolStripMenuItem_Click);
-            // 
-            // ajudaToolStripMenuItem
-            // 
-            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.ajudaToolStripMenuItem.Text = "Ajuda";
-            this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Server.Properties.Resources.ADM___Dashboard;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1234, 662);
-            this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salasDoEventoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem palestrantesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem palestranteNoEventoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
     }
 }
 

@@ -79,6 +79,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "FormAjuda";
             this.Text = "Formulário de Ajuda";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
