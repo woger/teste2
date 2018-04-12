@@ -15,6 +15,31 @@ namespace Server
         public Home2()
         {
             InitializeComponent();
+
+            btnEvento.TabStop = false;
+            btnEvento.FlatStyle = FlatStyle.Flat;
+            btnEvento.FlatAppearance.BorderSize = 0;
+            btnEvento.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
+            btnSalas.TabStop = false;
+            btnSalas.FlatStyle = FlatStyle.Flat;
+            btnSalas.FlatAppearance.BorderSize = 0;
+            btnSalas.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
+            btnPalestrante.TabStop = false;
+            btnPalestrante.FlatStyle = FlatStyle.Flat;
+            btnPalestrante.FlatAppearance.BorderSize = 0;
+            btnPalestrante.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
+            btnProgramacao.TabStop = false;
+            btnProgramacao.FlatStyle = FlatStyle.Flat;
+            btnProgramacao.FlatAppearance.BorderSize = 0;
+            
+
+            btnAjuda.TabStop = false;
+            btnAjuda.FlatStyle = FlatStyle.Flat;
+            btnAjuda.FlatAppearance.BorderSize = 0;
+            btnAjuda.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
         }
 
         private void btnEvento_Click(object sender, EventArgs e)

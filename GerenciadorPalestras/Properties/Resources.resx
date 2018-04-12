@@ -117,32 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bgLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgLogin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn-palestrante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-palestrante.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bgInterno" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgInterno.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn-programacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-programacao.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ADM___Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ADM - Dashboard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="evento2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\evento2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Help1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Help3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Palestrante" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Palestrante.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn-ajuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-ajuda.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Programacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Programacao.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Help3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="evento2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\evento2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ADM___Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADM - Dashboard.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Palestrante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Palestrante.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgLogin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Salas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Salas.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgInterno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgInterno.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn-salas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-salas.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bg-home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg-home.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

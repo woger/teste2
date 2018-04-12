@@ -73,6 +73,16 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap bg_home {
+            get {
+                object obj = ResourceManager.GetObject("bg-home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap bgInterno {
             get {
                 object obj = ResourceManager.GetObject("bgInterno", resourceCulture);
@@ -86,6 +96,46 @@ namespace Server.Properties {
         public static System.Drawing.Bitmap bgLogin {
             get {
                 object obj = ResourceManager.GetObject("bgLogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btn_ajuda {
+            get {
+                object obj = ResourceManager.GetObject("btn-ajuda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btn_palestrante {
+            get {
+                object obj = ResourceManager.GetObject("btn-palestrante", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btn_programacao {
+            get {
+                object obj = ResourceManager.GetObject("btn-programacao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btn_salas {
+            get {
+                object obj = ResourceManager.GetObject("btn-salas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

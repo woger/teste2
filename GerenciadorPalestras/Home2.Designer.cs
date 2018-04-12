@@ -48,61 +48,64 @@
             // 
             // btnEvento
             // 
-            this.btnEvento.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEvento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btnEvento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEvento.BackgroundImage")));
             this.btnEvento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEvento.Location = new System.Drawing.Point(230, 406);
+            this.btnEvento.Location = new System.Drawing.Point(207, 351);
             this.btnEvento.Name = "btnEvento";
-            this.btnEvento.Size = new System.Drawing.Size(151, 151);
+            this.btnEvento.Size = new System.Drawing.Size(157, 157);
             this.btnEvento.TabIndex = 0;
             this.btnEvento.UseVisualStyleBackColor = false;
             this.btnEvento.Click += new System.EventHandler(this.btnEvento_Click);
             // 
             // btnSalas
             // 
-            this.btnSalas.BackgroundImage = global::Server.Properties.Resources.Salas;
+            this.btnSalas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnSalas.BackgroundImage = global::Server.Properties.Resources.btn_salas;
             this.btnSalas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalas.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSalas.Location = new System.Drawing.Point(446, 406);
+            this.btnSalas.Location = new System.Drawing.Point(423, 351);
             this.btnSalas.Name = "btnSalas";
-            this.btnSalas.Size = new System.Drawing.Size(150, 151);
+            this.btnSalas.Size = new System.Drawing.Size(157, 157);
             this.btnSalas.TabIndex = 1;
-            this.btnSalas.UseVisualStyleBackColor = true;
+            this.btnSalas.UseVisualStyleBackColor = false;
             this.btnSalas.Click += new System.EventHandler(this.btnSalas_Click);
             // 
             // btnPalestrante
             // 
-            this.btnPalestrante.BackgroundImage = global::Server.Properties.Resources.Palestrante;
+            this.btnPalestrante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnPalestrante.BackgroundImage = global::Server.Properties.Resources.btn_palestrante;
             this.btnPalestrante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPalestrante.Location = new System.Drawing.Point(659, 406);
+            this.btnPalestrante.Location = new System.Drawing.Point(636, 351);
             this.btnPalestrante.Name = "btnPalestrante";
-            this.btnPalestrante.Size = new System.Drawing.Size(150, 151);
+            this.btnPalestrante.Size = new System.Drawing.Size(157, 157);
             this.btnPalestrante.TabIndex = 2;
-            this.btnPalestrante.UseVisualStyleBackColor = true;
+            this.btnPalestrante.UseVisualStyleBackColor = false;
             this.btnPalestrante.Click += new System.EventHandler(this.btnPalestrante_Click);
             // 
             // btnProgramacao
             // 
-            this.btnProgramacao.BackgroundImage = global::Server.Properties.Resources.Programacao;
-            this.btnProgramacao.Location = new System.Drawing.Point(867, 406);
+            this.btnProgramacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnProgramacao.BackgroundImage = global::Server.Properties.Resources.btn_programacao;
+            this.btnProgramacao.FlatAppearance.BorderSize = 0;
+            this.btnProgramacao.Location = new System.Drawing.Point(844, 351);
             this.btnProgramacao.Name = "btnProgramacao";
-            this.btnProgramacao.Size = new System.Drawing.Size(150, 151);
+            this.btnProgramacao.Size = new System.Drawing.Size(157, 157);
             this.btnProgramacao.TabIndex = 3;
-            this.btnProgramacao.UseVisualStyleBackColor = true;
+            this.btnProgramacao.UseVisualStyleBackColor = false;
             this.btnProgramacao.Click += new System.EventHandler(this.btnProgramacao_Click);
             // 
             // btnAjuda
             // 
-            this.btnAjuda.BackColor = System.Drawing.Color.Transparent;
-            this.btnAjuda.BackgroundImage = global::Server.Properties.Resources.Help1;
+            this.btnAjuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnAjuda.BackgroundImage = global::Server.Properties.Resources.btn_ajuda;
             this.btnAjuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAjuda.Location = new System.Drawing.Point(1002, 51);
+            this.btnAjuda.Location = new System.Drawing.Point(1139, 58);
             this.btnAjuda.Name = "btnAjuda";
-            this.btnAjuda.Size = new System.Drawing.Size(128, 128);
+            this.btnAjuda.Size = new System.Drawing.Size(76, 76);
             this.btnAjuda.TabIndex = 4;
             this.btnAjuda.UseVisualStyleBackColor = false;
             this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
-            
             // 
             // menuStrip1
             // 
@@ -113,7 +116,7 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1249, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1254, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -180,20 +183,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Server.Properties.Resources.ADM___Dashboard;
-            this.ClientSize = new System.Drawing.Size(1249, 598);
+            this.BackgroundImage = global::Server.Properties.Resources.bg_home;
+            this.ClientSize = new System.Drawing.Size(1254, 721);
             this.Controls.Add(this.btnAjuda);
-            this.Controls.Add(this.btnProgramacao);
             this.Controls.Add(this.btnPalestrante);
             this.Controls.Add(this.btnSalas);
             this.Controls.Add(this.btnEvento);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.btnProgramacao);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Home2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
