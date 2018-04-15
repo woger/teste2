@@ -35,7 +35,7 @@ namespace GerenciadorPalestras
                 tbxFileName.Text = evento.PathFile;
                 if (!String.IsNullOrEmpty(evento.PathFile))
                 {
-                    pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
+                    pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
                     panelBanner.BackgroundImage = Resize(new Bitmap(evento.PathFile), panelBanner.Width, panelBanner.Height);
                 }
                 this.ID = evento.Codigo;
@@ -64,7 +64,8 @@ namespace GerenciadorPalestras
             openFileDialog1.Filter = "Arquivos Imagem | *.jpeg; *.jpg; *.png";
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
+                pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), pictureBox1.Width, pictureBox1.Height);
+                //pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
                 tbxFileName.Text = openFileDialog1.FileName;
             }
         }
@@ -160,7 +161,7 @@ namespace GerenciadorPalestras
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            btnBuscarBanner_Click(null, null);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

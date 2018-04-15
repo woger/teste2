@@ -67,6 +67,32 @@ namespace Settings.DAO
             return sala;
         }
 
+        public Sala BuscarPorNome(string pNome, string pPath)
+        {
+            Sala sala = null;
+            //Sala usuario = null;
+            DataTable resultado = new DataTable();
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(pPath) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(pPath)))
+            {
+                oConn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM SALAS.DBF where NOME = '" + pNome + "'"))
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                    {
+                        sala = new Sala();
+                        sala.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
+                        sala.Nome = resultado.Rows[0]["NOME"].ToString();
+                    }
+                }
+            }
+            return sala;
+        }
+
         public void Inserir(string pNome)
         {
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))

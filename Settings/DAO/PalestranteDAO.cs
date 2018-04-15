@@ -65,6 +65,32 @@ namespace Settings.DAO
             return palestrante;
         }
 
+        public Palestrante BuscarPorNome(string pNome, string path)
+        {
+            Palestrante palestrante = null;
+            //Sala usuario = null;
+            DataTable resultado = new DataTable();
+            using (OleDbConnection oConn = new OleDbConnection(String.IsNullOrEmpty(path) ? ConexaoSingle.conexao : ConexaoSingle.conexaoRemota(path)))
+            {
+                oConn.Open();
+
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT * FROM PALESTRA.DBF where NOME = '" + pNome.ToUpper() + "'"))
+                {
+                    cmd.Connection = oConn;
+                    OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
+
+                    DA.Fill(resultado);
+                    if (resultado.Rows.Count > 0)
+                    {
+                        palestrante = new Palestrante();
+                        palestrante.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
+                        palestrante.Nome = resultado.Rows[0]["NOME"].ToString();
+                    }
+                }
+            }
+            return palestrante;
+        }
+
 
 
         public void Inserir(string pNome)
@@ -74,7 +100,7 @@ namespace Settings.DAO
                 oConn.Open();
 
                 using (OleDbCommand cmd = new OleDbCommand(@" INSERT INTO PALESTRA.DBF ([ID], [NOME]) 
-                                                            VALUES(" + (this.UltimoIdIncluido() + 1) + ", '" + pNome + "');"))
+                                                            VALUES(" + (this.UltimoIdIncluido() + 1) + ", '" + pNome.ToUpper() + "');"))
                 {
                     cmd.Connection = oConn;
                     cmd.ExecuteNonQuery();
@@ -88,7 +114,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(@" UPDATE PALESTRA.DBF set [NOME] = '" + pNome + "' where ID = " + pID))
+                using (OleDbCommand cmd = new OleDbCommand(@" UPDATE PALESTRA.DBF set [NOME] = '" + pNome.ToUpper() + "' where ID = " + pID))
                 {
                     cmd.Connection = oConn;
                     //cmd.Parameters.AddWithValue("nome", pNome);

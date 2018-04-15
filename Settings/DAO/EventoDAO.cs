@@ -19,7 +19,8 @@ namespace Settings.DAO
             {
                 oConn.Open();
                 OleDbCommand cmd = new OleDbCommand();
-
+                if(pFileName.Length > 140)
+                    pFileName = pFileName.Remove(140);
                 //Salva a imagem no diretório da app
                 if (System.IO.File.Exists(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName))
                 {

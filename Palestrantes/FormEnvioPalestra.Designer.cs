@@ -109,7 +109,7 @@
             // btnEnviarArquivo
             // 
             this.btnEnviarArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarArquivo.Location = new System.Drawing.Point(681, 377);
+            this.btnEnviarArquivo.Location = new System.Drawing.Point(480, 389);
             this.btnEnviarArquivo.Name = "btnEnviarArquivo";
             this.btnEnviarArquivo.Size = new System.Drawing.Size(161, 38);
             this.btnEnviarArquivo.TabIndex = 8;
@@ -131,7 +131,7 @@
             // btnExplorar
             // 
             this.btnExplorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExplorar.Location = new System.Drawing.Point(480, 377);
+            this.btnExplorar.Location = new System.Drawing.Point(681, 389);
             this.btnExplorar.Name = "btnExplorar";
             this.btnExplorar.Size = new System.Drawing.Size(161, 38);
             this.btnExplorar.TabIndex = 11;
@@ -142,6 +142,7 @@
             // panelBanner
             // 
             this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
+            this.panelBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
             this.panelBanner.Name = "panelBanner";
@@ -164,7 +165,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ddlPalestrante);
             this.Controls.Add(this.label1);
-            this.MaximizeBox = false;
             this.Name = "FormEnvioPalestra";
             this.Text = "Enviar Palestra";
             this.ResumeLayout(false);

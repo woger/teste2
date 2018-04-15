@@ -62,6 +62,7 @@
             // panelBanner
             // 
             this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
+            this.panelBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
             this.panelBanner.Name = "panelBanner";
@@ -73,13 +74,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
-            this.ClientSize = new System.Drawing.Size(1234, 741);
+            this.ClientSize = new System.Drawing.Size(1234, 733);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox1);
+            this.MaximizeBox = false;
             this.Name = "FormAjuda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário de Ajuda";
             this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

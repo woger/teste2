@@ -44,7 +44,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(280, 344);
+            this.label1.Location = new System.Drawing.Point(403, 344);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 15);
             this.label1.TabIndex = 0;
@@ -76,9 +76,9 @@
             // 
             // tbxIP
             // 
-            this.tbxIP.Location = new System.Drawing.Point(517, 343);
+            this.tbxIP.Location = new System.Drawing.Point(593, 343);
             this.tbxIP.Name = "tbxIP";
-            this.tbxIP.Size = new System.Drawing.Size(358, 20);
+            this.tbxIP.Size = new System.Drawing.Size(253, 20);
             this.tbxIP.TabIndex = 1;
             // 
             // tbxSenhaRede

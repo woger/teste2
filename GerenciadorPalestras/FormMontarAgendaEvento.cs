@@ -37,6 +37,7 @@ namespace GerenciadorPalestras
         {
             InitializeComponent();
             panelBanner.Width = this.Width;
+            dataGridView1.ForeColor = Color.Black;
             
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             CarregaDadosIniciais();

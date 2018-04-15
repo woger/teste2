@@ -49,11 +49,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 285);
+            this.label1.Location = new System.Drawing.Point(377, 430);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 15);
             this.label1.TabIndex = 0;
@@ -61,18 +62,20 @@
             // 
             // tbxNomeEvento
             // 
-            this.tbxNomeEvento.Location = new System.Drawing.Point(182, 282);
+            this.tbxNomeEvento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxNomeEvento.Location = new System.Drawing.Point(533, 427);
             this.tbxNomeEvento.Name = "tbxNomeEvento";
             this.tbxNomeEvento.Size = new System.Drawing.Size(307, 20);
             this.tbxNomeEvento.TabIndex = 1;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(28, 332);
+            this.label2.Location = new System.Drawing.Point(379, 477);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 15);
             this.label2.TabIndex = 2;
@@ -80,19 +83,21 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(185, 373);
+            this.listBox1.Location = new System.Drawing.Point(536, 518);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 4;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 373);
+            this.label3.Location = new System.Drawing.Point(378, 518);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 15);
             this.label3.TabIndex = 5;
@@ -104,9 +109,10 @@
             // 
             // btnBuscarBanner
             // 
-            this.btnBuscarBanner.Location = new System.Drawing.Point(935, 277);
+            this.btnBuscarBanner.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarBanner.Location = new System.Drawing.Point(668, 374);
             this.btnBuscarBanner.Name = "btnBuscarBanner";
-            this.btnBuscarBanner.Size = new System.Drawing.Size(183, 23);
+            this.btnBuscarBanner.Size = new System.Drawing.Size(172, 23);
             this.btnBuscarBanner.TabIndex = 5;
             this.btnBuscarBanner.Text = "Importar Banner";
             this.btnBuscarBanner.UseVisualStyleBackColor = true;
@@ -114,7 +120,8 @@
             // 
             // btnAddData
             // 
-            this.btnAddData.Location = new System.Drawing.Point(327, 324);
+            this.btnAddData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddData.Location = new System.Drawing.Point(678, 469);
             this.btnAddData.Name = "btnAddData";
             this.btnAddData.Size = new System.Drawing.Size(75, 23);
             this.btnAddData.TabIndex = 3;
@@ -124,7 +131,8 @@
             // 
             // tbxDataEvento
             // 
-            this.tbxDataEvento.Location = new System.Drawing.Point(182, 327);
+            this.tbxDataEvento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxDataEvento.Location = new System.Drawing.Point(533, 472);
             this.tbxDataEvento.Mask = "00/00/0000";
             this.tbxDataEvento.Name = "tbxDataEvento";
             this.tbxDataEvento.Size = new System.Drawing.Size(120, 20);
@@ -132,17 +140,21 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(599, 362);
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackgroundImage = global::Server.Properties.Resources.Upload_Files2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(380, 249);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(550, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(460, 111);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(71, 483);
+            this.btnSalvar.Location = new System.Drawing.Point(422, 628);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(280, 23);
             this.btnSalvar.TabIndex = 6;
@@ -152,15 +164,17 @@
             // 
             // tbxFileName
             // 
+            this.tbxFileName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbxFileName.Enabled = false;
-            this.tbxFileName.Location = new System.Drawing.Point(648, 279);
+            this.tbxFileName.Location = new System.Drawing.Point(380, 376);
             this.tbxFileName.Name = "tbxFileName";
-            this.tbxFileName.Size = new System.Drawing.Size(272, 20);
+            this.tbxFileName.Size = new System.Drawing.Size(246, 20);
             this.tbxFileName.TabIndex = 11;
             // 
             // btnExcluirData
             // 
-            this.btnExcluirData.Location = new System.Drawing.Point(317, 372);
+            this.btnExcluirData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExcluirData.Location = new System.Drawing.Point(668, 517);
             this.btnExcluirData.Name = "btnExcluirData";
             this.btnExcluirData.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirData.TabIndex = 12;
@@ -186,19 +200,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
+            this.panelBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBanner.Location = new System.Drawing.Point(0, 0);
             this.panelBanner.Name = "panelBanner";
-            this.panelBanner.Size = new System.Drawing.Size(1234, 158);
+            this.panelBanner.Size = new System.Drawing.Size(1234, 150);
             this.panelBanner.TabIndex = 16;
             this.panelBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblDadosSalvos
             // 
+            this.lblDadosSalvos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDadosSalvos.AutoSize = true;
             this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(182, 535);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(542, 654);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
             this.lblDadosSalvos.TabIndex = 29;
@@ -212,7 +228,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
-            this.ClientSize = new System.Drawing.Size(1234, 741);
+            this.ClientSize = new System.Drawing.Size(1234, 733);
             this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.label4);

@@ -181,7 +181,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -255,6 +255,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload Files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload Files2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

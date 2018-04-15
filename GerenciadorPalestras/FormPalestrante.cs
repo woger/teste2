@@ -107,6 +107,11 @@ namespace GerenciadorPalestras
         {
             if (!String.IsNullOrEmpty(tbxPalestrante.Text))
             {
+                if(new PalestranteDAO().BuscarPorNome(tbxPalestrante.Text.ToUpper(),string.Empty) != null)
+                {
+                    MessageBox.Show("Já existe um palestrante com o mesmo nome");
+                    return;
+                }
                 new PalestranteDAO().Inserir(tbxPalestrante.Text.Trim());
                 MensagemSucesso("Palestrante incluído com sucesso");
                 //MessageBox.Show("Palestrante incluído com sucesso");

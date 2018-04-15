@@ -43,6 +43,11 @@ namespace GerenciadorPalestras
         {
             if (!String.IsNullOrEmpty(tbxNomeSala.Text))
             {
+                if(new SalaDAO().BuscarPorNome(tbxNomeSala.Text.ToUpper(), string.Empty) != null)
+                {
+                    MessageBox.Show("Já existe uma sala com o mesmo nome");
+                    return;
+                }
                 new SalaDAO().Inserir(tbxNomeSala.Text.Trim());
                 //MessageBox.Show("Sala incluída com sucesso");
                 MensagemSucesso("Sala incluída com sucesso");

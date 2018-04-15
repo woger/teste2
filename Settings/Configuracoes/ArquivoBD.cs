@@ -76,7 +76,7 @@ namespace Settings.Configuracoes
 
                 try
                 {
-                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE EVENTO.DBF ([ID] NUMERIC (18,0), [NOME] CHAR(50), FILE_NAME CHAR(40));"))//this works and creates an empty .dbf file
+                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE EVENTO.DBF ([ID] NUMERIC (18,0), [NOME] CHAR(50), FILE_NAME CHAR(150));"))//this works and creates an empty .dbf file
                     {
                         cmd.Connection = oConn;
                         cmd.ExecuteNonQuery();
