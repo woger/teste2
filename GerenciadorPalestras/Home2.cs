@@ -40,6 +40,8 @@ namespace Server
             btnAjuda.FlatStyle = FlatStyle.Flat;
             btnAjuda.FlatAppearance.BorderSize = 0;
             btnAjuda.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
+            btnHome.Visible = false;
         }
 
         private void btnEvento_Click(object sender, EventArgs e)
@@ -104,6 +106,7 @@ namespace Server
             btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = false;
             foreach (Form childForm in MdiChildren)
                 childForm.Close();
+            btnHome.Visible = true;
         }
 
         //private void button1_Click(object sender, EventArgs e)
@@ -166,6 +169,14 @@ namespace Server
             formAjuda.StartPosition = FormStartPosition.CenterScreen;
             formAjuda.Show();
             
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = true;
+            foreach (Form childForm in MdiChildren)
+                childForm.Close();
+            btnHome.Visible = false;
         }
 
         //private void btnAjuda_Paint(object sender, PaintEventArgs e)

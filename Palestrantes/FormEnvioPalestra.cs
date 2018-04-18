@@ -200,5 +200,13 @@ namespace Palestrantes
                 Process.Start(agenda.PathPalestra(this.pathDiretorio));
             }
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja sair do sistema?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

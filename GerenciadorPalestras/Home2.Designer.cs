@@ -36,12 +36,13 @@
             this.btnAjuda = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaDoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.palestrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.palestranteNoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHome = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +130,13 @@
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
+            // eventoToolStripMenuItem
+            // 
+            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
+            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.eventoToolStripMenuItem.Text = "Evento";
+            this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
+            // 
             // salaDoEventoToolStripMenuItem
             // 
             this.salaDoEventoToolStripMenuItem.Name = "salaDoEventoToolStripMenuItem";
@@ -164,12 +172,17 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // eventoToolStripMenuItem
+            // btnHome
             // 
-            this.eventoToolStripMenuItem.Name = "eventoToolStripMenuItem";
-            this.eventoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.eventoToolStripMenuItem.Text = "Evento";
-            this.eventoToolStripMenuItem.Click += new System.EventHandler(this.eventoToolStripMenuItem_Click);
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnHome.BackgroundImage = global::Server.Properties.Resources.btn_home;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.Location = new System.Drawing.Point(885, 201);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(62, 61);
+            this.btnHome.TabIndex = 19;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // Home2
             // 
@@ -177,6 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Server.Properties.Resources.bg_home;
             this.ClientSize = new System.Drawing.Size(1254, 721);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnAjuda);
             this.Controls.Add(this.btnPalestrante);
             this.Controls.Add(this.btnSalas);
@@ -212,5 +226,6 @@
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
+        private System.Windows.Forms.Button btnHome;
     }
 }

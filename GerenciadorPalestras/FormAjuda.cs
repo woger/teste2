@@ -35,11 +35,6 @@ namespace GerenciadorPalestras
             }
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             Hide();
@@ -50,6 +45,11 @@ namespace GerenciadorPalestras
 
             home.StartPosition = FormStartPosition.CenterScreen;
             home.ShowDialog();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            btnVoltar_Click(null, null);
         }
     }
 }

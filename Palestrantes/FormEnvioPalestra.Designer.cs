@@ -38,6 +38,7 @@
             this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.btnExplorar = new System.Windows.Forms.Button();
             this.panelBanner = new System.Windows.Forms.Panel();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@
             // 
             this.ddlPalestrante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlPalestrante.FormattingEnabled = true;
-            this.ddlPalestrante.Location = new System.Drawing.Point(480, 288);
+            this.ddlPalestrante.Location = new System.Drawing.Point(490, 341);
             this.ddlPalestrante.Name = "ddlPalestrante";
             this.ddlPalestrante.Size = new System.Drawing.Size(362, 21);
             this.ddlPalestrante.TabIndex = 1;
@@ -67,7 +68,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(277, 291);
+            this.label2.Location = new System.Drawing.Point(287, 344);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 15);
             this.label2.TabIndex = 2;
@@ -79,7 +80,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(277, 343);
+            this.label3.Location = new System.Drawing.Point(287, 396);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 15);
             this.label3.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             this.ddlTema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlTema.FormattingEnabled = true;
-            this.ddlTema.Location = new System.Drawing.Point(480, 340);
+            this.ddlTema.Location = new System.Drawing.Point(490, 393);
             this.ddlTema.Name = "ddlTema";
             this.ddlTema.Size = new System.Drawing.Size(362, 21);
             this.ddlTema.TabIndex = 3;
@@ -100,7 +101,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(280, 482);
+            this.label4.Location = new System.Drawing.Point(290, 535);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 15);
             this.label4.TabIndex = 6;
@@ -109,7 +110,7 @@
             // btnEnviarArquivo
             // 
             this.btnEnviarArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarArquivo.Location = new System.Drawing.Point(480, 389);
+            this.btnEnviarArquivo.Location = new System.Drawing.Point(490, 442);
             this.btnEnviarArquivo.Name = "btnEnviarArquivo";
             this.btnEnviarArquivo.Size = new System.Drawing.Size(161, 38);
             this.btnEnviarArquivo.TabIndex = 8;
@@ -122,16 +123,16 @@
             this.lblNomeArquivo.AutoSize = true;
             this.lblNomeArquivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(147)))));
             this.lblNomeArquivo.ForeColor = System.Drawing.Color.White;
-            this.lblNomeArquivo.Location = new System.Drawing.Point(477, 484);
+            this.lblNomeArquivo.Location = new System.Drawing.Point(487, 537);
             this.lblNomeArquivo.Name = "lblNomeArquivo";
-            this.lblNomeArquivo.Size = new System.Drawing.Size(86, 13);
+            this.lblNomeArquivo.Size = new System.Drawing.Size(144, 13);
             this.lblNomeArquivo.TabIndex = 9;
-            this.lblNomeArquivo.Text = "Nenhum Arquivo";
+            this.lblNomeArquivo.Text = "Nenhum Arquivo Encontrado";
             // 
             // btnExplorar
             // 
             this.btnExplorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExplorar.Location = new System.Drawing.Point(681, 389);
+            this.btnExplorar.Location = new System.Drawing.Point(691, 442);
             this.btnExplorar.Name = "btnExplorar";
             this.btnExplorar.Size = new System.Drawing.Size(161, 38);
             this.btnExplorar.TabIndex = 11;
@@ -149,12 +150,25 @@
             this.panelBanner.Size = new System.Drawing.Size(1234, 158);
             this.panelBanner.TabIndex = 31;
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnSair.BackgroundImage = global::Client.Properties.Resources.btn_fechar;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Location = new System.Drawing.Point(900, 249);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(62, 61);
+            this.btnSair.TabIndex = 32;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // FormEnvioPalestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Client.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.btnExplorar);
             this.Controls.Add(this.lblNomeArquivo);
@@ -184,5 +198,6 @@
         private System.Windows.Forms.Label lblNomeArquivo;
         private System.Windows.Forms.Button btnExplorar;
         private System.Windows.Forms.Panel panelBanner;
+        private System.Windows.Forms.Button btnSair;
     }
 }

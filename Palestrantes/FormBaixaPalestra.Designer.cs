@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelBanner = new System.Windows.Forms.Panel();
             this.btnExplorar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +55,7 @@
             // 
             this.ddlSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSala.FormattingEnabled = true;
-            this.ddlSala.Location = new System.Drawing.Point(374, 281);
+            this.ddlSala.Location = new System.Drawing.Point(374, 346);
             this.ddlSala.Name = "ddlSala";
             this.ddlSala.Size = new System.Drawing.Size(402, 21);
             this.ddlSala.TabIndex = 3;
@@ -65,7 +66,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(316, 282);
+            this.label3.Location = new System.Drawing.Point(316, 347);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 5;
@@ -74,7 +75,7 @@
             // btnBaixarPorSala
             // 
             this.btnBaixarPorSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaixarPorSala.Location = new System.Drawing.Point(428, 318);
+            this.btnBaixarPorSala.Location = new System.Drawing.Point(428, 383);
             this.btnBaixarPorSala.Name = "btnBaixarPorSala";
             this.btnBaixarPorSala.Size = new System.Drawing.Size(131, 36);
             this.btnBaixarPorSala.TabIndex = 9;
@@ -84,7 +85,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(791, 279);
+            this.button1.Location = new System.Drawing.Point(791, 344);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 23);
             this.button1.TabIndex = 11;
@@ -105,7 +106,7 @@
             // btnExplorar
             // 
             this.btnExplorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExplorar.Location = new System.Drawing.Point(588, 318);
+            this.btnExplorar.Location = new System.Drawing.Point(588, 383);
             this.btnExplorar.Name = "btnExplorar";
             this.btnExplorar.Size = new System.Drawing.Size(131, 36);
             this.btnExplorar.TabIndex = 30;
@@ -113,12 +114,25 @@
             this.btnExplorar.UseVisualStyleBackColor = true;
             this.btnExplorar.Click += new System.EventHandler(this.btnExplorar_Click);
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnSair.BackgroundImage = global::Client.Properties.Resources.btn_fechar;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Location = new System.Drawing.Point(926, 244);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(62, 61);
+            this.btnSair.TabIndex = 31;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // FormBaixaPalestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Client.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnExplorar);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.button1);
@@ -143,5 +157,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelBanner;
         private System.Windows.Forms.Button btnExplorar;
+        private System.Windows.Forms.Button btnSair;
     }
 }
