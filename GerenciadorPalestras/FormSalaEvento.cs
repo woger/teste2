@@ -48,7 +48,13 @@ namespace GerenciadorPalestras
                     MessageBox.Show("Já existe uma sala com o mesmo nome");
                     return;
                 }
-                new SalaDAO().Inserir(tbxNomeSala.Text.Trim());
+
+                if (String.IsNullOrEmpty(tbxIP.Text))
+                {
+                    MessageBox.Show("O IP é Obrigatório");
+                    return;
+                }
+                new SalaDAO().Inserir(tbxNomeSala.Text.Trim(), tbxIP.Text.Trim());
                 //MessageBox.Show("Sala incluída com sucesso");
                 MensagemSucesso("Sala incluída com sucesso");
                 this.MostrarDados();
@@ -81,7 +87,7 @@ namespace GerenciadorPalestras
         {
             if (ID != 0 && !String.IsNullOrEmpty(tbxNomeSala.Text))
             {
-                new SalaDAO().Atualizar(this.ID, tbxNomeSala.Text);
+                new SalaDAO().Atualizar(this.ID, tbxNomeSala.Text, tbxIP.Text.Trim());
                 //MessageBox.Show("Sala atualizada com sucesso");
                 MensagemSucesso("Sala atualizada com sucesso");
                 ClearData();
@@ -122,7 +128,7 @@ namespace GerenciadorPalestras
 
         private void ClearData()
         {
-            tbxNomeSala.Text = string.Empty;
+            tbxNomeSala.Text = tbxIP.Text = string.Empty;
             ID = 0;
         }
 
@@ -130,6 +136,7 @@ namespace GerenciadorPalestras
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             tbxNomeSala.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tbxIP.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             tbxNomeSala.Focus();
 
             if (this.ID == 0)

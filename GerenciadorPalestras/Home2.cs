@@ -41,6 +41,15 @@ namespace Server
             btnAjuda.FlatAppearance.BorderSize = 0;
             btnAjuda.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
 
+            btnUsuarios.TabStop = false;
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.FlatAppearance.BorderSize = 0;
+            btnUsuarios.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
+            btnHome.TabStop = false;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
             btnHome.Visible = false;
         }
 
@@ -103,7 +112,7 @@ namespace Server
 
         private void FecharJanelasFilhas()
         {
-            btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = false;
+            btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = btnUsuarios.Visible = false;
             foreach (Form childForm in MdiChildren)
                 childForm.Close();
             btnHome.Visible = true;
@@ -173,10 +182,31 @@ namespace Server
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = true;
+            btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = btnUsuarios.Visible = true;
             foreach (Form childForm in MdiChildren)
                 childForm.Close();
             btnHome.Visible = false;
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnEvento.Visible = btnPalestrante.Visible = btnSalas.Visible = btnProgramacao.Visible = btnAjuda.Visible = btnUsuarios.Visible = true;
+            foreach (Form childForm in MdiChildren)
+                childForm.Close();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            this.FecharJanelasFilhas();
+
+            FormUsuario formUsuario = new FormUsuario();
+
+            formUsuario.MdiParent = this;
+            formUsuario.ControlBox = false;
+            formUsuario.Width = this.Width;
+
+            formUsuario.StartPosition = FormStartPosition.CenterScreen;
+            formUsuario.Show();
         }
 
         //private void btnAjuda_Paint(object sender, PaintEventArgs e)

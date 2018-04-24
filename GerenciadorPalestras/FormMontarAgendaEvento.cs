@@ -38,7 +38,7 @@ namespace GerenciadorPalestras
             InitializeComponent();
             panelBanner.Width = this.Width;
             dataGridView1.ForeColor = Color.Black;
-            
+
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             CarregaDadosIniciais();
             //this.WindowState = FormWindowState.Maximized;
@@ -116,7 +116,7 @@ namespace GerenciadorPalestras
             ddlFiltroPalestrantes.SelectedIndex = -1;
             tbxHorario.Text = tbxTema.Text = string.Empty;
             MostrarDados();
-            dataGridView1.Columns["Sala"].Visible = dataGridView1.Columns["Palestrante"].Visible = dataGridView1.Columns["Codigo"].Visible
+            dataGridView1.Columns["Codigo"].Visible
                 = dataGridView1.Columns["Data"].Visible = dataGridView1.Columns["Hora"].Visible = dataGridView1.Columns["Data"].Visible = dataGridView1.Columns["ArquivoPalestra"].Visible = dataGridView1.Columns["Tema"].Visible = false;
             dataGridView1.Columns["TemaFormatado"].HeaderText = "Tema";
         }
@@ -130,7 +130,7 @@ namespace GerenciadorPalestras
         {
             int? CodigoPalestrante = null;
             if (ddlFiltroPalestrantes.SelectedIndex != -1)
-                CodigoPalestrante =  ((KeyValuePair<int, string>)ddlFiltroPalestrantes.SelectedItem).Key;//int.Parse(ddlFiltroPalestrantes.SelectedItem.ToString().Split('-')[0]);
+                CodigoPalestrante = ((KeyValuePair<int, string>)ddlFiltroPalestrantes.SelectedItem).Key;//int.Parse(ddlFiltroPalestrantes.SelectedItem.ToString().Split('-')[0]);
             int? CodigoSala = null;
             if (ddlSalaFiltro.SelectedIndex != -1)
                 CodigoSala = ((KeyValuePair<int, string>)ddlSalaFiltro.SelectedItem).Key; //int.Parse(ddlSalaFiltro.SelectedItem.ToString().Split('-')[0]);
@@ -208,7 +208,8 @@ namespace GerenciadorPalestras
                 MensagemSucesso("Dados salvos com sucesso");
                 this.MostrarDados();
                 ClearData();
-                btnExcluir.Visible = false;
+                btnAtualizar.Visible = btnExcluir.Visible = false;
+                btnSalvar.Visible = true;
             }
             catch (Exception ex)
             {
@@ -259,7 +260,7 @@ namespace GerenciadorPalestras
             ddlPalestrante.SelectedItem = RetornaItem(ddlPalestrante, dataGridView1.Rows[e.RowIndex].Cells["Palestrante"].Value.ToString());
             tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells["Hora"].Value.ToString();
             tbxTema.Text = dataGridView1.Rows[e.RowIndex].Cells["Tema"].Value.ToString();
-            btnExcluir.Visible = true;
+            btnAtualizar.Visible = btnExcluir.Visible = true;
             btnSalvar.Visible = false;
             //tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
             //tbxLogin.Text = dataGridView1.Rows[e.RowIndex].Cells["Login"].Value.ToString();
@@ -287,7 +288,8 @@ namespace GerenciadorPalestras
                     new AgendaEventoDAO().Excluir(this.ID.Value);
                     MensagemSucesso("Registro excluído com sucesso");
                     CarregaDadosIniciais();
-                    btnExcluir.Visible = false;
+                    btnAtualizar.Visible = btnExcluir.Visible = false;
+                    btnSalvar.Visible = true;
                 }
             }
         }
@@ -302,6 +304,22 @@ namespace GerenciadorPalestras
 
             home.StartPosition = FormStartPosition.CenterScreen;
             home.ShowDialog();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            if (this.ID.HasValue)
+            {
+                new AgendaEventoDAO().Excluir(this.ID.Value);
+                //CarregaDadosIniciais();
+                new AgendaEventoDAO().SalvarAgendaEvento(((KeyValuePair<int, string>)ddlPalestrante.SelectedItem).Key, ((KeyValuePair<int, string>)ddlSala.SelectedItem).Key, RetornaDataHorarioEvento(), tbxHorario.Text, null, tbxTema.Text);
+                //MessageBox.Show("Dados salvos com sucesso");
+                MensagemSucesso("Dados salvos com sucesso");
+                this.MostrarDados();
+                ClearData();
+                btnAtualizar.Visible = btnExcluir.Visible = false;
+                btnSalvar.Visible = true;
+            }
         }
     }
 }

@@ -40,6 +40,8 @@
             this.lblDadosSalvos = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelBanner = new System.Windows.Forms.Panel();
+            this.tbxIP = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(569, 289);
+            this.label1.Location = new System.Drawing.Point(479, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 15);
             this.label1.TabIndex = 1;
@@ -71,10 +73,10 @@
             // tbxNomeSala
             // 
             this.tbxNomeSala.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxNomeSala.Location = new System.Drawing.Point(482, 308);
+            this.tbxNomeSala.Location = new System.Drawing.Point(592, 285);
             this.tbxNomeSala.Name = "tbxNomeSala";
-            this.tbxNomeSala.Size = new System.Drawing.Size(272, 20);
-            this.tbxNomeSala.TabIndex = 2;
+            this.tbxNomeSala.Size = new System.Drawing.Size(244, 20);
+            this.tbxNomeSala.TabIndex = 1;
             // 
             // btnIncluir
             // 
@@ -162,6 +164,27 @@
             this.panelBanner.Size = new System.Drawing.Size(1234, 158);
             this.panelBanner.TabIndex = 28;
             // 
+            // tbxIP
+            // 
+            this.tbxIP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxIP.Location = new System.Drawing.Point(592, 314);
+            this.tbxIP.Name = "tbxIP";
+            this.tbxIP.Size = new System.Drawing.Size(244, 20);
+            this.tbxIP.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(479, 319);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 15);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "IP";
+            // 
             // FormSalaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +193,8 @@
             this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 733);
+            this.Controls.Add(this.tbxIP);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -205,5 +230,7 @@
         private System.Windows.Forms.Label lblDadosSalvos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panelBanner;
+        private System.Windows.Forms.TextBox tbxIP;
+        private System.Windows.Forms.Label label4;
     }
 }

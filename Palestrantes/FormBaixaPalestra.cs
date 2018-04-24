@@ -27,6 +27,12 @@ namespace Palestrantes
         public FormBaixaPalestra(string path)
         {
             InitializeComponent();
+
+            btnSair.TabStop = false;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
             this.pathDiretorio = path;
             Evento evento = new EventoDAO().VerificaExistenciaEvento(this.pathDiretorio);
             if (evento != null) // Se for edição
@@ -116,9 +122,6 @@ namespace Palestrantes
                 MessageBox.Show("Selecione uma sala ao menos");
                 return;
             }
-
-            //if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
             int keySala = ((KeyValuePair<int, string>)ddlSala.SelectedItem).Key;
             List<AgendaEvento> agendasData = new AgendaEventoDAO().BuscaAgendaPorSala(keySala, this.pathDiretorio);
 
@@ -129,7 +132,6 @@ namespace Palestrantes
                     new AgendaEventoDAO().CriarPastasRemoto(this.pathDiretorio, agendasData[i].Data, agendasData[i].Sala.Codigo, agendasData[i].Palestrante.Codigo, agendasData[i].Hora, DiretoriFixoSincronizar, File.OpenRead(arquivosPalestra[j]), Path.GetFileName(arquivosPalestra[j]));
             }
             MessageBox.Show(@"Dados Salvos com sucesso em C:\PALESTRA");
-            //}
         }
 
         //private void btnBaixarPorHorario_Click(object sender, EventArgs e)
@@ -169,7 +171,7 @@ namespace Palestrantes
             Process.Start(DiretoriFixoSincronizar);
 
         }
-        
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Tem certeza que deseja sair do sistema?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)

@@ -18,7 +18,14 @@ namespace GerenciadorPalestras
         public Login()
         {
             InitializeComponent();
-            ArquivoBD.CriarArquivosBD();
+            try
+            {
+                ArquivoBD.CriarArquivosBD();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Ocorreu um erro ao definir as propriedades dos arquivos da aplicação. Contacte o administrador. Erro: " + e.Message);
+            }
             tbxLogin.Focus();
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             Evento evento = new EventoDAO().VerificaExistenciaEvento();

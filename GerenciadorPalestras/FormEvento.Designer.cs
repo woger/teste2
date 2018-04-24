@@ -154,7 +154,7 @@
             // 
             this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(422, 628);
+            this.btnSalvar.Location = new System.Drawing.Point(473, 619);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(280, 23);
             this.btnSalvar.TabIndex = 6;
@@ -214,7 +214,7 @@
             this.lblDadosSalvos.AutoSize = true;
             this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(542, 654);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(591, 645);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(35, 13);
             this.lblDadosSalvos.TabIndex = 29;

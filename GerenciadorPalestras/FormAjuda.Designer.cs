@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAjuda));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelBanner = new System.Windows.Forms.Panel();
@@ -40,11 +39,12 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(35, 290);
+            this.richTextBox1.Location = new System.Drawing.Point(431, 328);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(877, 318);
+            this.richTextBox1.Size = new System.Drawing.Size(609, 318);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.Text = "NA APLICACAO CLIENTE UTILIZE AS SEGUINTES CREDENCIAIS:\n\nLOGIN: MEDIADESK\nSENHA: @" +
+    "PALESTRANTE\n\nLOGIN: HOUSEMIX\nSENHA: @MONITOR";
             // 
             // label4
             // 

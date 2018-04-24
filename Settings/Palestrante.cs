@@ -23,7 +23,7 @@ namespace Settings
 
         public override string ToString()
         {
-            return this.Codigo + " - " + this.Nome;
+            return this.Nome;
         }
     }
 }

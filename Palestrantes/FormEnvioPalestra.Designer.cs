@@ -39,6 +39,7 @@
             this.btnExplorar = new System.Windows.Forms.Button();
             this.panelBanner = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
+            this.btnLimparFiltroPalestrante = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -153,14 +154,25 @@
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.btnSair.BackgroundImage = global::Client.Properties.Resources.btn_fechar;
+            this.btnSair.BackgroundImage = global::Client.Properties.Resources.btn_interno_fechar;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSair.Location = new System.Drawing.Point(900, 249);
+            this.btnSair.Location = new System.Drawing.Point(928, 270);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(62, 61);
+            this.btnSair.Size = new System.Drawing.Size(34, 33);
             this.btnSair.TabIndex = 32;
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnLimparFiltroPalestrante
+            // 
+            this.btnLimparFiltroPalestrante.ForeColor = System.Drawing.Color.Black;
+            this.btnLimparFiltroPalestrante.Location = new System.Drawing.Point(858, 339);
+            this.btnLimparFiltroPalestrante.Name = "btnLimparFiltroPalestrante";
+            this.btnLimparFiltroPalestrante.Size = new System.Drawing.Size(33, 23);
+            this.btnLimparFiltroPalestrante.TabIndex = 33;
+            this.btnLimparFiltroPalestrante.Text = "x";
+            this.btnLimparFiltroPalestrante.UseVisualStyleBackColor = true;
+            this.btnLimparFiltroPalestrante.Click += new System.EventHandler(this.btnLimparFiltroPalestrante_Click);
             // 
             // FormEnvioPalestra
             // 
@@ -168,6 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Client.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 701);
+            this.Controls.Add(this.btnLimparFiltroPalestrante);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.btnExplorar);
@@ -199,5 +212,6 @@
         private System.Windows.Forms.Button btnExplorar;
         private System.Windows.Forms.Panel panelBanner;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnLimparFiltroPalestrante;
     }
 }

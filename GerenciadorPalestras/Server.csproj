@@ -83,6 +83,9 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>XR2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -187,7 +190,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -267,6 +270,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btn-fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btb-home-sala.png" />
+    <None Include="Resources\btb-home-usuario.png" />
+    <None Include="Resources\btn-topo-home.png" />
+    <Content Include="XR2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

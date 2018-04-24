@@ -35,6 +35,7 @@
             this.btnProgramacao = new System.Windows.Forms.Button();
             this.btnAjuda = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaDoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +43,7 @@
             this.palestranteNoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +63,7 @@
             // btnSalas
             // 
             this.btnSalas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.btnSalas.BackgroundImage = global::Server.Properties.Resources.btn_salas;
+            this.btnSalas.BackgroundImage = global::Server.Properties.Resources.btb_home_sala;
             this.btnSalas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalas.ForeColor = System.Drawing.Color.Transparent;
             this.btnSalas.Location = new System.Drawing.Point(423, 351);
@@ -110,6 +112,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
             this.cadastroToolStripMenuItem,
             this.palestranteNoEventoToolStripMenuItem,
             this.ajudaToolStripMenuItem,
@@ -119,6 +122,14 @@
             this.menuStrip1.Size = new System.Drawing.Size(1254, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -172,15 +183,29 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnUsuarios.BackgroundImage = global::Server.Properties.Resources.btb_home_usuario;
+            this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.Location = new System.Drawing.Point(1028, 351);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(157, 157);
+            this.btnUsuarios.TabIndex = 8;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // btnHome
             // 
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.btnHome.BackgroundImage = global::Server.Properties.Resources.btn_home;
+            this.btnHome.BackgroundImage = global::Server.Properties.Resources.btn_topo_home;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHome.Location = new System.Drawing.Point(885, 201);
+            this.btnHome.Location = new System.Drawing.Point(844, 168);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(62, 61);
-            this.btnHome.TabIndex = 19;
+            this.btnHome.Size = new System.Drawing.Size(59, 52);
+            this.btnHome.TabIndex = 10;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -191,6 +216,7 @@
             this.BackgroundImage = global::Server.Properties.Resources.bg_home;
             this.ClientSize = new System.Drawing.Size(1254, 721);
             this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnAjuda);
             this.Controls.Add(this.btnPalestrante);
             this.Controls.Add(this.btnSalas);
@@ -226,6 +252,8 @@
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnHome;
     }
 }

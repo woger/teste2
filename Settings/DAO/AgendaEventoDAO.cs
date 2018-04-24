@@ -11,6 +11,38 @@ namespace Settings.DAO
 {
     public class AgendaEventoDAO
     {
+
+        public void CriarDiretorios(string path, int pPalestrante, int pSala, DateTime Data, string pHora, string pTema, string pPathServer)
+        {
+            try
+            {
+                System.IO.DirectoryInfo infoDiretorio = null;
+                Sala sala = new SalaDAO().BuscarPorCodigo(pSala, pPathServer);
+                if (sala != null)
+                {
+                    if (!System.IO.Directory.Exists(path + @"\" + sala.Nome)) //Se não existe a pasta da sala para a data
+                        infoDiretorio = System.IO.Directory.CreateDirectory(path + @"\" + sala.Nome);//Cria
+                }
+
+
+                if (!System.IO.Directory.Exists(path + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data))) //Se não existe a pasta da data
+                    infoDiretorio = System.IO.Directory.CreateDirectory(path + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data));//Cria
+
+
+
+                Palestrante palestrante = new PalestranteDAO().BuscarPorCodigo(pPalestrante, pPathServer);
+                if (palestrante != null)
+                {
+                    //Verifico se já existe a pasta para o horário
+                    if (!System.IO.Directory.Exists(path + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome())) //Se não existe a pasta do horário para a sala e para a data
+                        infoDiretorio = System.IO.Directory.CreateDirectory(path + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome());//Cria
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Ocorreu um erro ao criar as pastas no diretório de instalação " + path + ": " + e.Message);
+            }
+        }
         public void SalvarAgendaEvento(int pPalestrante, int pSala, DateTime Data, string pHora, int? pCodigo, string pTema)
         {
             //DataTable resultado = new DataTable();
@@ -49,34 +81,7 @@ namespace Settings.DAO
                 cmd.ExecuteNonQuery();
 
                 //cria o diretório para a data informada, cria a sala, horário
-                try
-                {
-                    System.IO.DirectoryInfo infoDiretorio = null;
-                    Sala sala = new SalaDAO().BuscarPorCodigo(pSala, null);
-                    if (sala != null)
-                    {
-                        if (!System.IO.Directory.Exists(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + @"\" + sala.Nome)) //Se não existe a pasta da sala para a data
-                            infoDiretorio = System.IO.Directory.CreateDirectory(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + @"\" + sala.Nome);//Cria
-                    }
-
-
-                    if (!System.IO.Directory.Exists(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + @"\" + sala.Nome + @"\"+ ArquivoBD.FORMATARDATA_DIRETORIO(Data))) //Se não existe a pasta da data
-                        infoDiretorio = System.IO.Directory.CreateDirectory(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data));//Cria
-
-                    
-
-                    Palestrante palestrante = new PalestranteDAO().BuscarPorCodigo(pPalestrante, null);
-                    if (palestrante != null)
-                    {
-                        //Verifico se já existe a pasta para o horário
-                        if (!System.IO.Directory.Exists(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS  + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome())) //Se não existe a pasta do horário para a sala e para a data
-                            infoDiretorio = System.IO.Directory.CreateDirectory(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + @"\" + sala.Nome + @"\" + ArquivoBD.FORMATARDATA_DIRETORIO(Data) + @"\" + pHora.Replace(":", "-") + @" - " + palestrante.NomeSobreNome());//Cria
-                    }
-                }
-                catch (Exception e)
-                {
-                    throw new Exception("Ocorreu um erro ao criar as pastas no diretório de instalação " + ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS + ": " + e.Message);
-                }
+                CriarDiretorios(ArquivoBD.DIRETORIO_INSTALACAO_PALESTRAS, pPalestrante, pSala, Data, pHora, pTema, string.Empty);
             }
         }
 
@@ -185,6 +190,7 @@ namespace Settings.DAO
                         agendaEvento.Sala = new SalaDAO().BuscarPorCodigo(int.Parse(resultado.Rows[0]["ID_SALA"].ToString()), pPath);
                         agendaEvento.Data = DateTime.Parse(resultado.Rows[0]["DATA"].ToString());
                         agendaEvento.Hora = resultado.Rows[0]["HORA"].ToString();
+                        agendaEvento.Tema = resultado.Rows[0]["TEMA"].ToString();
                         agendaEvento.ArquivoPalestra = resultado.Rows[0]["FILENAME"].ToString();
                         //evento.Datas = this.DatasEvento();
                         return agendaEvento;

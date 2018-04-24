@@ -13,7 +13,7 @@ namespace Settings
         {
             get
             {
-                return this.Data.ToString("dd/MM/yyy") + " - " + this.Hora + ": " + this.Tema.ToUpper();
+                return this.Data.ToString("dd/MM/yyy") + " - " + this.Hora + ": " + this.Tema.ToUpper() + " - Sala:" + this.Sala;
             }
 
         }
@@ -21,23 +21,23 @@ namespace Settings
 
         public string Hora { get; set; }
 
-        public string NomeSala
-        {
-            get
-            {
-                return this.Sala.Nome;
-            }
+        //public string NomeSala
+        //{
+        //    get
+        //    {
+        //        return this.Sala.Nome;
+        //    }
 
-        }
+        //}
 
-        public string NomePalestrante
-        {
-            get
-            {
-                return this.Palestrante.Nome; 
-            }
+        //public string NomePalestrante
+        //{
+        //    get
+        //    {
+        //        return this.Palestrante.Nome; 
+        //    }
             
-        }
+        //}
 
         
 

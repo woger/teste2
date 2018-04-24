@@ -11,9 +11,11 @@ namespace Settings
 
         public string Nome { get; set; }
 
+        public string IP { get; set; }
+
         public override string ToString()
         {
-            return this.Codigo + " - " + this.Nome;
+            return this.Nome.ToUpper();
         }
     }
 }

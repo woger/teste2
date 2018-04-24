@@ -26,6 +26,11 @@ namespace Palestrantes
         public FormEnvioPalestra(string path)
         {
             InitializeComponent();
+            btnSair.TabStop = false;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
             this.pathDiretorio = path;
             Evento evento = new EventoDAO().VerificaExistenciaEvento(this.pathDiretorio);
             if (evento != null) // Se for edição
@@ -33,6 +38,14 @@ namespace Palestrantes
                 panelBanner.BackgroundImage = new Bitmap(path + @"\" + evento.Arquivo);
             }
 
+            CarregarPalestrante();
+        }
+        //panelPalestrantes.Controls.Add()
+
+
+        public void CarregarPalestrante()
+        {
+            ddlPalestrante.DataSource = null;//.Items.Clear();
             List<Palestrante> palestrantes = new AgendaEventoDAO().ListarPalestrantesEvento(this.pathDiretorio);
             if (palestrantes.Count > 0)
             {
@@ -45,26 +58,28 @@ namespace Palestrantes
                 ddlPalestrante.SelectedIndex = -1;
                 ddlPalestrante.SelectedIndexChanged += ddlPalestrante_SelectedIndexChanged;
             }
-            //panelPalestrantes.Controls.Add()
         }
 
         public void ddlPalestrante_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Carrego os temas para o palestrante selecionado
-            int keyPalestrante = ((KeyValuePair<int, string>)ddlPalestrante.SelectedItem).Key;
-
-            List<AgendaEvento> eventosDoProfissional = new AgendaEventoDAO().BuscaAgendaPorPalestrante(keyPalestrante, this.pathDiretorio);
-            if (eventosDoProfissional.Count > 0)
+            if (ddlPalestrante.SelectedItem != null)
             {
-                Dictionary<int, string> dictionaryAgendas = new Dictionary<int, string>();
-                for (int i = 0; i < eventosDoProfissional.Count; i++)
-                    dictionaryAgendas.Add(eventosDoProfissional[i].Codigo, eventosDoProfissional[i].TemaFormatado);
-                ddlTema.DataSource = new BindingSource(dictionaryAgendas, null);
-                ddlTema.DisplayMember = "Value";
-                ddlTema.ValueMember = "Key";
-                ddlTema.SelectedIndex = -1;
+                //Carrego os temas para o palestrante selecionado
+                int keyPalestrante = ((KeyValuePair<int, string>)ddlPalestrante.SelectedItem).Key;
 
-                ddlTema.SelectedIndexChanged += ddlTema_SelectedIndexChanged;
+                List<AgendaEvento> eventosDoProfissional = new AgendaEventoDAO().BuscaAgendaPorPalestrante(keyPalestrante, this.pathDiretorio);
+                if (eventosDoProfissional.Count > 0)
+                {
+                    Dictionary<int, string> dictionaryAgendas = new Dictionary<int, string>();
+                    for (int i = 0; i < eventosDoProfissional.Count; i++)
+                        dictionaryAgendas.Add(eventosDoProfissional[i].Codigo, eventosDoProfissional[i].TemaFormatado);
+                    ddlTema.DataSource = new BindingSource(dictionaryAgendas, null);
+                    ddlTema.DisplayMember = "Value";
+                    ddlTema.ValueMember = "Key";
+                    ddlTema.SelectedIndex = -1;
+
+                    ddlTema.SelectedIndexChanged += ddlTema_SelectedIndexChanged;
+                }
             }
         }
 
@@ -125,6 +140,7 @@ namespace Palestrantes
             }
 
             int keyAgenda = ((KeyValuePair<int, string>)ddlTema.SelectedItem).Key;
+            AgendaEvento agenda = null;
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -133,7 +149,7 @@ namespace Palestrantes
                 {
 
                     //string nomeArquivo = dialog.SafeFileName;
-                    AgendaEvento agenda = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
+                    agenda = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
                     if (agenda != null)
                     {
                         string[] arquivosSelecionados = dialog.FileNames;
@@ -151,30 +167,9 @@ namespace Palestrantes
                             arquivoUsuario.Close();
                         }
 
-
-
-                        //new AgendaEventoDAO().AtualizarArquivoPalestra(agenda.Codigo, dialog.SafeFileName, this.pathDiretorio);
                         ddlTema_SelectedIndexChanged(null, null);
                         MessageBox.Show("Arquivo(s) enviado(s) com sucesso");
                     }
-
-                    //using (var fileStream = File.Create(agenda.PathPalestra(this.pathDiretorio) + @"/ " + nomeArquivo))
-                    ////using (var fileStream = new FileStream(agenda.PathPalestra(this.pathDiretorio) + @"/ " + nomeArquivo))
-                    //{
-
-                    //    StreamWriter writer = new StreamWriter(fileStream); // do anything you want, e.g. read it
-                    //    //using (StreamWriter writer = new StreamWriter(new FileStream(path, FileMode.Open), new UTF8Encoding())) // do anything you want, e.g. read it
-                    //    {
-                    //        byte[] bytes = new byte[fileStream.Length];
-                    //        fileStream.Read(bytes, 0, (int)fileStream.Length);
-                    //        writer.Write(bytes, 0, bytes.Length);
-
-                    //        //fileStream.Write(reader.)
-                    //        //reader.InputStream.Seek(0, SeekOrigin.Begin);
-                    //        //reader.InputStream.CopyTo(fileStream);
-                    //    }
-                    //}
-
                 }
             }
             catch (UnauthorizedAccessException ex)
@@ -182,6 +177,46 @@ namespace Palestrantes
                 MessageBox.Show("Ocorreu um erro: O sistema está sem permissão de escrita no diretório informado. Por favor, tente novamente após a autorização");
                 return;
             }
+
+            CopiarArquivosParaSala(agenda);
+        }
+
+        void CopiarArquivosParaSala(AgendaEvento agenda)
+        {
+            try
+            {
+                string[] files = Directory.GetFiles(agenda.PathPalestra(this.pathDiretorio));
+                if (files.Length > 0)
+                {
+
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        try
+                        {
+                            FileStream arquivoSala = File.OpenRead(files[i]);
+                            new AgendaEventoDAO().CriarDiretorios(@"\\" + agenda.Sala.IP + @"\PALESTRAS", agenda.Palestrante.Codigo, agenda.Sala.Codigo, agenda.Data, agenda.Hora, agenda.TemaFormatado, this.pathDiretorio);
+                            FileStream arquivoSaida = File.Create(@"\\"  + agenda.PathPalestra(agenda.Sala.IP) + @"/ " + Path.GetFileName(files[i]));
+                            int b;
+
+                            while ((b = arquivoSala.ReadByte()) > -1)
+                                arquivoSaida.WriteByte((byte)b);
+
+                            arquivoSaida.Flush();
+                            arquivoSaida.Close();
+                            arquivoSala.Close();
+                            //if (i == 0)
+                            //    lblNomeArquivo.Text = "* " + nome;
+                            //else
+                            //    lblNomeArquivo.Text += "\r\n* " + nome;
+                        }
+                        catch(Exception e)
+                        {
+                            Console.Write(e.Message);
+                        }
+                    }
+                }
+            }
+            catch { }
         }
 
         private void btnExplorar_Click(object sender, EventArgs e)
@@ -193,12 +228,22 @@ namespace Palestrantes
             }
 
             int keyAgenda = ((KeyValuePair<int, string>)ddlTema.SelectedItem).Key;
-
             AgendaEvento agenda = new AgendaEventoDAO().BuscarPorCodigo(keyAgenda, this.pathDiretorio);
             if (agenda != null)
             {
                 Process.Start(agenda.PathPalestra(this.pathDiretorio));
+                if (MessageBox.Show("Deseja atualizar os arquivos para na sala informada?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes) // if user clicked OK
+                {
+                    CopiarArquivosParaSala(agenda);
+                }
+                
             }
+
+
+
+
+
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -207,6 +252,12 @@ namespace Palestrantes
             {
                 Application.Exit();
             }
+        }
+
+        private void btnLimparFiltroPalestrante_Click(object sender, EventArgs e)
+        {
+            ddlTema.SelectedIndex = -1;
+            CarregarPalestrante();
         }
     }
 }

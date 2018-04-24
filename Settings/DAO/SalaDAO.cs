@@ -33,6 +33,7 @@ namespace Settings.DAO
                             Sala sala = new Sala();
                             sala.Codigo = int.Parse(resultado.Rows[i]["ID"].ToString());
                             sala.Nome = resultado.Rows[i]["NOME"].ToString();
+                            sala.IP = resultado.Rows[i]["IP"].ToString();
                             salas.Add(sala);
                         }
                     }
@@ -61,6 +62,7 @@ namespace Settings.DAO
                         sala = new Sala();
                         sala.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
                         sala.Nome = resultado.Rows[0]["NOME"].ToString();
+                        sala.IP = resultado.Rows[0]["IP"].ToString();
                     }
                 }
             }
@@ -87,20 +89,21 @@ namespace Settings.DAO
                         sala = new Sala();
                         sala.Codigo = int.Parse(resultado.Rows[0]["ID"].ToString());
                         sala.Nome = resultado.Rows[0]["NOME"].ToString();
+                        sala.IP = resultado.Rows[0]["IP"].ToString();
                     }
                 }
             }
             return sala;
         }
 
-        public void Inserir(string pNome)
+        public void Inserir(string pNome, string pIP)
         {
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(@" INSERT INTO SALAS.DBF ([ID], [NOME]) 
-                                                            VALUES(" + (this.UltimoIdIncluido() + 1) + ", '" + pNome + "');"))
+                using (OleDbCommand cmd = new OleDbCommand(@" INSERT INTO SALAS.DBF ([ID], [NOME], [IP]) 
+                                                            VALUES(" + (this.UltimoIdIncluido() + 1) + ", '" + pNome + "', '"+ pIP + "');"))
                 {
                     cmd.Connection = oConn;
                     cmd.ExecuteNonQuery();
@@ -108,13 +111,13 @@ namespace Settings.DAO
             }
         }
 
-        public void Atualizar(int pID, string pNome)
+        public void Atualizar(int pID, string pNome, string pIP)
         {
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(@" UPDATE SALAS.DBF set [NOME] = '" + pNome + "' where ID = " + pID))
+                using (OleDbCommand cmd = new OleDbCommand(@" UPDATE SALAS.DBF set [NOME] = '" + pNome + "', [IP] = '"+ pIP + "' where ID = " + pID))
                 {
                     cmd.Connection = oConn;
                     //cmd.Parameters.AddWithValue("nome", pNome);

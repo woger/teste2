@@ -103,6 +103,26 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap btb_home_sala {
+            get {
+                object obj = ResourceManager.GetObject("btb_home_sala", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap btb_home_usuario {
+            get {
+                object obj = ResourceManager.GetObject("btb_home_usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap btn_ajuda {
             get {
                 object obj = ResourceManager.GetObject("btn-ajuda", resourceCulture);
@@ -143,9 +163,9 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap btn_salas {
+        public static System.Drawing.Bitmap btn_topo_home {
             get {
-                object obj = ResourceManager.GetObject("btn-salas", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_topo_home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,26 +176,6 @@ namespace Server.Properties {
         public static System.Drawing.Bitmap evento2 {
             get {
                 object obj = ResourceManager.GetObject("evento2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Help1 {
-            get {
-                object obj = ResourceManager.GetObject("Help1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Help3 {
-            get {
-                object obj = ResourceManager.GetObject("Help3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

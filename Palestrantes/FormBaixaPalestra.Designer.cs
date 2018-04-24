@@ -117,11 +117,11 @@
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.btnSair.BackgroundImage = global::Client.Properties.Resources.btn_fechar;
+            this.btnSair.BackgroundImage = global::Client.Properties.Resources.btn_interno_fechar;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSair.Location = new System.Drawing.Point(926, 244);
+            this.btnSair.Location = new System.Drawing.Point(930, 251);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(62, 61);
+            this.btnSair.Size = new System.Drawing.Size(34, 33);
             this.btnSair.TabIndex = 31;
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
