@@ -27,6 +27,7 @@ namespace GerenciadorPalestras
             dataGridView1.Columns["PerfilToString"].Visible = false;
             dataGridView1.Columns["Perfil"].Visible = false;
             //dataGridView1.Columns["PerfilToString"].HeaderText = "Perfil";
+            panelBanner.Width = this.Width;
 
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if (evento != null) // Se for edição

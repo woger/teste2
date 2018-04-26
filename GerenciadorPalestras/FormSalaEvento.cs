@@ -22,6 +22,7 @@ namespace GerenciadorPalestras
             InitializeComponent();
             MostrarDados();
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
+            panelBanner.Width = this.Width;
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if (evento != null) // Se for edição
             {
