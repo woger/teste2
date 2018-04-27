@@ -12,7 +12,7 @@ using System.Management;
 using System.IO;
 using System.Diagnostics;
 using Settings.DAO;
-
+using Settings.Configuracoes;
 
 namespace Palestrantes
 {
@@ -38,6 +38,11 @@ namespace Palestrantes
             //{
             //    panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
             //}
+            if (System.IO.File.Exists(Evento.DIRETORIO_INSTALACAO_BANNER(CAMINHO_REDE)))
+            {
+                //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
+                panelBanner.BackgroundImage = Helper.Resize(new Bitmap(Evento.DIRETORIO_INSTALACAO_BANNER(CAMINHO_REDE)), panelBanner.Width, panelBanner.Height);
+            }
         }
 
         private void btnTestarConexao_Click(object sender, EventArgs e)
@@ -45,12 +50,12 @@ namespace Palestrantes
 
 
             //return di.GetFiles(pattern);
-            if (!String.IsNullOrEmpty(tbxIP.Text))
-            {
-                //MessageBox.Show("Preencha o IP da máquina servidora");
-                //return;
-                CAMINHO_REDE = tbxIP.Text;
-            }
+            //if (!String.IsNullOrEmpty(tbxIP.Text))
+            //{
+            //    //MessageBox.Show("Preencha o IP da máquina servidora");
+            //    //return;
+            //    CAMINHO_REDE = tbxIP.Text;
+            //}
 
 
             if (ddlUsuarios.SelectedIndex == -1)

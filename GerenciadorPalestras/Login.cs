@@ -28,10 +28,15 @@ namespace GerenciadorPalestras
             }
             tbxLogin.Focus();
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
-            Evento evento = new EventoDAO().VerificaExistenciaEvento();
-            if (evento != null) // Se for edição
+            //Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            //if (evento != null) // Se for edição
+            //{
+            //    panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+            //}
+            if (System.IO.File.Exists(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)))
             {
-                panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+                //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
+                panelBanner.BackgroundImage = Helper.Resize(new Bitmap(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)), panelBanner.Width, panelBanner.Height);
             }
         }
 

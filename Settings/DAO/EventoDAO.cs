@@ -12,32 +12,32 @@ namespace Settings.DAO
 {
     public class EventoDAO
     {
-        public void SalvarEvento(String pNomeEvento, String pFileName, List<DateTime> pDatas, Bitmap pImagem )
+        public void SalvarEvento(String pNomeEvento, List<DateTime> pDatas)
         {
             //DataTable resultado = new DataTable();
             using (OleDbConnection oConn = new OleDbConnection(ConexaoSingle.conexao))
             {
                 oConn.Open();
                 OleDbCommand cmd = new OleDbCommand();
-                if(pFileName.Length > 140)
-                    pFileName = pFileName.Remove(140);
+                //if(pFileName.Length > 140)
+                //    pFileName = pFileName.Remove(140);
                 //Salva a imagem no diretório da app
-                if (System.IO.File.Exists(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName))
-                {
-                    string nomeArquivo = Path.GetFileNameWithoutExtension(pFileName);
-                    string extensao = Path.GetExtension(pFileName);
-                    pFileName = nomeArquivo + new Random(5).Next(0, 10).ToString() + extensao;
-                    pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);
-                }
-                else
-                    pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);
+                //if (System.IO.File.Exists(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName))
+                //{
+                //    string nomeArquivo = Path.GetFileNameWithoutExtension(pFileName);
+                //    string extensao = Path.GetExtension(pFileName);
+                //    pFileName = nomeArquivo + new Random(5).Next(0, 10).ToString() + extensao;
+                //    pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);
+                //}
+                //else
+                //    pImagem.Save(ArquivoBD.DIRETORIO_INSTALACAO + @"\" + pFileName);
 
 
                 if (VerificaExistenciaEvento() == null)// Se não existe                
-                    cmd.CommandText = @" INSERT INTO EVENTO.DBF (ID, NOME, FILE_NAME) 
-                                                            VALUES (1, '" + pNomeEvento + "', '" + pFileName + "');";
+                    cmd.CommandText = @" INSERT INTO EVENTO.DBF (ID, NOME) 
+                                                            VALUES (1, '" + pNomeEvento + "');";
                 else
-                    cmd.CommandText = @" UPDATE EVENTO.DBF SET NOME = '" + pNomeEvento + "', FILE_NAME = '" + pFileName + "'";
+                    cmd.CommandText = @" UPDATE EVENTO.DBF SET NOME = '" + pNomeEvento + "'";
 
                 cmd.Connection = oConn;
                 cmd.ExecuteNonQuery();

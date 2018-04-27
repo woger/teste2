@@ -86,6 +86,7 @@
     <Compile Include="AgendaEvento.cs" />
     <Compile Include="ConexaoSingle.cs" />
     <Compile Include="Configuracoes\ArquivoBD.cs" />
+    <Compile Include="Configuracoes\Helper.cs" />
     <Compile Include="DAO\AgendaEventoDAO.cs" />
     <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\PalestranteDAO.cs" />

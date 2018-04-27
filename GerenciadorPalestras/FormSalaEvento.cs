@@ -1,5 +1,6 @@
 ﻿using Server;
 using Settings;
+using Settings.Configuracoes;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,10 @@ namespace GerenciadorPalestras
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             panelBanner.Width = this.Width;
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
-            if (evento != null) // Se for edição
+            if (System.IO.File.Exists(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)))
             {
-                panelBanner.BackgroundImage = new Bitmap(evento.PathFile);
+                //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
+                panelBanner.BackgroundImage = Helper.Resize(new Bitmap(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)), panelBanner.Width, panelBanner.Height);
             }
         }
 

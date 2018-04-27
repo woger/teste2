@@ -8,6 +8,13 @@ namespace Settings
 {
     public class Evento
     {
+
+        public static String DIRETORIO_INSTALACAO_BANNER(String pPath) {
+            if(String.IsNullOrEmpty(pPath))
+                return ArquivoBD.DIRETORIO_INSTALACAO + @"\banner.jpg";
+            else
+                return pPath + @"\banner.jpg";
+        } 
         public int Codigo { get; set; }
 
         public string Nome { get; set; }

@@ -166,7 +166,7 @@
             this.lblDadosSalvos.AutoSize = true;
             this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(510, 492);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(454, 495);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(140, 13);
             this.lblDadosSalvos.TabIndex = 29;

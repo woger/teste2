@@ -1,5 +1,6 @@
 ﻿using Server;
 using Settings;
+using Settings.Configuracoes;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -25,19 +26,21 @@ namespace GerenciadorPalestras
             //form.Show();
             //Close();
             panelBanner.Width = this.Width;
-            
+
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             //Verifica se já existe evento
+            if (System.IO.File.Exists(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)))
+            {
+                //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
+                panelBanner.BackgroundImage = Helper.Resize(new Bitmap(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)), panelBanner.Width, panelBanner.Height);
+            }
+
             Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if(evento != null) // Se for edição
             {
                 tbxNomeEvento.Text = evento.Nome;
-                tbxFileName.Text = evento.PathFile;
-                if (!String.IsNullOrEmpty(evento.PathFile))
-                {
-                    pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
-                    panelBanner.BackgroundImage = Resize(new Bitmap(evento.PathFile), panelBanner.Width, panelBanner.Height);
-                }
+                //tbxFileName.Text = evento.PathFile;
+               
                 this.ID = evento.Codigo;
                 foreach (DateTime data in evento.Datas)
                     listBox1.Items.Add(data.ToString("dd/MM/yyyy"));
@@ -59,25 +62,18 @@ namespace GerenciadorPalestras
             this.Invoke(new MethodInvoker(() => lblDadosSalvos.Visible = false));
         }
 
-        private void btnBuscarBanner_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Filter = "Arquivos Imagem | *.jpeg; *.jpg; *.png";
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), pictureBox1.Width, pictureBox1.Height);
-                //pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
-                tbxFileName.Text = openFileDialog1.FileName;
-            }
-        }
+        //private void btnBuscarBanner_Click(object sender, EventArgs e)
+        //{
+        //    openFileDialog1.Filter = "Arquivos Imagem | *.jpeg; *.jpg; *.png";
+        //    if(openFileDialog1.ShowDialog() == DialogResult.OK)
+        //    {
+        //        pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), pictureBox1.Width, pictureBox1.Height);
+        //        //pictureBox1.Image = Resize(Image.FromFile(openFileDialog1.FileName), 550, 158);
+        //        tbxFileName.Text = openFileDialog1.FileName;
+        //    }
+        //}
 
-        private Image Resize(Image img, int iWidth, int iHeight)
-        {
-            Bitmap bmp = new Bitmap(iWidth, iHeight);
-            Graphics graphic = Graphics.FromImage((Image)bmp);
-            graphic.DrawImage(img, 0, 0, iWidth, iHeight);
-
-            return (Image)bmp;
-        }
+        
 
 
         private void btnAddData_Click(object sender, EventArgs e)
@@ -116,11 +112,11 @@ namespace GerenciadorPalestras
                 return;
             }
 
-            if (String.IsNullOrEmpty(tbxFileName.Text))
-            {
-                MessageBox.Show("Banner é obrigatório");
-                return;
-            }
+            //if (String.IsNullOrEmpty(tbxFileName.Text))
+            //{
+            //    MessageBox.Show("Banner é obrigatório");
+            //    return;
+            //}
 
             if(this.RetornaDatasInformadas().Count == 0)
             {
@@ -132,9 +128,9 @@ namespace GerenciadorPalestras
             if (evento == null)
                 evento = new Evento();
             evento.Nome = tbxNomeEvento.Text;
-            evento.Arquivo = openFileDialog1.SafeFileName;
+            //evento.Arquivo = openFileDialog1.SafeFileName;
             evento.Datas = RetornaDatasInformadas();
-            new EventoDAO().SalvarEvento(evento.Nome, evento.Arquivo, evento.Datas, new Bitmap(tbxFileName.Text));
+            new EventoDAO().SalvarEvento(evento.Nome,  evento.Datas);
             MensagemSucesso("Dados Salvos com sucesso");
         }
 
@@ -154,15 +150,15 @@ namespace GerenciadorPalestras
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        //private void panel1_Paint(object sender, PaintEventArgs e)
+        //{
+           
+        //}
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            btnBuscarBanner_Click(null, null);
-        }
+        //private void pictureBox1_Click(object sender, EventArgs e)
+        //{
+        //    btnBuscarBanner_Click(null, null);
+        //}
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {

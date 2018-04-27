@@ -1,4 +1,5 @@
 ﻿using Settings;
+using Settings.Configuracoes;
 using Settings.DAO;
 using System;
 using System.Collections.Generic;
@@ -32,10 +33,15 @@ namespace Palestrantes
             btnSair.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
 
             this.pathDiretorio = path;
-            Evento evento = new EventoDAO().VerificaExistenciaEvento(this.pathDiretorio);
-            if (evento != null) // Se for edição
+            //Evento evento = new EventoDAO().VerificaExistenciaEvento(this.pathDiretorio);
+            //if (evento != null) // Se for edição
+            //{
+            //    panelBanner.BackgroundImage = new Bitmap(path + @"\" + evento.Arquivo);
+            //}
+            if (System.IO.File.Exists(Evento.DIRETORIO_INSTALACAO_BANNER(pathDiretorio)))
             {
-                panelBanner.BackgroundImage = new Bitmap(path + @"\" + evento.Arquivo);
+                //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
+                panelBanner.BackgroundImage = Helper.Resize(new Bitmap(Evento.DIRETORIO_INSTALACAO_BANNER(pathDiretorio)), panelBanner.Width, panelBanner.Height);
             }
 
             CarregarPalestrante();
