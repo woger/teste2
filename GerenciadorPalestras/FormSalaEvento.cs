@@ -24,7 +24,7 @@ namespace GerenciadorPalestras
             MostrarDados();
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             panelBanner.Width = this.Width;
-            Evento evento = new EventoDAO().VerificaExistenciaEvento();
+            //Evento evento = new EventoDAO().VerificaExistenciaEvento();
             if (System.IO.File.Exists(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)))
             {
                 //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);

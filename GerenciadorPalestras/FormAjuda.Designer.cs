@@ -31,6 +31,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panelBanner = new System.Windows.Forms.Panel();
+            this.lblPositionHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -68,12 +69,22 @@
             this.panelBanner.Size = new System.Drawing.Size(1234, 158);
             this.panelBanner.TabIndex = 17;
             // 
+            // lblPositionHome
+            // 
+            this.lblPositionHome.AutoSize = true;
+            this.lblPositionHome.Location = new System.Drawing.Point(911, 180);
+            this.lblPositionHome.Name = "lblPositionHome";
+            this.lblPositionHome.Size = new System.Drawing.Size(35, 13);
+            this.lblPositionHome.TabIndex = 31;
+            this.lblPositionHome.Text = "label5";
+            // 
             // FormAjuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 733);
+            this.Controls.Add(this.lblPositionHome);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox1);
@@ -93,5 +104,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelBanner;
+        public System.Windows.Forms.Label lblPositionHome;
     }
 }

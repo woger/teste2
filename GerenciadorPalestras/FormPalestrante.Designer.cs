@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblDadosSalvos = new System.Windows.Forms.Label();
             this.panelBanner = new System.Windows.Forms.Panel();
+            this.lblPositionHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,6 +160,15 @@
             this.panelBanner.TabIndex = 29;
             this.panelBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBanner_Paint);
             // 
+            // lblPositionHome
+            // 
+            this.lblPositionHome.AutoSize = true;
+            this.lblPositionHome.Location = new System.Drawing.Point(897, 178);
+            this.lblPositionHome.Name = "lblPositionHome";
+            this.lblPositionHome.Size = new System.Drawing.Size(35, 13);
+            this.lblPositionHome.TabIndex = 33;
+            this.lblPositionHome.Text = "label5";
+            // 
             // FormPalestrante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +177,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 733);
+            this.Controls.Add(this.lblPositionHome);
             this.Controls.Add(this.panelBanner);
             this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label3);
@@ -201,5 +212,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDadosSalvos;
         private System.Windows.Forms.Panel panelBanner;
+        public System.Windows.Forms.Label lblPositionHome;
     }
 }

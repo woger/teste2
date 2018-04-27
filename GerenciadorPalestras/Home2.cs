@@ -62,6 +62,7 @@ namespace Server
             formEvento.MdiParent = this;
             formEvento.ControlBox = false;
             formEvento.Width = this.Width;
+            btnHome.SetBounds(formEvento.lblPositionHome.Location.X, formEvento.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
 
             formEvento.StartPosition = FormStartPosition.CenterScreen;
             formEvento.Show();
@@ -76,7 +77,7 @@ namespace Server
             formSalaEvento.MdiParent = this;
             formSalaEvento.ControlBox = false;
             formSalaEvento.Width = this.Width;
-
+            btnHome.SetBounds(formSalaEvento.lblPositionHome.Location.X, formSalaEvento.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
             formSalaEvento.StartPosition = FormStartPosition.CenterScreen;
             formSalaEvento.Show();
             
@@ -90,7 +91,7 @@ namespace Server
             formPalestrante.MdiParent = this;
             formPalestrante.ControlBox = false;
             formPalestrante.Width = this.Width;
-
+            btnHome.SetBounds(formPalestrante.lblPositionHome.Location.X, formPalestrante.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
             formPalestrante.StartPosition = FormStartPosition.CenterScreen;
             formPalestrante.Show();
         }
@@ -105,7 +106,7 @@ namespace Server
             formMontarAgendaEvento.MdiParent = this;
             formMontarAgendaEvento.ControlBox = false;
             formMontarAgendaEvento.Width = this.Width;
-
+            btnHome.SetBounds(formMontarAgendaEvento.lblPositionHome.Location.X, formMontarAgendaEvento.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
             formMontarAgendaEvento.StartPosition = FormStartPosition.CenterScreen;
             formMontarAgendaEvento.Show();
         }
@@ -174,6 +175,7 @@ namespace Server
             formAjuda.MdiParent = this;
             formAjuda.ControlBox = false;
             formAjuda.Width = this.Width;
+            btnHome.SetBounds(formAjuda.lblPositionHome.Location.X, formAjuda.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
 
             formAjuda.StartPosition = FormStartPosition.CenterScreen;
             formAjuda.Show();
@@ -204,7 +206,7 @@ namespace Server
             formUsuario.MdiParent = this;
             formUsuario.ControlBox = false;
             formUsuario.Width = this.Width;
-
+            btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
             formUsuario.StartPosition = FormStartPosition.CenterScreen;
             formUsuario.Show();
         }

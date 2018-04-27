@@ -42,6 +42,7 @@
             this.panelBanner = new System.Windows.Forms.Panel();
             this.tbxIP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblPositionHome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,6 +186,15 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "IP";
             // 
+            // lblPositionHome
+            // 
+            this.lblPositionHome.AutoSize = true;
+            this.lblPositionHome.Location = new System.Drawing.Point(896, 180);
+            this.lblPositionHome.Name = "lblPositionHome";
+            this.lblPositionHome.Size = new System.Drawing.Size(35, 13);
+            this.lblPositionHome.TabIndex = 33;
+            this.lblPositionHome.Text = "label5";
+            // 
             // FormSalaEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +203,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::Server.Properties.Resources.bgInterno;
             this.ClientSize = new System.Drawing.Size(1234, 733);
+            this.Controls.Add(this.lblPositionHome);
             this.Controls.Add(this.tbxIP);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblDadosSalvos);
@@ -232,5 +243,6 @@
         private System.Windows.Forms.Panel panelBanner;
         private System.Windows.Forms.TextBox tbxIP;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lblPositionHome;
     }
 }
