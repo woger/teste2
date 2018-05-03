@@ -17,7 +17,7 @@ namespace Palestrantes
     public partial class FormBaixaPalestra : Form
     {
         private string pathDiretorio = string.Empty;
-        private static string DiretoriFixoSincronizar = @"C:\PALESTRA\";
+        private static string DiretoriFixoSincronizar = @"C:\PALESTRAS\";
         public FormBaixaPalestra()
         {
             InitializeComponent();
