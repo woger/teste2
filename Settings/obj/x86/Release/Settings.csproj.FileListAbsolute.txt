@@ -1,0 +1,6 @@
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Settings\bin\x86\Release\Settings.dll
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Settings\bin\x86\Release\Settings.pdb
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Settings\obj\x86\Release\Settings.Properties.Resources.resources
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Settings\obj\x86\Release\Settings.csproj.GenerateResource.Cache
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Settings\obj\x86\Release\Settings.dll
+E:\Sistemas\Gerenciador de Palestras\Source Code\teste2\Settings\obj\x86\Release\Settings.pdb

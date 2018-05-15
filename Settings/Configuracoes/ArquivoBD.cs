@@ -172,5 +172,82 @@ namespace Settings.Configuracoes
                 }
             }
         }
+
+        public static void CriarArquivosCronometroBD()
+        {
+            //string dbfDirectory = @"C:\the_path_to_my_dbf_file_or_files";
+
+            using (OleDbConnection oConn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + ArquivoBD.DIRETORIO_INSTALACAO + ";Extended Properties=dBase III"))
+            {
+                oConn.Open();
+
+                try
+                {
+                    using (OleDbCommand cmd = new OleDbCommand(" CREATE TABLE USUARIO.DBF ([ID] NUMERIC (18,0), [CO_PERFIL] NUMERIC(1,0), [NOME] CHAR(100), [LOGIN] CHAR(100), [SENHA] CHAR(20));"))//this works and creates an empty .dbf file
+                    {
+                        cmd.Connection = oConn;
+                        cmd.ExecuteNonQuery();
+
+                        //Cria um usuário ADMIN
+                        using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                                                            VALUES(1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1)"))
+                        //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        {
+                            cmd2.Connection = oConn;
+                            cmd2.ExecuteNonQuery();
+                        }
+
+                        //Cria um usuário Monitor
+                        using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                                                            VALUES(2, 'HOUSEMIX', 'HOUSEMIX', '" + Settings.DAO.PassWord.ObterSenhaMonitor() + "', 3)"))
+                        //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        {
+                            cmd2.Connection = oConn;
+                            cmd2.ExecuteNonQuery();
+                        }
+
+
+                        //Cria um usuário Palestrante
+                        using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                                                            VALUES(3, 'MEDIADESK', 'MEDIADESK', '" + Settings.DAO.PassWord.ObterSenhaPalestrante() + "', 2)"))
+                        //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        {
+                            cmd2.Connection = oConn;
+                            cmd2.ExecuteNonQuery();
+                        }
+
+                    }
+                }
+                catch { }
+
+                //try
+                //{
+
+                //}
+                //catch { }
+
+                try
+                {
+                    using (OleDbCommand cmd = new OleDbCommand("  CREATE TABLE HORARIO.DBF ([ID] NUMERIC (18,0), [NOME] CHAR(50), TEMPO CHAR(150));"))//this works and creates an empty .dbf file
+                    {
+                        cmd.Connection = oConn;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+
+                catch { }
+                
+                //SETA OS ARQUIVOS DO BD OCULTOS NO DIRETÓRIO
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\USUARIO.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\EVENTO.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\DATAS.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\SALAS.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\PALESTRA.DBF", FileAttributes.Hidden);
+                //File.SetAttributes(ArquivoBD.DIRETORIO_INSTALACAO + @"\SALA_PAL.DBF", FileAttributes.Hidden);
+
+                oConn.Close();                
+            }
+        }
     }
 }
