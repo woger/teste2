@@ -25,7 +25,14 @@ namespace Cronometro
             {
                 MessageBox.Show("Ocorreu um erro ao definir as propriedades dos arquivos da aplicação. Contacte o administrador. Erro: " + e.Message);
             }
-            tbxLogin.Focus();
+            Dictionary<int, string> dictionaryUsuarios = new Dictionary<int, string>();
+
+            dictionaryUsuarios.Add(1, "ADMIN");
+            dictionaryUsuarios.Add(2, "HOUSEMIX");
+            ddlUsuarios.DataSource = new BindingSource(dictionaryUsuarios, null);
+            ddlUsuarios.DisplayMember = "Value";
+            ddlUsuarios.ValueMember = "Key";
+            ddlUsuarios.SelectedIndex = -1;
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             //Evento evento = new EventoDAO().VerificaExistenciaEvento();
             //if (evento != null) // Se for edição
@@ -42,7 +49,7 @@ namespace Cronometro
         private void button1_Click(object sender, EventArgs e)
         {
             Settings.DAO.UsuarioDAO usuarioDAO = new Settings.DAO.UsuarioDAO();
-            Usuario usuario = usuarioDAO.Login(tbxLogin.Text, tbxSenha.Text);
+            Usuario usuario = usuarioDAO.Login(((KeyValuePair<int, string>)ddlUsuarios.SelectedItem).Value, tbxSenha.Text);
             if(usuario != null)
             {
                 this.Hide();

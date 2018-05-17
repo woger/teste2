@@ -197,15 +197,24 @@ namespace Settings.Configuracoes
                             cmd2.ExecuteNonQuery();
                         }
 
-
-                        //Cria um usuário Palestrante
+                        //Cria um usuário Monitor
                         using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
-                                                            VALUES(3, 'MEDIADESK', 'MEDIADESK', 'MEDIADESK', 3)"))
+                                                            VALUES(2, 'HOUSEMIX', 'HOUSEMIX', 'HOUSEMIX', 2)"))
                         //VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
                         {
                             cmd2.Connection = oConn;
                             cmd2.ExecuteNonQuery();
                         }
+
+
+                        ////Cria um usuário Palestrante
+                        //using (OleDbCommand cmd2 = new OleDbCommand(@" INSERT INTO USUARIO.DBF ([ID], [NOME], [LOGIN], [SENHA], [CO_PERFIL]) 
+                        //                                    VALUES(3, 'MEDIADESK', 'MEDIADESK', '" + Settings.DAO.PassWord.ObterSenhaPalestrante() + "', 2)"))
+                        ////VALUES (1, 'ADMINISTRADOR', 'ADMIN', 'ADMIN', 1, " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + ");"))
+                        //{
+                        //    cmd2.Connection = oConn;
+                        //    cmd2.ExecuteNonQuery();
+                        //}
 
                     }
                 }

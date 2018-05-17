@@ -58,6 +58,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblContador;
+        public System.Windows.Forms.Label lblContador;
     }
 }

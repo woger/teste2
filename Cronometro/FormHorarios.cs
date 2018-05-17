@@ -16,12 +16,14 @@ namespace Cronometro
     {
 
         public static System.Timers.Timer aTimer = new System.Timers.Timer();
+
         int ID = 0;
         int IndexSelected = 0;
         //private System.Windows.Forms.Timer timer1;
         int minutos = 0;
         int segundos = 0;
         public Settings.EnumPerfil PerfilUsuarioLogado;
+        private static FormCronometro formCronometro = null;
         public FormHorarios(Settings.EnumPerfil pPerfilUsuarioLogado)
         {
             this.PerfilUsuarioLogado = pPerfilUsuarioLogado;
@@ -32,7 +34,7 @@ namespace Cronometro
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
 
-            if(pPerfilUsuarioLogado == EnumPerfil.PALESTRANTE)
+            if (pPerfilUsuarioLogado == EnumPerfil.MONITOR)
             {
                 //Desabilita Cadastro
                 lblNome.Visible = lblMinuto.Visible = tbxHorario.Visible = tbxNome.Visible = btnAtualizar.Visible = btnExcluir.Visible = btnIncluir.Visible = false;
@@ -61,14 +63,14 @@ namespace Cronometro
             dataGridView1.Columns.Add(btn);
             btn.HeaderText = string.Empty;
             btn.DefaultCellStyle.BackColor = Color.White;
-            //btn.Text = "Clique aqui";
-            dataGridView1.CellPainting += DataGridView1_CellPainting;
+            btn.Text = "Iniciar";
+            //dataGridView1.CellPainting += DataGridView1_CellPainting;
             btn.Name = "btnIniciar";
             btn.UseColumnTextForButtonValue = true;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.Columns["Temporizador"].HeaderText = "Minutos";
             dataGridView1.Columns["Contador"].HeaderText = "Tempo";
-            dataGridView1.Columns["btnIniciar"].Width = 30;
+            dataGridView1.Columns["btnIniciar"].Width = 50;
         }
 
         private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -84,32 +86,87 @@ namespace Cronometro
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-                if (e.ColumnIndex == dataGridView1.Columns["btnIniciar"].Index && PerfilUsuarioLogado != EnumPerfil.PALESTRANTE)
+            if (e.ColumnIndex == dataGridView1.Columns["btnIniciar"].Index)
             {
-                this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
 
-                FormCronometro formCronometro = new FormCronometro(tempo.Temporizador);
+                if (this.ID == Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())) //Se o usuário clicou para iniciar novamente NA MESMA LINHA
+                {
+                    if (ContadorAtivo())
+                        PausarContador();
+                    else
+                        RetomarContador();
+                }
+                else
+                {
+                    //Caso já tenha selecionado um tempo, tenho que parar ele no datagrid
+                    Tempo tempoAnterior = new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[IndexSelected].Cells[1].Value.ToString()));
+                    if (dataGridView1["Contador", IndexSelected] != null)
+                        dataGridView1["Contador", IndexSelected].Value = tempoAnterior.Temporizador;
 
-                //formCronometro.MdiParent = this;
-                formCronometro.ControlBox = true;
+                    this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
 
-                //formCronometro.Width = this.Width;
-                //btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
-                formCronometro.StartPosition = FormStartPosition.CenterScreen;
-                formCronometro.Show();
-                IndexSelected = e.RowIndex;
-                //dataGridView1.CellFormatting += DataGridView1_CellFormatting;
-                minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
-                segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
-                if (timer1 != null)
-                    timer1.Stop();
-                timer1 = new System.Windows.Forms.Timer();
-                timer1.Tick += new EventHandler(timer1_Tick);
-                timer1.Interval = 1000; // 1 second
-                timer1.Start();
+                    if (formCronometro == null)
+                    {
+                        formCronometro = new FormCronometro(tempo.Temporizador);
+
+                        //formCronometro.MdiParent = this;
+                        formCronometro.ControlBox = true;
+
+                        //formCronometro.Width = this.Width;
+                        //btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+                        formCronometro.StartPosition = FormStartPosition.CenterScreen;
+                        formCronometro.Show();
+                        IndexSelected = e.RowIndex;
+                        //dataGridView1.CellFormatting += DataGridView1_CellFormatting;
+                        minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
+                        segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
+
+                        timer1 = new System.Windows.Forms.Timer();
+                        timer1.Tick += new EventHandler(timer1_Tick);
+                        timer1.Interval = 1000; // 1 second
+                        timer1.Start();
+                        dataGridView1["btnIniciar", IndexSelected].Value = "Pausar";
+
+                    }
+                    else
+                    {
+                        formCronometro.MudaContador(tempo.Temporizador);
+                        minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
+                        segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
+                        //if (dataGridView1["Contador", IndexSelected] != null)
+                        //    dataGridView1["Contador", IndexSelected].Value = minutos.ToString("00") + ":" + segundos.ToString("00");
+                        IndexSelected = e.RowIndex;
+                    }
+                }
+
+
+                
+
             }
+        }
+
+        public void PausarContador()
+        {
+            timer1.Stop();
+            if (dataGridView1["btnIniciar", IndexSelected] != null)
+                dataGridView1["btnIniciar", IndexSelected].Value = "Iniciar";
+            if (formCronometro != null)
+                formCronometro.PausarContador();
+        }
+
+        public void RetomarContador()
+        {
+            timer1.Start();
+            if (dataGridView1["btnIniciar", IndexSelected] != null)
+                dataGridView1.Rows[IndexSelected].Cells["btnIniciar"].Value = "Pausar";
+            if(formCronometro != null)
+                formCronometro.RetomarContador();
+        }
+
+        public bool ContadorAtivo()
+        {
+            return timer1.Enabled;
         }
 
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -256,20 +313,23 @@ namespace Cronometro
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-            tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            tbxNome.Focus();
+            if (PerfilUsuarioLogado != EnumPerfil.MONITOR)
+            {
+                ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbxNome.Focus();
 
-            if (this.ID == 0)
-            {
-                this.btnAtualizar.Visible = this.btnExcluir.Visible = false;
-                this.btnIncluir.Visible = true;
-            }
-            else
-            {
-                this.btnAtualizar.Visible = this.btnExcluir.Visible = true;
-                this.btnIncluir.Visible = false;
+                if (this.ID == 0)
+                {
+                    this.btnAtualizar.Visible = this.btnExcluir.Visible = false;
+                    this.btnIncluir.Visible = true;
+                }
+                else
+                {
+                    this.btnAtualizar.Visible = this.btnExcluir.Visible = true;
+                    this.btnIncluir.Visible = false;
+                }
             }
         }
 

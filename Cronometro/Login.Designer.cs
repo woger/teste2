@@ -31,9 +31,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbxLogin = new System.Windows.Forms.TextBox();
             this.tbxSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ddlUsuarios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -72,15 +72,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
             // 
-            // tbxLogin
-            // 
-            this.tbxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxLogin.Location = new System.Drawing.Point(444, 292);
-            this.tbxLogin.MaxLength = 20;
-            this.tbxLogin.Name = "tbxLogin";
-            this.tbxLogin.Size = new System.Drawing.Size(172, 20);
-            this.tbxLogin.TabIndex = 1;
-            // 
             // tbxSenha
             // 
             this.tbxSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -97,11 +88,20 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Demi", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(548, 155);
+            this.label3.Location = new System.Drawing.Point(501, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 23);
+            this.label3.Size = new System.Drawing.Size(238, 23);
             this.label3.TabIndex = 4;
-            this.label3.Text = "CRONOMETRO";
+            this.label3.Text = "GERENCIADOR DE TEMPO";
+            // 
+            // ddlUsuarios
+            // 
+            this.ddlUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlUsuarios.FormattingEnabled = true;
+            this.ddlUsuarios.Location = new System.Drawing.Point(439, 292);
+            this.ddlUsuarios.Name = "ddlUsuarios";
+            this.ddlUsuarios.Size = new System.Drawing.Size(177, 21);
+            this.ddlUsuarios.TabIndex = 5;
             // 
             // Login
             // 
@@ -111,9 +111,9 @@
             this.BackgroundImage = global::Cronometro.Properties.Resources.bgLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1234, 681);
+            this.Controls.Add(this.ddlUsuarios);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbxSenha);
-            this.Controls.Add(this.tbxLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -130,8 +130,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbxLogin;
         private System.Windows.Forms.TextBox tbxSenha;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ddlUsuarios;
     }
 }

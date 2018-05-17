@@ -11,7 +11,7 @@ namespace Cronometro
 {
     public partial class FormCronometro : Form
     {
-        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Timer timer1;
         int minutos = 0;
         int segundos = 0;
         
@@ -19,7 +19,15 @@ namespace Cronometro
         public FormCronometro(string pContador)
         {
             InitializeComponent();
+            MudaContador(pContador);
+            
+        }
 
+        public void MudaContador(string pContador)
+        {
+
+            if (timer1 != null)
+                timer1.Stop();
             timer1 = new System.Windows.Forms.Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Interval = 1000; // 1 second
@@ -29,6 +37,25 @@ namespace Cronometro
             lblContador.Text = pContador;
             minutos = int.Parse(pContador.Split(':')[0]);
             segundos = int.Parse(pContador.Split(':')[1]);
+        }
+
+        public void PausarContador()
+        {
+            if(timer1 != null)
+                timer1.Stop();
+        }
+
+        public void RetomarContador()
+        {
+            if (timer1 != null)
+                timer1.Start();
+        }
+
+        public bool ContadorAtivo()
+        {
+            if (timer1 != null)
+                return timer1.Enabled;
+            return false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
