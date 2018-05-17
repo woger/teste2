@@ -49,7 +49,7 @@ namespace Cronometro
 
                 HelperUsuario.RegistrarLogin(usuario);
 
-                new Home2().ShowDialog();
+                new Home2((EnumPerfil)Enum.Parse(typeof(EnumPerfil), usuario.Perfil.ToString())).ShowDialog();
                 this.Close();
             }
             else

@@ -38,7 +38,6 @@
             this.palestranteNoEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHome = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +45,7 @@
             // btnHorarios
             // 
             this.btnHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnHorarios.BackgroundImage = global::Cronometro.Properties.Resources.cadastrar_tempo;
             this.btnHorarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHorarios.Location = new System.Drawing.Point(304, 173);
             this.btnHorarios.Name = "btnHorarios";
@@ -128,19 +128,6 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // btnHome
-            // 
-            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.btnHome.BackgroundImage = global::Cronometro.Properties.Resources.btn_home;
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHome.Location = new System.Drawing.Point(791, 8);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(59, 52);
-            this.btnHome.TabIndex = 10;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
@@ -163,7 +150,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 400);
             this.ControlBox = false;
-            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnHorarios);
             this.Controls.Add(this.menuStrip1);
@@ -194,6 +180,5 @@
         private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnHome;
     }
 }

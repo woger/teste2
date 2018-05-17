@@ -1,6 +1,6 @@
 ﻿namespace Cronometro
 {
-    partial class FormCronometro
+    partial class FormIniciarCronometro
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,14 @@
             // 
             // lblContador
             // 
-            this.lblContador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblContador.AutoSize = true;
+            this.lblContador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContador.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblContador.Font = new System.Drawing.Font("Microsoft Sans Serif", 250.99F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContador.Location = new System.Drawing.Point(91, 48);
             this.lblContador.Name = "lblContador";
-            this.lblContador.Size = new System.Drawing.Size(0, 379);
+            this.lblContador.Size = new System.Drawing.Size(885, 300);
             this.lblContador.TabIndex = 0;
             // 
             // FormCronometro
@@ -52,7 +53,6 @@
             this.Text = "FormCronometro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

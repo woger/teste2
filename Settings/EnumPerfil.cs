@@ -8,7 +8,7 @@ namespace Settings
     public enum EnumPerfil
     {
         ADMINISTRADOR = 1
-        , PALESTRANTE = 2
-        , MONITOR = 3
+        , PALESTRANTE = 3
+        , MONITOR = 2
     }
 }

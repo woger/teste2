@@ -16,8 +16,10 @@ namespace Cronometro
     {
         public static System.Timers.Timer aTimer = new System.Timers.Timer();
         int ID = 0;
-        public FormUsuario()
+        public Settings.EnumPerfil PerfilUsuarioLogado;
+        public FormUsuario(Settings.EnumPerfil pPerfilUsuarioLogado)
         {
+            this.PerfilUsuarioLogado = pPerfilUsuarioLogado;
             InitializeComponent();
             MostrarDados();
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
@@ -40,6 +42,11 @@ namespace Cronometro
             //    //pictureBox1.Image = Resize(new Bitmap(evento.PathFile), pictureBox1.Width, pictureBox1.Height);
             //    panelBanner.BackgroundImage = Helper.Resize(new Bitmap(Evento.DIRETORIO_INSTALACAO_BANNER(string.Empty)), panelBanner.Width, panelBanner.Height);
             //}
+            btnHome.TabStop = false;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+            //btnHome.Visible = false;
         }
 
         void MensagemSucesso(string texto)
@@ -112,6 +119,14 @@ namespace Cronometro
             //ddlPerfil.SelectedValue = Enum.Parse(typeof(EnumPerfil), (dataGridView1.Rows[e.RowIndex].Cells["Perfil"].Value.ToString()));
             //ddlPerfil.SelectedItem = (EnumPerfil)int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Perfil"].Value.ToString());
             btnSalvar.Visible = true;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home2 home = new Home2(PerfilUsuarioLogado);
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
         }
     }
 }

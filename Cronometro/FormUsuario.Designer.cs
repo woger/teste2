@@ -40,6 +40,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblDadosSalvos = new System.Windows.Forms.Label();
             this.lblPositionHome = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,14 +58,12 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(428, 46);
+            this.label3.Location = new System.Drawing.Point(428, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 2;
@@ -72,38 +71,32 @@
             // 
             // tbxLogin
             // 
-            this.tbxLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbxLogin.Enabled = false;
-            this.tbxLogin.Location = new System.Drawing.Point(517, 43);
+            this.tbxLogin.Location = new System.Drawing.Point(517, 80);
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(177, 20);
             this.tbxLogin.TabIndex = 1;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(395, 255);
+            this.dataGridView1.Location = new System.Drawing.Point(395, 292);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(403, 228);
+            this.dataGridView1.Size = new System.Drawing.Size(403, 106);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(505, 229);
+            this.label5.Location = new System.Drawing.Point(505, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 8;
@@ -111,12 +104,10 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(537, 167);
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalvar.Location = new System.Drawing.Point(537, 204);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(127, 129);
+            this.btnSalvar.Size = new System.Drawing.Size(127, 23);
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Atualizar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -125,10 +116,8 @@
             // 
             // tbxSenha
             // 
-            this.tbxSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSenha.Location = new System.Drawing.Point(517, 85);
+            this.tbxSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxSenha.Location = new System.Drawing.Point(517, 122);
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(177, 20);
@@ -136,10 +125,8 @@
             // 
             // tbxConfirmaSenha
             // 
-            this.tbxConfirmaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxConfirmaSenha.Location = new System.Drawing.Point(517, 126);
+            this.tbxConfirmaSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxConfirmaSenha.Location = new System.Drawing.Point(517, 163);
             this.tbxConfirmaSenha.Name = "tbxConfirmaSenha";
             this.tbxConfirmaSenha.PasswordChar = '*';
             this.tbxConfirmaSenha.Size = new System.Drawing.Size(177, 20);
@@ -147,14 +134,12 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(423, 85);
+            this.label6.Location = new System.Drawing.Point(423, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 12;
@@ -162,14 +147,12 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(423, 129);
+            this.label7.Location = new System.Drawing.Point(423, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 13);
             this.label7.TabIndex = 13;
@@ -177,13 +160,11 @@
             // 
             // lblDadosSalvos
             // 
-            this.lblDadosSalvos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDadosSalvos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDadosSalvos.AutoSize = true;
             this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(483, 204);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(483, 241);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(140, 13);
             this.lblDadosSalvos.TabIndex = 29;
@@ -194,11 +175,24 @@
             // 
             this.lblPositionHome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPositionHome.AutoSize = true;
-            this.lblPositionHome.Location = new System.Drawing.Point(880, 62);
+            this.lblPositionHome.Location = new System.Drawing.Point(1013, -25);
             this.lblPositionHome.Name = "lblPositionHome";
             this.lblPositionHome.Size = new System.Drawing.Size(35, 13);
             this.lblPositionHome.TabIndex = 33;
             this.lblPositionHome.Text = "label5";
+            // 
+            // btnHome
+            // 
+            this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnHome.BackgroundImage = global::Cronometro.Properties.Resources.btn_home;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.Location = new System.Drawing.Point(969, 4);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(62, 49);
+            this.btnHome.TabIndex = 34;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // FormUsuario
             // 
@@ -207,7 +201,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.BackgroundImage = global::Cronometro.Properties.Resources.bgInterno;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1194, 561);
+            this.ClientSize = new System.Drawing.Size(1194, 466);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.lblPositionHome);
             this.Controls.Add(this.lblDadosSalvos);
             this.Controls.Add(this.label7);
@@ -246,5 +241,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDadosSalvos;
         public System.Windows.Forms.Label lblPositionHome;
+        private System.Windows.Forms.Button btnHome;
     }
 }

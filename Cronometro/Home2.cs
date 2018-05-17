@@ -11,8 +11,10 @@ namespace Cronometro
 {
     public partial class Home2 : Form
     {
-        public Home2()
+        public Settings.EnumPerfil PerfilUsuarioLogado;
+        public Home2(Settings.EnumPerfil pPerfilUsuarioLogado)
         {
+            this.PerfilUsuarioLogado = pPerfilUsuarioLogado;
             InitializeComponent();
 
             btnHorarios.TabStop = false;
@@ -45,11 +47,11 @@ namespace Cronometro
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
 
-            btnHome.TabStop = false;
-            btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.FlatAppearance.BorderSize = 0;
-            btnHome.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
-            btnHome.Visible = false;
+            //btnHome.TabStop = false;
+            //btnHome.FlatStyle = FlatStyle.Flat;
+            //btnHome.FlatAppearance.BorderSize = 0;
+            //btnHome.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+            //btnHome.Visible = false;
         }
 
         private void btnEvento_Click(object sender, EventArgs e)
@@ -115,7 +117,7 @@ namespace Cronometro
             btnHorarios.Visible = btnUsuarios.Visible = false;
             foreach (Form childForm in MdiChildren)
                 childForm.Close();
-            btnHome.Visible = true;
+            //btnHome.Visible = true;
         }
 
         //private void button1_Click(object sender, EventArgs e)
@@ -181,13 +183,20 @@ namespace Cronometro
             
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            btnHorarios.Visible =  btnUsuarios.Visible = true;
-            foreach (Form childForm in MdiChildren)
-                childForm.Close();
-            btnHome.Visible = false;
-        }
+        //private void btnHome_Click(object sender, EventArgs e)
+        //{
+        //    btnHorarios.Visible =  btnUsuarios.Visible = true;
+        //    foreach (Form childForm in MdiChildren)
+        //        childForm.Close();
+        //    //btnHome.Visible = false;
+        //    Home2 home = new Home2(PerfilUsuarioLogado);
+
+        //    //formMontarAgendaEvento.MdiParent = this;
+        //    //formMontarAgendaEvento.ControlBox = false;
+
+        //    home.StartPosition = FormStartPosition.CenterScreen;
+        //    home.ShowDialog();
+        //}
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -198,30 +207,45 @@ namespace Cronometro
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            this.FecharJanelasFilhas();
+            ////this.Hide();
+            //this.FecharJanelasFilhas();
 
-            FormUsuario formUsuario = new FormUsuario();
+            //FormAjuda formAjuda = new FormAjuda();
 
-            formUsuario.MdiParent = this;
-            formUsuario.ControlBox = false;
+            //formAjuda.MdiParent = this;
+            //formAjuda.ControlBox = false;
+            //formAjuda.Width = this.Width;
+            //btnHome.SetBounds(formAjuda.lblPositionHome.Location.X, formAjuda.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+
+            //formAjuda.StartPosition = FormStartPosition.CenterScreen;
+            //formAjuda.Show();
+
+            //this.FecharJanelasFilhas();
+            this.Hide();
+            FormUsuario formUsuario = new FormUsuario(PerfilUsuarioLogado);
+
+            //formUsuario.MdiParent = this;
+            //formUsuario.ControlBox = false;
             //formUsuario.Width = this.Width;
-            btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+            //btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+            //btnHome.Visible = true;
             formUsuario.StartPosition = FormStartPosition.CenterScreen;
-            formUsuario.Show();
+            formUsuario.ShowDialog();
         }
 
         private void btnHorarios_Click(object sender, EventArgs e)
         {
-            this.FecharJanelasFilhas();
+            //this.FecharJanelasFilhas();
+            this.Hide();
+            FormHorarios forHorarios = new FormHorarios(PerfilUsuarioLogado);
 
-            FormHorarios forHorarios = new FormHorarios();
-
-            forHorarios.MdiParent = this;
-            forHorarios.ControlBox = false;
-            forHorarios.Width = this.Width;
-            btnHome.SetBounds(forHorarios.lblPositionHome.Location.X, forHorarios.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+            //forHorarios.MdiParent = this;
+           // forHorarios.ControlBox = false;
+           // forHorarios.Width = this.Width;
+            //btnHome.SetBounds(forHorarios.lblPositionHome.Location.X, forHorarios.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+            //btnHome.Visible = true;
             forHorarios.StartPosition = FormStartPosition.CenterScreen;
-            forHorarios.Show();
+            forHorarios.ShowDialog();
         }
 
         private void btnListar_Click(object sender, EventArgs e)

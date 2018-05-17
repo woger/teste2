@@ -33,14 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxLogin = new System.Windows.Forms.TextBox();
             this.tbxSenha = new System.Windows.Forms.TextBox();
-            this.panelBanner = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(557, 430);
+            this.button1.Location = new System.Drawing.Point(552, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 29);
             this.button1.TabIndex = 3;
@@ -54,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(450, 368);
+            this.label1.Location = new System.Drawing.Point(445, 274);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(628, 368);
+            this.label2.Location = new System.Drawing.Point(623, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // tbxLogin
             // 
             this.tbxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxLogin.Location = new System.Drawing.Point(449, 386);
+            this.tbxLogin.Location = new System.Drawing.Point(444, 292);
             this.tbxLogin.MaxLength = 20;
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(172, 20);
@@ -84,22 +84,24 @@
             // tbxSenha
             // 
             this.tbxSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxSenha.Location = new System.Drawing.Point(627, 386);
+            this.tbxSenha.Location = new System.Drawing.Point(622, 292);
             this.tbxSenha.MaxLength = 10;
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(172, 20);
             this.tbxSenha.TabIndex = 2;
             // 
-            // panelBanner
+            // label3
             // 
-            this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(96)))));
-            this.panelBanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelBanner.Location = new System.Drawing.Point(0, 0);
-            this.panelBanner.Name = "panelBanner";
-            this.panelBanner.Size = new System.Drawing.Size(1234, 158);
-            this.panelBanner.TabIndex = 32;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Demi", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(548, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "CRONOMETRO";
             // 
             // Login
             // 
@@ -109,7 +111,7 @@
             this.BackgroundImage = global::Cronometro.Properties.Resources.bgLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1234, 681);
-            this.Controls.Add(this.panelBanner);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbxSenha);
             this.Controls.Add(this.tbxLogin);
             this.Controls.Add(this.label2);
@@ -130,6 +132,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxLogin;
         private System.Windows.Forms.TextBox tbxSenha;
-        private System.Windows.Forms.Panel panelBanner;
+        private System.Windows.Forms.Label label3;
     }
 }

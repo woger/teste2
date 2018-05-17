@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormIniciarCronometro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIniciarCronometro.Designer.cs">
+      <DependentUpon>FormIniciarCronometro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCronometro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormIniciarCronometro.resx">
+      <DependentUpon>FormIniciarCronometro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCronometro.resx">
       <DependentUpon>FormCronometro.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +136,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btn-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnTempo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn-play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastrar-tempo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-azul-fundo-transparente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

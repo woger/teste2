@@ -21,10 +21,23 @@ namespace Cronometro
         //private System.Windows.Forms.Timer timer1;
         int minutos = 0;
         int segundos = 0;
-        public FormHorarios()
+        public Settings.EnumPerfil PerfilUsuarioLogado;
+        public FormHorarios(Settings.EnumPerfil pPerfilUsuarioLogado)
         {
+            this.PerfilUsuarioLogado = pPerfilUsuarioLogado;
             InitializeComponent();
             MostrarDados();
+            btnHome.TabStop = false;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+
+            if(pPerfilUsuarioLogado == EnumPerfil.PALESTRANTE)
+            {
+                //Desabilita Cadastro
+                lblNome.Visible = lblMinuto.Visible = tbxHorario.Visible = tbxNome.Visible = btnAtualizar.Visible = btnExcluir.Visible = btnIncluir.Visible = false;
+            }
+            //btnHome.Visible = false;
             //panelBanner.BackgroundImage = Image.FromFile("d:\\teste.jpg");
             //panelBanner.Width = this.Width;
             //Evento evento = new EventoDAO().VerificaExistenciaEvento();
@@ -46,18 +59,33 @@ namespace Cronometro
 
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             dataGridView1.Columns.Add(btn);
-            btn.HeaderText = "Iniciar";
-            btn.Text = "Clique aqui";
+            btn.HeaderText = string.Empty;
+            btn.DefaultCellStyle.BackColor = Color.White;
+            //btn.Text = "Clique aqui";
+            dataGridView1.CellPainting += DataGridView1_CellPainting;
             btn.Name = "btnIniciar";
             btn.UseColumnTextForButtonValue = true;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.Columns["Temporizador"].HeaderText = "Minutos";
             dataGridView1.Columns["Contador"].HeaderText = "Tempo";
+            dataGridView1.Columns["btnIniciar"].Width = 30;
+        }
+
+        private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
+            {
+                Image img = (Image)global::Cronometro.Properties.Resources.play_azul_fundo_transparente;
+                e.PaintContent(e.CellBounds);
+                e.Graphics.DrawImage(img, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width, e.CellBounds.Height);
+                e.Handled = true;
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["btnIniciar"].Index)
+            
+                if (e.ColumnIndex == dataGridView1.Columns["btnIniciar"].Index && PerfilUsuarioLogado != EnumPerfil.PALESTRANTE)
             {
                 this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
                 Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
@@ -66,7 +94,7 @@ namespace Cronometro
 
                 //formCronometro.MdiParent = this;
                 formCronometro.ControlBox = true;
-                
+
                 //formCronometro.Width = this.Width;
                 //btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
                 formCronometro.StartPosition = FormStartPosition.CenterScreen;
@@ -90,12 +118,12 @@ namespace Cronometro
             Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
             //if (dataGridView1.Columns[e.ColumnIndex].Name.Equals("time"))
             //{
-                minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
-                segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
-                timer1 = new System.Windows.Forms.Timer();
-                timer1.Tick += new EventHandler(timer1_Tick);
-                timer1.Interval = 1000; // 1 second
-                timer1.Start();
+            minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
+            segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
 
             //}
         }
@@ -119,10 +147,10 @@ namespace Cronometro
             //DataGridViewButtonColumn
 
             //((DataGridViewDisableButtonCell)dataGridView1["btnIniciar", IndexSelected]).
-            if(dataGridView1["Contador", IndexSelected] != null)
-                dataGridView1["Contador",IndexSelected].Value = minutos.ToString("00") + ":" + segundos.ToString("00");
+            if (dataGridView1["Contador", IndexSelected] != null)
+                dataGridView1["Contador", IndexSelected].Value = minutos.ToString("00") + ":" + segundos.ToString("00");
 
-            
+
             //Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
 
             //lblContador.Text = minutos.ToString("00") + ":" + segundos.ToString("00");
@@ -142,7 +170,7 @@ namespace Cronometro
         {
             if (!String.IsNullOrEmpty(tbxNome.Text))
             {
-                
+
                 if (String.IsNullOrEmpty(tbxHorario.Text))
                 {
                     MessageBox.Show("O Tempo é Obrigatório");
@@ -209,7 +237,7 @@ namespace Cronometro
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocorreu um erro ao excluir: "+ ex.Message);
+                    MessageBox.Show("Ocorreu um erro ao excluir: " + ex.Message);
                     return;
                 }
             }
@@ -248,11 +276,19 @@ namespace Cronometro
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             Hide();
-            Home2 home = new Home2();
+            Home2 home = new Home2(PerfilUsuarioLogado);
 
             //formMontarAgendaEvento.MdiParent = this;
             //formMontarAgendaEvento.ControlBox = false;
 
+            home.StartPosition = FormStartPosition.CenterScreen;
+            home.ShowDialog();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home2 home = new Home2(PerfilUsuarioLogado);
             home.StartPosition = FormStartPosition.CenterScreen;
             home.ShowDialog();
         }
