@@ -16,7 +16,7 @@ namespace Cronometro
         {
             this.PerfilUsuarioLogado = pPerfilUsuarioLogado;
             InitializeComponent();
-
+            btnUsuarios.Enabled = this.PerfilUsuarioLogado == Settings.EnumPerfil.ADMINISTRADOR;
             btnHorarios.TabStop = false;
             btnHorarios.FlatStyle = FlatStyle.Flat;
             btnHorarios.FlatAppearance.BorderSize = 0;

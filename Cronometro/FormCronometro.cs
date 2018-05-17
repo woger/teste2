@@ -14,13 +14,13 @@ namespace Cronometro
         public System.Windows.Forms.Timer timer1;
         int minutos = 0;
         int segundos = 0;
-        
+
 
         public FormCronometro(string pContador)
         {
             InitializeComponent();
             MudaContador(pContador);
-            
+
         }
 
         public void MudaContador(string pContador)
@@ -41,7 +41,7 @@ namespace Cronometro
 
         public void PausarContador()
         {
-            if(timer1 != null)
+            if (timer1 != null)
                 timer1.Stop();
         }
 
@@ -60,6 +60,11 @@ namespace Cronometro
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (minutos == 0)
+                //lblContador.ForeColor = Color.FromArgb(170,103,8);
+                lblContador.ForeColor = Color.FromArgb(238,162,54);
+            else
+                lblContador.ForeColor = Color.Black;
 
             if (segundos == 0)
             {

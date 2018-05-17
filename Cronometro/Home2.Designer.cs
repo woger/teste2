@@ -39,7 +39,7 @@
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUsuarios = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.btnHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btnHorarios.BackgroundImage = global::Cronometro.Properties.Resources.cadastrar_tempo;
             this.btnHorarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHorarios.Location = new System.Drawing.Point(304, 173);
+            this.btnHorarios.Location = new System.Drawing.Point(148, 173);
             this.btnHorarios.Name = "btnHorarios";
             this.btnHorarios.Size = new System.Drawing.Size(157, 157);
             this.btnHorarios.TabIndex = 0;
@@ -135,24 +135,24 @@
             this.btnUsuarios.BackgroundImage = global::Cronometro.Properties.Resources.btb_home_usuario;
             this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.Location = new System.Drawing.Point(627, 173);
+            this.btnUsuarios.Location = new System.Drawing.Point(445, 173);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(157, 157);
             this.btnUsuarios.TabIndex = 8;
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Demi", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(469, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 23);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "DASHBOARD";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label1.Location = new System.Drawing.Point(2, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 29);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "DASHBOARD";
             // 
             // Home2
             // 
@@ -161,8 +161,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = global::Cronometro.Properties.Resources.bgInterno;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1034, 466);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(735, 451);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnHorarios);
             this.Controls.Add(this.menuStrip1);
@@ -193,6 +193,6 @@
         private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

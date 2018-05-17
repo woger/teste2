@@ -50,7 +50,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(333, 29);
             this.label1.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(348, 83);
+            this.label3.Location = new System.Drawing.Point(198, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.tbxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbxLogin.Enabled = false;
-            this.tbxLogin.Location = new System.Drawing.Point(437, 80);
+            this.tbxLogin.Location = new System.Drawing.Point(287, 72);
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(177, 20);
             this.tbxLogin.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(315, 292);
+            this.dataGridView1.Location = new System.Drawing.Point(165, 284);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(403, 106);
             this.dataGridView1.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(425, 266);
+            this.label5.Location = new System.Drawing.Point(275, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 8;
@@ -105,7 +105,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSalvar.Location = new System.Drawing.Point(457, 204);
+            this.btnSalvar.Location = new System.Drawing.Point(307, 196);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(127, 23);
             this.btnSalvar.TabIndex = 4;
@@ -117,7 +117,7 @@
             // tbxSenha
             // 
             this.tbxSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxSenha.Location = new System.Drawing.Point(437, 122);
+            this.tbxSenha.Location = new System.Drawing.Point(287, 114);
             this.tbxSenha.Name = "tbxSenha";
             this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(177, 20);
@@ -126,7 +126,7 @@
             // tbxConfirmaSenha
             // 
             this.tbxConfirmaSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbxConfirmaSenha.Location = new System.Drawing.Point(437, 163);
+            this.tbxConfirmaSenha.Location = new System.Drawing.Point(287, 155);
             this.tbxConfirmaSenha.Name = "tbxConfirmaSenha";
             this.tbxConfirmaSenha.PasswordChar = '*';
             this.tbxConfirmaSenha.Size = new System.Drawing.Size(177, 20);
@@ -139,7 +139,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(343, 122);
+            this.label6.Location = new System.Drawing.Point(193, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 12;
@@ -152,7 +152,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(343, 166);
+            this.label7.Location = new System.Drawing.Point(193, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 13);
             this.label7.TabIndex = 13;
@@ -164,7 +164,7 @@
             this.lblDadosSalvos.AutoSize = true;
             this.lblDadosSalvos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(81)))), ((int)(((byte)(148)))));
             this.lblDadosSalvos.ForeColor = System.Drawing.Color.White;
-            this.lblDadosSalvos.Location = new System.Drawing.Point(403, 241);
+            this.lblDadosSalvos.Location = new System.Drawing.Point(253, 233);
             this.lblDadosSalvos.Name = "lblDadosSalvos";
             this.lblDadosSalvos.Size = new System.Drawing.Size(140, 13);
             this.lblDadosSalvos.TabIndex = 29;
@@ -175,7 +175,7 @@
             // 
             this.lblPositionHome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPositionHome.AutoSize = true;
-            this.lblPositionHome.Location = new System.Drawing.Point(933, -25);
+            this.lblPositionHome.Location = new System.Drawing.Point(783, -33);
             this.lblPositionHome.Name = "lblPositionHome";
             this.lblPositionHome.Size = new System.Drawing.Size(35, 13);
             this.lblPositionHome.TabIndex = 33;
@@ -187,9 +187,9 @@
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btnHome.BackgroundImage = global::Cronometro.Properties.Resources.btn_home;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHome.Location = new System.Drawing.Point(889, 4);
+            this.btnHome.Location = new System.Drawing.Point(584, 3);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(62, 49);
+            this.btnHome.Size = new System.Drawing.Size(56, 49);
             this.btnHome.TabIndex = 34;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -201,7 +201,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.BackgroundImage = global::Cronometro.Properties.Resources.bgInterno;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1034, 466);
+            this.ClientSize = new System.Drawing.Size(735, 451);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.lblPositionHome);
             this.Controls.Add(this.lblDadosSalvos);
