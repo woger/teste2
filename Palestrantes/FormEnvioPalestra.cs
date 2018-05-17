@@ -174,7 +174,7 @@ namespace Palestrantes
                         }
 
                         ddlTema_SelectedIndexChanged(null, null);
-                        MessageBox.Show("Arquivo(s) enviado(s) com sucesso");
+                        MessageBox.Show("Arquivo(s) enviado(s) para o servidor com sucesso. Será realizada uma cópia dos arquivos para a sala da palestra.");
                     }
                 }
             }
@@ -184,45 +184,47 @@ namespace Palestrantes
                 return;
             }
 
-            CopiarArquivosParaSala(agenda);
+            try
+            {
+                CopiarArquivosParaSala(agenda);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao copiar o(s) arquivo(s) para a sala da palestra: O IP " + agenda.Sala.IP + " está sem permissão de escrita no diretório informado.");
+                return;
+            }
+
         }
 
         void CopiarArquivosParaSala(AgendaEvento agenda)
         {
-            try
+
+            string[] files = Directory.GetFiles(agenda.PathPalestra(this.pathDiretorio));
+            if (files.Length > 0)
             {
-                string[] files = Directory.GetFiles(agenda.PathPalestra(this.pathDiretorio));
-                if (files.Length > 0)
+
+                for (int i = 0; i < files.Length; i++)
                 {
 
-                    for (int i = 0; i < files.Length; i++)
-                    {
-                        try
-                        {
-                            FileStream arquivoSala = File.OpenRead(files[i]);
-                            new AgendaEventoDAO().CriarDiretorios(@"\\" + agenda.Sala.IP + @"\PALESTRAS", agenda.Palestrante.Codigo, agenda.Sala.Codigo, agenda.Data, agenda.Hora, agenda.TemaFormatado, this.pathDiretorio);
-                            FileStream arquivoSaida = File.Create(@"\\"  + agenda.PathPalestra(agenda.Sala.IP) + @"/ " + Path.GetFileName(files[i]));
-                            int b;
+                    FileStream arquivoSala = File.OpenRead(files[i]);
+                    new AgendaEventoDAO().CriarDiretorios(@"\\" + agenda.Sala.IP + @"\PALESTRAS", agenda.Palestrante.Codigo, agenda.Sala.Codigo, agenda.Data, agenda.Hora, agenda.TemaFormatado, this.pathDiretorio);
+                    FileStream arquivoSaida = File.Create(@"\\" + agenda.PathPalestra(agenda.Sala.IP) + @"/ " + Path.GetFileName(files[i]));
+                    int b;
 
-                            while ((b = arquivoSala.ReadByte()) > -1)
-                                arquivoSaida.WriteByte((byte)b);
+                    while ((b = arquivoSala.ReadByte()) > -1)
+                        arquivoSaida.WriteByte((byte)b);
 
-                            arquivoSaida.Flush();
-                            arquivoSaida.Close();
-                            arquivoSala.Close();
-                            //if (i == 0)
-                            //    lblNomeArquivo.Text = "* " + nome;
-                            //else
-                            //    lblNomeArquivo.Text += "\r\n* " + nome;
-                        }
-                        catch(Exception e)
-                        {
-                            Console.Write(e.Message);
-                        }
-                    }
+                    arquivoSaida.Flush();
+                    arquivoSaida.Close();
+                    arquivoSala.Close();
+                    //if (i == 0)
+                    //    lblNomeArquivo.Text = "* " + nome;
+                    //else
+                    //    lblNomeArquivo.Text += "\r\n* " + nome;
+
                 }
             }
-            catch { }
+
         }
 
         private void btnExplorar_Click(object sender, EventArgs e)
@@ -242,7 +244,7 @@ namespace Palestrantes
                 {
                     CopiarArquivosParaSala(agenda);
                 }
-                
+
             }
 
 
