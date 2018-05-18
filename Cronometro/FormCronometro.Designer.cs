@@ -50,6 +50,7 @@
             this.Controls.Add(this.lblContador);
             this.Name = "FormCronometro";
             this.Text = "FormCronometro";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();

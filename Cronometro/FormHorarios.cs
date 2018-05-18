@@ -84,10 +84,36 @@ namespace Cronometro
             }
         }
 
+        private bool Is_Form_Loaded_Already(string FormName)
+        {
+            foreach (Form form_loaded in Application.OpenForms)
+            {
+                if (form_loaded.Text.IndexOf(FormName) >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["btnIniciar"].Index)
-            {
+            { 
+
+                if (formCronometro == null || !Is_Form_Loaded_Already(formCronometro.Name))
+                {
+                    formCronometro = new FormCronometro(new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())).Temporizador);
+                                                                                       
+                    //formCronometro.MdiParent = this;
+                    formCronometro.ControlBox = true;
+
+                    //formCronometro.Width = this.Width;
+                    //btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+                    formCronometro.StartPosition = FormStartPosition.CenterScreen;
+                    formCronometro.Show();
+
+                }
 
                 if (this.ID == Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())) //Se o usuário clicou para iniciar novamente NA MESMA LINHA
                 {
@@ -100,42 +126,30 @@ namespace Cronometro
                 {
                     //Caso já tenha selecionado um tempo, tenho que parar ele no datagrid
                     Tempo tempoAnterior = new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[IndexSelected].Cells[1].Value.ToString()));
-                    if (dataGridView1["Contador", IndexSelected] != null)
+                    if (dataGridView1["Contador", IndexSelected] != null && tempoAnterior != null)
                         dataGridView1["Contador", IndexSelected].Value = tempoAnterior.Temporizador;
 
                     this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
                     Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
 
-                    if (formCronometro == null || !formCronometro.IsAccessible)
+                    if (formCronometro == null || !Is_Form_Loaded_Already(formCronometro.Name))
                     {
-                        formCronometro = new FormCronometro(tempo.Temporizador);
+                        //formCronometro = new FormCronometro(tempo.Temporizador);
 
-                        //formCronometro.MdiParent = this;
-                        formCronometro.ControlBox = true;
+                        ////formCronometro.MdiParent = this;
+                        //formCronometro.ControlBox = true;
 
-                        //formCronometro.Width = this.Width;
-                        //btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
-                        formCronometro.StartPosition = FormStartPosition.CenterScreen;
-                        formCronometro.Show();
+                        ////formCronometro.Width = this.Width;
+                        ////btnHome.SetBounds(formUsuario.lblPositionHome.Location.X, formUsuario.lblPositionHome.Location.Y, btnHome.Width, btnHome.Height);
+                        //formCronometro.StartPosition = FormStartPosition.CenterScreen;
+                        //formCronometro.Show();
                         IndexSelected = e.RowIndex;
                         //dataGridView1.CellFormatting += DataGridView1_CellFormatting;
                         minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
                         segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
 
-                        timer1 = new System.Windows.Forms.Timer();
-                        timer1.Tick += new EventHandler(timer1_Tick);
-                        timer1.Interval = 1000; // 1 second
-                        timer1.Start();
-                        dataGridView1.Columns.Remove("btnIniciar");
-                        DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                        //dataGridView1.Columns.Add(btn);
-                        btn.HeaderText = string.Empty;
-                        btn.DefaultCellStyle.BackColor = Color.White;
-                        btn.Text = "Pausar";
-                        //dataGridView1.CellPainting += DataGridView1_CellPainting;
-                        btn.Name = "btnIniciar";
-                        btn.UseColumnTextForButtonValue = true;
-                        dataGridView1.Columns.Insert(dataGridView1.Columns.Count, btn);
+                        
+
 
                     }
                     else
@@ -147,10 +161,14 @@ namespace Cronometro
                         //    dataGridView1["Contador", IndexSelected].Value = minutos.ToString("00") + ":" + segundos.ToString("00");
                         IndexSelected = e.RowIndex;
                     }
+                    timer1 = new System.Windows.Forms.Timer();
+                    timer1.Tick += new EventHandler(timer1_Tick);
+                    timer1.Interval = 1000; // 1 second
+                    timer1.Start();
                 }
 
 
-                
+
 
             }
         }
@@ -158,16 +176,16 @@ namespace Cronometro
         public void PausarContador()
         {
             timer1.Stop();
-            dataGridView1.Columns.Remove("btnIniciar");
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            //dataGridView1.Columns.Add(btn);
-            btn.HeaderText = string.Empty;
-            btn.DefaultCellStyle.BackColor = Color.White;
-            btn.Text = "Iniciar";
-            //dataGridView1.CellPainting += DataGridView1_CellPainting;
-            btn.Name = "btnIniciar";
-            btn.UseColumnTextForButtonValue = true;
-            dataGridView1.Columns.Insert(0, btn);
+            //dataGridView1.Columns.Remove("btnIniciar");
+            //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            ////dataGridView1.Columns.Add(btn);
+            //btn.HeaderText = string.Empty;
+            //btn.DefaultCellStyle.BackColor = Color.White;
+            //btn.Text = "Iniciar";
+            ////dataGridView1.CellPainting += DataGridView1_CellPainting;
+            //btn.Name = "btnIniciar";
+            //btn.UseColumnTextForButtonValue = true;
+            //dataGridView1.Columns.Insert(0, btn);
 
             //if (dataGridView1["btnIniciar", IndexSelected] != null)
             //    dataGridView1["btnIniciar", IndexSelected].Value = "Iniciar";
@@ -179,16 +197,16 @@ namespace Cronometro
         {
             timer1.Start();
 
-            dataGridView1.Columns.Remove("btnIniciar");
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            //dataGridView1.Columns.Add(btn);
-            btn.HeaderText = string.Empty;
-            btn.DefaultCellStyle.BackColor = Color.White;
-            btn.Text = "Pausar";
-            //dataGridView1.CellPainting += DataGridView1_CellPainting;
-            btn.Name = "btnIniciar";
-            btn.UseColumnTextForButtonValue = true;
-            dataGridView1.Columns.Insert(0, btn);
+            //dataGridView1.Columns.Remove("btnIniciar");
+            //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            ////dataGridView1.Columns.Add(btn);
+            //btn.HeaderText = string.Empty;
+            //btn.DefaultCellStyle.BackColor = Color.White;
+            //btn.Text = "Pausar";
+            ////dataGridView1.CellPainting += DataGridView1_CellPainting;
+            //btn.Name = "btnIniciar";
+            //btn.UseColumnTextForButtonValue = true;
+            //dataGridView1.Columns.Insert(0, btn);
 
             //if (dataGridView1["btnIniciar", IndexSelected] != null)
             //    dataGridView1.Rows[IndexSelected].Cells["btnIniciar"].Value = "Pausar";
