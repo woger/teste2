@@ -37,6 +37,12 @@ namespace Cronometro
             lblContador.Text = pContador;
             minutos = int.Parse(pContador.Split(':')[0]);
             segundos = int.Parse(pContador.Split(':')[1]);
+
+            if (minutos == 0)
+                //lblContador.ForeColor = Color.FromArgb(170,103,8);
+                lblContador.ForeColor = Color.FromArgb(238, 162, 54);
+            else
+                lblContador.ForeColor = Color.Black;
         }
 
         public void PausarContador()
@@ -60,11 +66,7 @@ namespace Cronometro
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (minutos == 0)
-                //lblContador.ForeColor = Color.FromArgb(170,103,8);
-                lblContador.ForeColor = Color.FromArgb(238,162,54);
-            else
-                lblContador.ForeColor = Color.Black;
+            
 
             if (segundos == 0)
             {
@@ -80,6 +82,12 @@ namespace Cronometro
                 segundos--;
 
             lblContador.Text = minutos.ToString("00") + ":" + segundos.ToString("00");
+
+            if (minutos == 0)
+                //lblContador.ForeColor = Color.FromArgb(170,103,8);
+                lblContador.ForeColor = Color.FromArgb(238, 162, 54);
+            else
+                lblContador.ForeColor = Color.Black;
         }
     }
 }

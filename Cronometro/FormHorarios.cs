@@ -71,18 +71,28 @@ namespace Cronometro
             dataGridView1.Columns["Temporizador"].HeaderText = "Minutos";
             dataGridView1.Columns["Contador"].HeaderText = "Tempo";
             dataGridView1.Columns["btnIniciar"].Width = 50;
+
+            DataGridViewButtonColumn btn2 = new DataGridViewButtonColumn();
+            dataGridView1.Columns.Add(btn2);
+            btn2.HeaderText = string.Empty;
+            btn2.DefaultCellStyle.BackColor = Color.White;
+            btn2.Text = "Zerar";
+
+            btn2.Name = "btnZerar";
+            btn2.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns["btnZerar"].Width = 50;
         }
 
-        private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.ColumnIndex == 0 && e.RowIndex > -1)
-            {
-                Image img = (Image)global::Cronometro.Properties.Resources.play_azul_fundo_transparente;
-                e.PaintContent(e.CellBounds);
-                e.Graphics.DrawImage(img, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width, e.CellBounds.Height);
-                e.Handled = true;
-            }
-        }
+        //private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        //{
+        //    if (e.ColumnIndex == 0 && e.RowIndex > -1)
+        //    {
+        //        Image img = (Image)global::Cronometro.Properties.Resources.play_azul_fundo_transparente;
+        //        e.PaintContent(e.CellBounds);
+        //        e.Graphics.DrawImage(img, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width, e.CellBounds.Height);
+        //        e.Handled = true;
+        //    }
+        //}
 
         private bool Is_Form_Loaded_Already(string FormName)
         {
@@ -99,12 +109,12 @@ namespace Cronometro
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["btnIniciar"].Index)
-            { 
+            {
 
                 if (formCronometro == null || !Is_Form_Loaded_Already(formCronometro.Name))
                 {
-                    formCronometro = new FormCronometro(new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())).Temporizador);
-                                                                                       
+                    formCronometro = new FormCronometro(new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString())).Temporizador);
+
                     //formCronometro.MdiParent = this;
                     formCronometro.ControlBox = true;
 
@@ -115,21 +125,27 @@ namespace Cronometro
 
                 }
 
-                if (this.ID == Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())) //Se o usuário clicou para iniciar novamente NA MESMA LINHA
+                if (this.ID == Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString())) //Se o usuário clicou para iniciar novamente NA MESMA LINHA
                 {
                     if (ContadorAtivo())
+                    {
                         PausarContador();
+                        dataGridView1.Rows[e.RowIndex].Cells["btnIniciar"].Value = "Iniciar";
+                    }
                     else
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells["btnIniciar"].Value = "Pausar";
                         RetomarContador();
+                    }
                 }
                 else
                 {
                     //Caso já tenha selecionado um tempo, tenho que parar ele no datagrid
-                    Tempo tempoAnterior = new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[IndexSelected].Cells[1].Value.ToString()));
+                    Tempo tempoAnterior = new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[IndexSelected].Cells[2].Value.ToString()));
                     if (dataGridView1["Contador", IndexSelected] != null && tempoAnterior != null)
                         dataGridView1["Contador", IndexSelected].Value = tempoAnterior.Temporizador;
 
-                    this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
                     Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
 
                     if (formCronometro == null || !Is_Form_Loaded_Already(formCronometro.Name))
@@ -148,7 +164,7 @@ namespace Cronometro
                         minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
                         segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
 
-                        
+
 
 
                     }
@@ -170,6 +186,26 @@ namespace Cronometro
 
 
 
+            }
+            else if (e.ColumnIndex == dataGridView1.Columns["btnZerar"].Index)
+            {
+                if (this.ID == Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()))
+                {
+                    this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
+                    //Reiniciar contador
+
+                    formCronometro.MudaContador(tempo.Temporizador);
+                    minutos = int.Parse(tempo.Temporizador.Split(':')[0]);
+                    segundos = int.Parse(tempo.Temporizador.Split(':')[1]);
+                    if (timer1 != null)
+                        timer1.Start();
+                }
+                //Tempo tempoAnterior = new TempoDAO().BuscarPorCodigo(Convert.ToInt32(dataGridView1.Rows[IndexSelected].Cells[2].Value.ToString()));
+                //if (dataGridView1["Contador", IndexSelected] != null && tempoAnterior != null)
+                //    dataGridView1["Contador", IndexSelected].Value = tempoAnterior.Temporizador;
+
+                
             }
         }
 
@@ -221,7 +257,7 @@ namespace Cronometro
 
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+            //this.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
             Tempo tempo = new TempoDAO().BuscarPorCodigo(this.ID);
             //if (dataGridView1.Columns[e.ColumnIndex].Name.Equals("time"))
             //{
@@ -365,9 +401,9 @@ namespace Cronometro
         {
             if (PerfilUsuarioLogado != EnumPerfil.MONITOR)
             {
-                ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                tbxNome.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbxHorario.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 tbxNome.Focus();
 
                 if (this.ID == 0)
