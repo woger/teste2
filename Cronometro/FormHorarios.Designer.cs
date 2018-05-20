@@ -178,12 +178,12 @@
             // btnHome
             // 
             this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
             this.btnHome.BackgroundImage = global::Cronometro.Properties.Resources.btn_home;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.Location = new System.Drawing.Point(586, 5);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(55, 46);
+            this.btnHome.Size = new System.Drawing.Size(55, 44);
             this.btnHome.TabIndex = 30;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);

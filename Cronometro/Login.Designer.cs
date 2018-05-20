@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxSenha = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.ddlUsuarios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -82,19 +81,6 @@
             this.tbxSenha.Size = new System.Drawing.Size(150, 20);
             this.tbxSenha.TabIndex = 2;
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Demi", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(244, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "GERENCIADOR DE TEMPO";
-            // 
             // ddlUsuarios
             // 
             this.ddlUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -103,7 +89,7 @@
             this.ddlUsuarios.Location = new System.Drawing.Point(191, 177);
             this.ddlUsuarios.Name = "ddlUsuarios";
             this.ddlUsuarios.Size = new System.Drawing.Size(152, 21);
-            this.ddlUsuarios.TabIndex = 5;
+            this.ddlUsuarios.TabIndex = 1;
             // 
             // Login
             // 
@@ -114,7 +100,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(735, 451);
             this.Controls.Add(this.ddlUsuarios);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbxSenha);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -133,7 +118,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxSenha;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox ddlUsuarios;
     }
 }

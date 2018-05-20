@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Cronometro
@@ -14,12 +15,16 @@ namespace Cronometro
         public System.Windows.Forms.Timer timer1;
         int minutos = 0;
         int segundos = 0;
+        bool estaDecrescente = true;
+        bool contadorImpar = true;
 
 
         public FormCronometro(string pContador)
         {
             InitializeComponent();
             MudaContador(pContador);
+            this.BackColor = Color.Black;
+            this.lblContador.ForeColor = Color.White;
 
         }
 
@@ -37,12 +42,12 @@ namespace Cronometro
             lblContador.Text = pContador;
             minutos = int.Parse(pContador.Split(':')[0]);
             segundos = int.Parse(pContador.Split(':')[1]);
-
-            if (minutos == 0)
-                //lblContador.ForeColor = Color.FromArgb(170,103,8);
-                lblContador.ForeColor = Color.FromArgb(238, 162, 54);
-            else
-                lblContador.ForeColor = Color.Black;
+            lblContador.ForeColor = Color.White;
+            //if (minutos == 0)
+            //    //lblContador.ForeColor = Color.FromArgb(170,103,8);
+            //    lblContador.ForeColor = Color.FromArgb(238, 162, 54);
+            //else
+            //    lblContador.ForeColor = Color.Black;
         }
 
         public void PausarContador()
@@ -66,28 +71,75 @@ namespace Cronometro
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
 
-            if (segundos == 0)
+            if (estaDecrescente)
             {
-                if (minutos == 0)
-                    timer1.Stop();
-                else
+                if (segundos == 0)
                 {
-                    segundos = 59;
-                    minutos--;
+                    if (minutos == 0)
+                        estaDecrescente = false;
+                    else
+                    {
+                        segundos = 59;
+                        if (estaDecrescente)
+                            minutos--;
+                        else
+                            minutos++;
+                    }
                 }
+                else
+                    segundos--;
             }
             else
-                segundos--;
+            {
+                if (contadorImpar)
+                {
+                    //Bota as cores
+                    this.BackColor = Color.White;
+                    lblContador.ForeColor = Color.Red;
+                }
+                else
+                {
+                    //Bota outras cores
+                    this.BackColor = Color.Black;
+                    lblContador.ForeColor = Color.White;
+                }
+
+                if (segundos == 59)
+                {
+                    segundos = 0;
+                    minutos++;
+                }
+                else
+                    segundos++;
+                contadorImpar = !contadorImpar;
+            }
+            
 
             lblContador.Text = minutos.ToString("00") + ":" + segundos.ToString("00");
 
-            if (minutos == 0)
-                //lblContador.ForeColor = Color.FromArgb(170,103,8);
-                lblContador.ForeColor = Color.FromArgb(238, 162, 54);
+            //if (minutos == 0)
+            //    //lblContador.ForeColor = Color.FromArgb(170,103,8);
+            //    lblContador.ForeColor = Color.FromArgb(238, 162, 54);
+            //else
+            //    lblContador.ForeColor = Color.Black;
+        }
+
+        private void piscarLabel()
+        {
+            // Se o label estiver visível, ele ficará não visível.
+            if (lblContador.Visible == true)
+                lblContador.Visible = false;
+            // Se o label estiver não visível, ele ficará visível.
             else
-                lblContador.ForeColor = Color.Black;
+                lblContador.Visible = true;
+
+            // Cria um intervalo até a próxima execução.
+            Thread.Sleep(1000);
+
+            // Chama novamente o método.
+            piscarLabel();
+
         }
     }
 }
