@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1072, 427);
             this.Controls.Add(this.lblContador);
             this.Name = "FormCronometro";
-            this.Text = "FormCronometro";
+            this.Text = "Cronômetro";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

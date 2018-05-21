@@ -153,6 +153,7 @@
     <None Include="Resources\play-azul-fundo-transparente.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StopTimer.png" />
     <Content Include="XR2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

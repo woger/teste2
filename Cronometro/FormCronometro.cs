@@ -43,6 +43,7 @@ namespace Cronometro
             minutos = int.Parse(pContador.Split(':')[0]);
             segundos = int.Parse(pContador.Split(':')[1]);
             lblContador.ForeColor = Color.White;
+            estaDecrescente = true;
             //if (minutos == 0)
             //    //lblContador.ForeColor = Color.FromArgb(170,103,8);
             //    lblContador.ForeColor = Color.FromArgb(238, 162, 54);

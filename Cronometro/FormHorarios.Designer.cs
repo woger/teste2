@@ -42,6 +42,7 @@
             this.lblMinuto = new System.Windows.Forms.Label();
             this.tbxHorario = new System.Windows.Forms.MaskedTextBox();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +189,18 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.BackColor = System.Drawing.Color.Transparent;
+            this.btnStop.BackgroundImage = global::Cronometro.Properties.Resources.StopTimer;
+            this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStop.Location = new System.Drawing.Point(532, 253);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(119, 112);
+            this.btnStop.TabIndex = 31;
+            this.btnStop.UseVisualStyleBackColor = false;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // FormHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +209,7 @@
             this.BackgroundImage = global::Cronometro.Properties.Resources.bgInterno;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(735, 451);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.tbxHorario);
             this.Controls.Add(this.lblMinuto);
@@ -234,5 +248,6 @@
         private System.Windows.Forms.Label lblMinuto;
         private System.Windows.Forms.MaskedTextBox tbxHorario;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnStop;
     }
 }
