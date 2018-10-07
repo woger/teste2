@@ -115,17 +115,19 @@ namespace Settings.DAO
             }
 
 
+            if (!String.IsNullOrEmpty(pNomeArquivo))
+            {
 
+                System.IO.FileStream arquivoSaida = System.IO.File.Create(pathFinal + @"\ " + pNomeArquivo);
+                int b;
 
-            System.IO.FileStream arquivoSaida = System.IO.File.Create(pathFinal + @"\ " + pNomeArquivo); 
-            int b;
+                while ((b = pArquivo.ReadByte()) > -1)
+                    arquivoSaida.WriteByte((byte)b);
 
-            while ((b = pArquivo.ReadByte()) > -1)
-                arquivoSaida.WriteByte((byte)b);
-
-            arquivoSaida.Flush();
-            arquivoSaida.Close();
-            pArquivo.Close();
+                arquivoSaida.Flush();
+                arquivoSaida.Close();
+                pArquivo.Close();
+            }
         }
 
         public AgendaEvento VerificaExistenciaEvento(int pSala, DateTime Data, string pHora, int? pCodigo)
@@ -408,7 +410,7 @@ namespace Settings.DAO
             {
                 oConn.Open();
 
-                using (OleDbCommand cmd = new OleDbCommand(" SELECT DISTINCT ID_PALESTR FROM SALA_PAL.DBF "))
+                using (OleDbCommand cmd = new OleDbCommand(" SELECT DISTINCT ID_PALESTR FROM SALA_PAL.DBF"))
                 {
                     cmd.Connection = oConn;
                     OleDbDataAdapter DA = new OleDbDataAdapter(cmd);
@@ -424,7 +426,7 @@ namespace Settings.DAO
                     }
                 }
             }
-            return palestrantes;
+            return palestrantes.OrderBy(P=>P.Nome).ToList();
         }
 
         public void AtualizarArquivoPalestra(int pIDPalestra, string pFileName, string pathDB)

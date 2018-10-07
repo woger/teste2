@@ -136,8 +136,11 @@ namespace Palestrantes
             for (int i = 0; i < agendasData.Count; i++)
             {
                 string[] arquivosPalestra = Directory.GetFiles(agendasData[i].PathPalestra(this.pathDiretorio));
-                for (int j = 0; j < arquivosPalestra.Length; j++)
-                    new AgendaEventoDAO().CriarPastasRemoto(this.pathDiretorio, agendasData[i].Data, agendasData[i].Sala.Codigo, agendasData[i].Palestrante.Codigo, agendasData[i].Hora, DiretoriFixoSincronizar, File.OpenRead(arquivosPalestra[j]), Path.GetFileName(arquivosPalestra[j]));
+                if (arquivosPalestra.Length > 0)
+                    for (int j = 0; j < arquivosPalestra.Length; j++)
+                        new AgendaEventoDAO().CriarPastasRemoto(this.pathDiretorio, agendasData[i].Data, agendasData[i].Sala.Codigo, agendasData[i].Palestrante.Codigo, agendasData[i].Hora, DiretoriFixoSincronizar, File.OpenRead(arquivosPalestra[j]), Path.GetFileName(arquivosPalestra[j]));
+                else
+                    new AgendaEventoDAO().CriarPastasRemoto(this.pathDiretorio, agendasData[i].Data, agendasData[i].Sala.Codigo, agendasData[i].Palestrante.Codigo, agendasData[i].Hora, DiretoriFixoSincronizar, null, string.Empty);
             }
             MessageBox.Show(@"Dados Salvos com sucesso em C:\PALESTRA");
         }
@@ -175,9 +178,16 @@ namespace Palestrantes
 
         private void btnExplorar_Click(object sender, EventArgs e)
         {
-            if(ddlSala.SelectedIndex != -1)
-                Process.Start(DiretoriFixoSincronizar);
-
+            if (ddlSala.SelectedIndex != -1)
+            {
+                if (Directory.Exists(DiretoriFixoSincronizar))
+                    Process.Start(DiretoriFixoSincronizar);
+                else
+                {
+                    MessageBox.Show(@"Você deve sincronizar os dados com o servidor antes de explorar.");
+                    return;
+                }
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace Settings
         {
             get
             {
-                return this.Data.ToString("dd/MM/yyy") + " - " + this.Hora + ": " + this.Tema.ToUpper() + " - Sala:" + this.Sala;
+                return this.Data.ToString("dd/MM/yyy") + " - " + this.Hora + " - Sala:" + this.Sala + ": " + this.Tema.ToUpper();
             }
 
         }
